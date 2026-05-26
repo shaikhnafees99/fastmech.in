@@ -34,6 +34,31 @@ body {
   overflow-x: hidden;
 }
 
+body.is-rtl {
+  text-align: right;
+}
+
+body.is-rtl .hero-actions,
+body.is-rtl .emergency-actions,
+body.is-rtl .trust-row,
+body.is-rtl .area-tags {
+  justify-content: flex-end;
+}
+
+body.is-rtl .brand,
+body.is-rtl .nav-links,
+body.is-rtl .sticky-call,
+body.is-rtl .footer-bottom .container {
+  direction: rtl;
+}
+
+body.is-rtl .phone-number,
+body.is-rtl .nav-call,
+body.is-rtl .sticky-call a:first-child,
+body.is-rtl .search-card a:first-of-type {
+  direction: ltr;
+}
+
 a { color: inherit; text-decoration: none; }
 
 img { display: block; max-width: 100%; }
@@ -162,6 +187,30 @@ img { display: block; max-width: 100%; }
 }
 
 .site-header.is-scrolled .nav-links .nav-call { background: var(--ink); color: var(--white); }
+
+.language-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.language-control select {
+  min-height: 34px;
+  max-width: 118px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0 8px;
+  color: var(--ink);
+  background: var(--white);
+  font: inherit;
+}
+
+.site-header.is-scrolled .language-control { color: var(--ink); }
 
 .menu-toggle {
   display: none;
@@ -934,6 +983,17 @@ details p {
   .nav-links a,
   .site-header .nav-links a {
     color: var(--ink);
+  }
+
+  .language-control {
+    justify-content: space-between;
+    color: var(--ink);
+  }
+
+  .language-control select {
+    max-width: none;
+    width: 150px;
+    border: 1px solid var(--line);
   }
 
   .hero-grid,
