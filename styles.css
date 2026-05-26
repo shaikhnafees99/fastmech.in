@@ -915,6 +915,20 @@ details p {
   background: var(--white);
 }
 
+.sticky-call .whatsapp-chat {
+  grid-column: 1 / -1;
+  gap: 8px;
+  color: var(--white);
+  background: #18b95b;
+  box-shadow: 0 10px 24px rgba(24, 185, 91, 0.28);
+}
+
+.sticky-call .whatsapp-chat svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -1090,6 +1104,6 @@ details p {
   }
 
   .site-footer {
-    padding-bottom: 62px;
+    padding-bottom: 106px;
   }
 }

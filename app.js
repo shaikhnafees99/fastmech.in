@@ -10,6 +10,7 @@ const translations = {
     brandSmall: "Mumbai roadside rescue",
     nav: ["Services", "Emergency", "Mumbai Areas", "FAQ"],
     navCall: "Call +91 86918 80050",
+    whatsapp: "Chat WhatsApp",
     language: "Language",
     heroEyebrow: "24/7 Emergency Car Help in Mumbai",
     heroTitle: "Fast Mechanic for battery jump start, towing and on-road car rescue.",
@@ -92,7 +93,8 @@ const translations = {
     dir: "ltr",
     brandSmall: "मुंबई रोडसाइड मदत",
     nav: ["सेवा", "आपत्कालीन", "मुंबई भाग", "प्रश्न"],
-    navCall: "कॉल +91 86918 80050",
+  navCall: "कॉल +91 86918 80050",
+  whatsapp: "WhatsApp चैट",
     language: "भाषा",
     heroEyebrow: "मुंबईत 24/7 आपत्कालीन कार मदत",
     heroTitle: "बॅटरी जंप स्टार्ट, टोइंग आणि ऑन-रोड कार रेस्क्यूसाठी Fast Mechanic.",
@@ -155,6 +157,7 @@ translations.hi = {
   brandSmall: "मुंबई रोडसाइड सहायता",
   nav: ["सेवाएं", "इमरजेंसी", "मुंबई क्षेत्र", "FAQ"],
   language: "भाषा",
+  whatsapp: "WhatsApp चॅट",
   heroEyebrow: "मुंबई में 24/7 इमरजेंसी कार सहायता",
   heroTitle: "बैटरी जंप स्टार्ट, टोइंग और ऑन-रोड कार रेस्क्यू के लिए Fast Mechanic.",
   heroLede: "घर, ऑफिस, हाईवे, पार्किंग बेसमेंट या देर रात सड़क पर फंसे हैं? मुंबई, ठाणे और नवी मुंबई में तुरंत कार ब्रेकडाउन सहायता के लिए कॉल करें.",
@@ -175,6 +178,7 @@ translations.ur = {
   brandSmall: "ممبئی روڈ سائیڈ مدد",
   nav: ["سروسز", "ایمرجنسی", "ممبئی علاقے", "FAQ"],
   navCall: "کال +91 86918 80050",
+  whatsapp: "WhatsApp چیٹ",
   language: "زبان",
   heroEyebrow: "ممبئی میں 24/7 ایمرجنسی کار مدد",
   heroTitle: "بیٹری جمپ اسٹارٹ، ٹوئنگ اور آن روڈ کار ریسکیو کے لیے Fast Mechanic.",
@@ -199,6 +203,7 @@ translations.gu = {
   brandSmall: "મુંબઈ રોડસાઈડ મદદ",
   nav: ["સેવાઓ", "ઇમરજન્સી", "મુંબઈ વિસ્તાર", "FAQ"],
   language: "ભાષા",
+  whatsapp: "WhatsApp ચેટ",
   heroEyebrow: "મુંબઈમાં 24/7 ઇમરજન્સી કાર મદદ",
   heroTitle: "બેટરી જમ્પ સ્ટાર્ટ, ટોઇંગ અને ઓન-રોડ કાર રેસ્ક્યૂ માટે Fast Mechanic.",
   heroLede: "ઘર, ઓફિસ, હાઇવે, પાર્કિંગ બેઝમેન્ટ અથવા રાત્રે રસ્તા પર ફસાયા છો? મુંબઈ, થાણે અને નવી મુંબઈમાં તાત્કાલિક મદદ માટે કોલ કરો.",
@@ -217,6 +222,7 @@ translations.ta = {
   brandSmall: "மும்பை சாலை உதவி",
   nav: ["சேவைகள்", "அவசரம்", "மும்பை பகுதிகள்", "FAQ"],
   language: "மொழி",
+  whatsapp: "WhatsApp அரட்டை",
   heroEyebrow: "மும்பையில் 24/7 அவசர கார் உதவி",
   heroTitle: "பேட்டரி ஜம்ப் ஸ்டார்ட், டோயிங் மற்றும் ஆன்-ரோடு கார் ரெஸ்க்யூக்கு Fast Mechanic.",
   heroLede: "வீடு, அலுவலகம், ஹைவே, பார்க்கிங் பேஸ்மென்ட் அல்லது இரவு சாலையில் சிக்கியுள்ளீர்களா? மும்பை, தானே மற்றும் நவி மும்பையில் உடனடி உதவிக்கு அழைக்கவும்.",
@@ -299,7 +305,8 @@ const applyLanguage = (lang) => {
   setText(".footer-bottom span", text.footerBottom);
   setText(".footer-bottom a", text.emergencyCall);
   setText(".sticky-call a:first-child", text.navCall);
-  setText(".sticky-call a:last-child", text.saveContact);
+  setText(".sticky-call a:nth-child(2)", text.saveContact);
+  setText(".whatsapp-chat span", text.whatsapp);
 };
 
 const setHeaderState = () => {
