@@ -88,13 +88,18 @@ img { display: block; max-width: 100%; }
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  color: var(--ink);
-  background: linear-gradient(135deg, var(--amber), var(--orange));
-  font-weight: 900;
-  letter-spacing: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+}
+
+.brand-mark img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
 }
 
 .brand strong,

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Fast Mechanic Logo</title>
+  <desc id="desc">Shield logo with a fast road, lightning bolt and wrench for emergency car mechanic service.</desc>
+  <defs>
+    <linearGradient id="bg" x1="72" y1="64" x2="448" y2="456" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8c948"/>
+      <stop offset="0.46" stop-color="#ff8a21"/>
+      <stop offset="1" stop-color="#ff4f1f"/>
+    </linearGradient>
+    <linearGradient id="road" x1="152" y1="358" x2="360" y2="164" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1720"/>
+      <stop offset="1" stop-color="#152a38"/>
+    </linearGradient>
+  </defs>
+  <path fill="#0b1720" d="M256 24 84 84v130c0 121 70 224 172 274 102-50 172-153 172-274V84L256 24Z"/>
+  <path fill="url(#bg)" d="M256 58 116 107v111c0 99 55 184 140 229 85-45 140-130 140-229V107L256 58Z"/>
+  <path fill="#0b1720" d="M139 334c26 42 66 76 117 103 51-27 91-61 117-103H139Z"/>
+  <path fill="url(#road)" d="M214 334h84l-15-118h-54l-15 118Z"/>
+  <path fill="#fff" d="m249 238-7 44h28l-7-44h-14Zm-11 68-5 28h46l-5-28h-36Z" opacity=".94"/>
+  <path fill="#fff" d="M152 250h208l-24-75H176l-24 75Z"/>
+  <path fill="#0b1720" d="M188 198h136l9 30H179l9-30Z"/>
+  <circle cx="202" cy="255" r="31" fill="#0b1720"/>
+  <circle cx="310" cy="255" r="31" fill="#0b1720"/>
+  <circle cx="202" cy="255" r="13" fill="#fff"/>
+  <circle cx="310" cy="255" r="13" fill="#fff"/>
+  <path fill="#ff4f1f" d="M267 105h70l-45 73h55L218 329l37-103h-54l66-121Z"/>
+  <path fill="#fff" d="M309 82a52 52 0 0 1 69 69l-31-31-24 24 31 31a52 52 0 0 1-63-63l18 18 18-18-18-30Z"/>
+  <path fill="#0b1720" d="M316 95a39 39 0 0 1 46 46l-15-15a10 10 0 0 0-14 0l-24 24a10 10 0 0 0 0 14l15 15a39 39 0 0 1-37-38l15 15a10 10 0 0 0 14 0l18-18a10 10 0 0 0 2-11l-20-32Z" opacity=".22"/>
+</svg>
