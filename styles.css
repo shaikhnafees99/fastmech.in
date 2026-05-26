@@ -810,7 +810,7 @@ details p {
   width: min(520px, calc(100% - 28px));
   grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.75fr);
   gap: 6px;
-  padding: 8px;
+  padding: 6px;
   border-radius: 8px;
   background: rgba(11, 23, 32, 0.9);
   backdrop-filter: blur(18px);
@@ -820,13 +820,13 @@ details p {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
+  min-height: 38px;
   border-radius: 6px;
   background: var(--amber);
   color: var(--ink);
   font-weight: 950;
-  padding: 0 8px;
-  font-size: clamp(0.74rem, 3.28vw, 0.96rem);
+  padding: 0 6px;
+  font-size: clamp(0.82rem, 3.52vw, 1rem);
   line-height: 1;
   white-space: nowrap;
   text-align: center;
