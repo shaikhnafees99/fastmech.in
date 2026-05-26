@@ -808,7 +808,7 @@ details p {
   display: none;
   transform: translateX(-50%);
   width: min(520px, calc(100% - 28px));
-  grid-template-columns: 1fr 0.78fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 8px;
   padding: 8px;
   border-radius: 8px;
@@ -825,6 +825,9 @@ details p {
   background: var(--amber);
   color: var(--ink);
   font-weight: 950;
+  font-size: clamp(0.78rem, 3.4vw, 0.98rem);
+  line-height: 1;
+  white-space: nowrap;
   text-align: center;
 }
 
