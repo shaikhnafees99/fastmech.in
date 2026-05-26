@@ -9,7 +9,7 @@
   "categories": ["business", "utilities", "navigation"],
   "icons": [
     {
-      "src": "logo.svg",
+      "src": "logo.svg?v=realistic-20260526",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"

@@ -1,29 +1,81 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
   <title id="title">Fast Mechanic Logo</title>
-  <desc id="desc">Shield logo with a fast road, lightning bolt and wrench for emergency car mechanic service.</desc>
+  <desc id="desc">Premium roadside mechanic logo with realistic car front, metallic shield, lightning and wrench.</desc>
   <defs>
-    <linearGradient id="bg" x1="72" y1="64" x2="448" y2="456" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#f8c948"/>
-      <stop offset="0.46" stop-color="#ff8a21"/>
+    <radialGradient id="plateGlow" cx="31%" cy="16%" r="82%">
+      <stop offset="0" stop-color="#4c5e69"/>
+      <stop offset=".42" stop-color="#162836"/>
+      <stop offset="1" stop-color="#081119"/>
+    </radialGradient>
+    <linearGradient id="shieldEdge" x1="88" y1="48" x2="424" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eef7ff"/>
+      <stop offset=".18" stop-color="#8ea0aa"/>
+      <stop offset=".54" stop-color="#273946"/>
+      <stop offset="1" stop-color="#050a0f"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="150" y1="140" x2="360" y2="354" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff7b8"/>
+      <stop offset=".22" stop-color="#f8c948"/>
+      <stop offset=".58" stop-color="#f78a1e"/>
       <stop offset="1" stop-color="#ff4f1f"/>
     </linearGradient>
-    <linearGradient id="road" x1="152" y1="358" x2="360" y2="164" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0b1720"/>
-      <stop offset="1" stop-color="#152a38"/>
+    <linearGradient id="paint" x1="132" y1="202" x2="390" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff2a9"/>
+      <stop offset=".35" stop-color="#f8c948"/>
+      <stop offset=".74" stop-color="#eb7b18"/>
+      <stop offset="1" stop-color="#b82d17"/>
     </linearGradient>
+    <linearGradient id="glass" x1="172" y1="166" x2="345" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8fdff"/>
+      <stop offset=".32" stop-color="#9fd9f4"/>
+      <stop offset="1" stop-color="#143349"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="328" y1="96" x2="444" y2="246" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".38" stop-color="#c5d1d8"/>
+      <stop offset=".68" stop-color="#6c7f8d"/>
+      <stop offset="1" stop-color="#172531"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity=".38"/>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
   </defs>
-  <path fill="#0b1720" d="M256 24 84 84v130c0 121 70 224 172 274 102-50 172-153 172-274V84L256 24Z"/>
-  <path fill="url(#bg)" d="M256 58 116 107v111c0 99 55 184 140 229 85-45 140-130 140-229V107L256 58Z"/>
-  <path fill="#0b1720" d="M139 334c26 42 66 76 117 103 51-27 91-61 117-103H139Z"/>
-  <path fill="url(#road)" d="M214 334h84l-15-118h-54l-15 118Z"/>
-  <path fill="#fff" d="m249 238-7 44h28l-7-44h-14Zm-11 68-5 28h46l-5-28h-36Z" opacity=".94"/>
-  <path fill="#fff" d="M152 250h208l-24-75H176l-24 75Z"/>
-  <path fill="#0b1720" d="M188 198h136l9 30H179l9-30Z"/>
-  <circle cx="202" cy="255" r="31" fill="#0b1720"/>
-  <circle cx="310" cy="255" r="31" fill="#0b1720"/>
-  <circle cx="202" cy="255" r="13" fill="#fff"/>
-  <circle cx="310" cy="255" r="13" fill="#fff"/>
-  <path fill="#ff4f1f" d="M267 105h70l-45 73h55L218 329l37-103h-54l66-121Z"/>
-  <path fill="#fff" d="M309 82a52 52 0 0 1 69 69l-31-31-24 24 31 31a52 52 0 0 1-63-63l18 18 18-18-18-30Z"/>
-  <path fill="#0b1720" d="M316 95a39 39 0 0 1 46 46l-15-15a10 10 0 0 0-14 0l-24 24a10 10 0 0 0 0 14l15 15a39 39 0 0 1-37-38l15 15a10 10 0 0 0 14 0l18-18a10 10 0 0 0 2-11l-20-32Z" opacity=".22"/>
+
+  <circle cx="256" cy="256" r="232" fill="#050a0f"/>
+  <path fill="url(#shieldEdge)" d="M256 28 72 94v128c0 122 72 226 184 262 112-36 184-140 184-262V94L256 28Z" filter="url(#shadow)"/>
+  <path fill="url(#plateGlow)" d="M256 63 108 116v109c0 99 56 185 148 221 92-36 148-122 148-221V116L256 63Z"/>
+  <path fill="none" stroke="#f8c948" stroke-width="10" d="M256 82 130 127v96c0 85 48 158 126 192 78-34 126-107 126-192v-96L256 82Z" opacity=".9"/>
+  <path fill="#ffffff" d="M146 116c30-13 66-23 110-34 44 11 80 21 110 34-79-8-151-8-220 0Z" opacity=".15"/>
+
+  <ellipse cx="256" cy="339" rx="152" ry="34" fill="#000" opacity=".36" filter="url(#soft)"/>
+
+  <g filter="url(#shadow)">
+    <path fill="url(#paint)" d="M120 286h272c-4-35-17-66-38-93-14-18-32-29-53-33h-78c-27 0-50 10-69 29-22 22-34 54-34 97Z"/>
+    <path fill="#67140c" d="M112 286h292v38H112z"/>
+    <path fill="url(#glass)" d="M181 185h57v62h-96c7-30 20-51 39-62Zm83 0h38c20 0 37 11 50 33 5 8 9 18 12 29H264v-62Z"/>
+    <path fill="#fff" d="M149 226h76l-8 21h-75c1-7 3-14 7-21Zm128-40h24c15 0 29 8 40 25l-64-25Z" opacity=".52"/>
+    <path fill="#f7fbff" d="M128 288h48c11 0 20 9 20 20h-68v-20Zm208 0h48v20h-68c0-11 9-20 20-20Z"/>
+    <circle cx="179" cy="323" r="42" fill="#060b10"/>
+    <circle cx="333" cy="323" r="42" fill="#060b10"/>
+    <circle cx="179" cy="323" r="20" fill="#dfe8ee"/>
+    <circle cx="333" cy="323" r="20" fill="#dfe8ee"/>
+    <circle cx="179" cy="323" r="8" fill="#6c7f8d"/>
+    <circle cx="333" cy="323" r="8" fill="#6c7f8d"/>
+    <path fill="#fffbdd" d="M121 268h45c8 0 14 6 14 14h-59v-14Zm211 0h47v14h-61c0-8 6-14 14-14Z" opacity=".95"/>
+  </g>
+
+  <path fill="url(#gold)" d="M272 96h70l-40 82h61L223 381l37-122h-63L272 96Z" filter="url(#shadow)"/>
+  <path fill="#fff7bf" d="M290 116h24l-35 73h34l-46 66 20-72h-31l34-67Z" opacity=".5"/>
+
+  <g filter="url(#shadow)">
+    <path fill="url(#metal)" d="M378 86a58 58 0 0 1 60 83l-41-41-29 29 41 41a58 58 0 0 1-76-76l28 28 29-29-12-35Z"/>
+    <path fill="#f8c948" d="m348 208 28-28 72 72c8 8 8 20 0 28s-20 8-28 0l-72-72Z"/>
+    <path fill="#fff" d="m372 188 10-10 60 60-10 10-60-60Z" opacity=".45"/>
+  </g>
+
+  <path fill="#ffffff" d="M151 112c-24 10-31 15-41 20v72c8-46 20-72 41-92Z" opacity=".13"/>
+  <path fill="#000000" d="M109 228c5 88 56 164 147 200 91-36 142-112 147-200-24 73-76 126-147 154-71-28-123-81-147-154Z" opacity=".24"/>
 </svg>
