@@ -804,13 +804,13 @@ details p {
   position: fixed;
   z-index: 60;
   left: 50%;
-  bottom: 16px;
+  bottom: 8px;
   display: none;
   transform: translateX(-50%);
   width: min(520px, calc(100% - 28px));
   grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.75fr);
-  gap: 6px;
-  padding: 6px;
+  gap: 5px;
+  padding: 4px;
   border-radius: 8px;
   background: rgba(11, 23, 32, 0.9);
   backdrop-filter: blur(18px);
@@ -820,13 +820,13 @@ details p {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 38px;
+  min-height: 36px;
   border-radius: 6px;
   background: var(--amber);
   color: var(--ink);
   font-weight: 950;
-  padding: 0 6px;
-  font-size: clamp(0.82rem, 3.52vw, 1rem);
+  padding: 0 5px;
+  font-size: clamp(0.8rem, 3.45vw, 1rem);
   line-height: 1;
   white-space: nowrap;
   text-align: center;
@@ -1000,6 +1000,6 @@ details p {
   }
 
   .site-footer {
-    padding-bottom: 74px;
+    padding-bottom: 62px;
   }
 }
