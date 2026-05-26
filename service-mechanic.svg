@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" role="img" aria-label="Car mechanic service illustration">
+  <rect width="720" height="450" fill="#101b24"/>
+  <path fill="#1e3442" d="M0 310h720v140H0z"/>
+  <path fill="#f8c948" d="M104 260h330l-34-106H160l-56 106Z"/>
+  <path fill="#fff" d="M178 178h180l18 50H152l26-50Z" opacity=".9"/>
+  <rect x="196" y="242" width="170" height="54" rx="8" fill="#0b1720"/>
+  <path stroke="#f8c948" stroke-width="10" d="M218 270h126"/>
+  <circle cx="190" cy="308" r="44" fill="#0b1720"/>
+  <circle cx="374" cy="308" r="44" fill="#0b1720"/>
+  <circle cx="190" cy="308" r="17" fill="#fff"/>
+  <circle cx="374" cy="308" r="17" fill="#fff"/>
+  <path fill="#ff4f1f" d="M530 92a68 68 0 0 1 88 88l-40-40-34 34 40 40a68 68 0 0 1-82-82l28 28 28-28-28-40Z"/>
+  <path stroke="#fff" stroke-width="22" stroke-linecap="round" d="m492 216-90 90"/>
+  <path stroke="#0b1720" stroke-width="10" stroke-linecap="round" d="m492 216-90 90"/>
+</svg>

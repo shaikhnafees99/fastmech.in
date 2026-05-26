@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" role="img" aria-label="Towing service illustration">
+  <rect width="720" height="450" fill="#101b24"/>
+  <path fill="#1e3442" d="M0 320h720v130H0z"/>
+  <path fill="#f8c948" d="M96 236h264l44 76H96v-76Z"/>
+  <path fill="#fff" d="M128 258h94v36h-94z" opacity=".9"/>
+  <path fill="#ff4f1f" d="M374 178h118l76 134H398l-24-134Z"/>
+  <path fill="#fff" d="M414 202h54l40 68h-80l-14-68Z" opacity=".9"/>
+  <path stroke="#f8c948" stroke-width="16" stroke-linecap="round" fill="none" d="M394 234 264 154 196 154"/>
+  <path stroke="#fff" stroke-width="10" stroke-linecap="round" d="M196 154l22-28m-22 28 22 28"/>
+  <circle cx="178" cy="320" r="44" fill="#0b1720"/>
+  <circle cx="394" cy="320" r="44" fill="#0b1720"/>
+  <circle cx="526" cy="320" r="44" fill="#0b1720"/>
+  <circle cx="178" cy="320" r="17" fill="#fff"/>
+  <circle cx="394" cy="320" r="17" fill="#fff"/>
+  <circle cx="526" cy="320" r="17" fill="#fff"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" role="img" aria-label="Battery jump start service illustration">
+  <rect width="720" height="450" fill="#101b24"/>
+  <path fill="#1e3442" d="M0 306h720v144H0z"/>
+  <path fill="#f8c948" d="M118 290h344l-42-122H180l-62 122Z"/>
+  <path fill="#fff" d="M198 192h190l18 58H168l30-58Z"/>
+  <circle cx="208" cy="302" r="42" fill="#0b1720"/>
+  <circle cx="370" cy="302" r="42" fill="#0b1720"/>
+  <circle cx="208" cy="302" r="17" fill="#fff"/>
+  <circle cx="370" cy="302" r="17" fill="#fff"/>
+  <rect x="482" y="188" width="118" height="82" rx="12" fill="#0b1720"/>
+  <rect x="498" y="206" width="86" height="34" rx="5" fill="#f8c948"/>
+  <path stroke="#ff4f1f" stroke-width="14" stroke-linecap="round" fill="none" d="M506 244c-62-30-106-26-132 10"/>
+  <path stroke="#35d07f" stroke-width="14" stroke-linecap="round" fill="none" d="M581 244c-35-42-82-54-141-36"/>
+  <path fill="#ff4f1f" d="M330 86h78l-44 72h60L294 326l38-112h-58l56-128Z"/>
+</svg>

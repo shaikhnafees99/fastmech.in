@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" role="img" aria-label="Car key lock assistance illustration">
+  <rect width="720" height="450" fill="#101b24"/>
+  <path fill="#182a36" d="M98 96h390c58 0 104 47 104 104v154H98V96Z"/>
+  <path fill="#f8c948" d="M132 134h328c38 0 70 31 70 70v94H132V134Z"/>
+  <path fill="#fff" d="M178 162h126v70H158l20-70Zm168 0h94c27 0 50 22 50 50v20H346v-70Z" opacity=".9"/>
+  <rect x="382" y="250" width="74" height="18" rx="9" fill="#0b1720"/>
+  <circle cx="206" cy="354" r="46" fill="#0b1720"/>
+  <circle cx="484" cy="354" r="46" fill="#0b1720"/>
+  <circle cx="206" cy="354" r="18" fill="#fff"/>
+  <circle cx="484" cy="354" r="18" fill="#fff"/>
+  <circle cx="574" cy="126" r="38" fill="#ff4f1f"/>
+  <path fill="#fff" d="M570 126a18 18 0 1 0-10 16l-1 27h18l1-27a18 18 0 0 0-8-16Zm0-8a8 8 0 1 1 0 16 8 8 0 0 1 0-16Z"/>
+  <path stroke="#f8c948" stroke-width="16" stroke-linecap="round" d="M600 166h62m-24 0v34m24-34v24"/>
+</svg>

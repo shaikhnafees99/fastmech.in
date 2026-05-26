@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" role="img" aria-label="Petrol delivery service illustration">
+  <rect width="720" height="450" fill="#101b24"/>
+  <path fill="#1e3442" d="M0 318h720v132H0z"/>
+  <rect x="120" y="104" width="176" height="254" rx="18" fill="#f8c948"/>
+  <rect x="154" y="138" width="108" height="84" rx="8" fill="#fff"/>
+  <path fill="#0b1720" d="M296 178h44c38 0 68 31 68 68v70c0 26 21 47 47 47s47-21 47-47V184h36v132c0 46-37 83-83 83s-83-37-83-83v-70c0-18-14-32-32-32h-44v-36Z"/>
+  <path fill="#ff4f1f" d="m514 132 62 58-36 38-58-62 32-34Z"/>
+  <path fill="#fff" d="M536 118h40v78h-40z" transform="rotate(42 556 157)" opacity=".9"/>
+  <path fill="#ff4f1f" d="M180 260h56l-40 72h58l-102 88 30-70h-50l48-90Z"/>
+</svg>

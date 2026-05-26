@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" role="img" aria-label="Stepney change service illustration">
+  <rect width="720" height="450" fill="#101b24"/>
+  <path fill="#1e3442" d="M0 318h720v132H0z"/>
+  <path fill="#f8c948" d="M98 280h332l-36-112H156L98 280Z"/>
+  <path fill="#fff" d="M174 192h184l18 54H148l26-54Z" opacity=".9"/>
+  <circle cx="208" cy="300" r="52" fill="#0b1720"/>
+  <circle cx="208" cy="300" r="28" fill="#fff"/>
+  <circle cx="208" cy="300" r="10" fill="#0b1720"/>
+  <circle cx="520" cy="262" r="86" fill="#0b1720"/>
+  <circle cx="520" cy="262" r="54" fill="#fff"/>
+  <circle cx="520" cy="262" r="20" fill="#0b1720"/>
+  <path stroke="#f8c948" stroke-width="12" stroke-linecap="round" d="M520 176v172M434 262h172M459 201l122 122M581 201 459 323"/>
+  <path fill="#ff4f1f" d="M338 314h116v28H318l20-28Z"/>
+</svg>
