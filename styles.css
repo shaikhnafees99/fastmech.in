@@ -501,10 +501,28 @@ h3 {
   margin: 14px 0 24px;
 }
 
-.service-card a {
+.service-card .service-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: auto;
-  color: var(--orange);
+  min-height: 44px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--amber);
   font-weight: 950;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(248, 201, 72, 0.28);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card .service-cta:hover {
+  color: var(--white);
+  background: var(--orange);
+  box-shadow: 0 16px 34px rgba(255, 79, 31, 0.26);
+  transform: translateY(-1px);
 }
 
 .emergency-section {
@@ -979,7 +997,7 @@ details p {
   }
 
   .service-grid {
-    padding-bottom: 76px;
+    padding-bottom: 120px;
   }
 
   .metrics div {
