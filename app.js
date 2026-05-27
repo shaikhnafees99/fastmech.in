@@ -2,6 +2,9 @@ const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
 const languageSelect = document.querySelector("[data-language-select]");
+const PHONE_DISPLAY = "+91 70218 10153";
+const PHONE_TEL = "+917021810153";
+const WHATSAPP_URL = `https://wa.me/${PHONE_TEL.replace("+", "")}?text=Hi%20Fast%20Mechanic%2C%20I%20need%20roadside%20assistance%20in%20Mumbai.`;
 
 const translations = {
   en: {
@@ -9,7 +12,7 @@ const translations = {
     dir: "ltr",
     brandSmall: "Mumbai roadside rescue",
     nav: ["Services", "Emergency", "Mumbai Areas", "FAQ"],
-    navCall: "Call +91 86918 80050",
+    navCall: "Call +91 70218 10153",
     whatsapp: "Chat WhatsApp",
     language: "Language",
     heroEyebrow: "24/7 Emergency Car Help in Mumbai",
@@ -62,10 +65,38 @@ const translations = {
     coverageEyebrow: "Mumbai Coverage",
     coverageTitle: "Roadside mechanic and towing assistance across Mumbai.",
     coverageText: "Fast Mechanic targets high-demand car breakdown locations including residential towers, office zones, highways, railway station areas, mall parking, airport routes and South Mumbai business districts.",
+    coverageNote: "Primary PIN codes are shown for service planning. Some Mumbai localities use multiple postal codes.",
+    localSeoEyebrow: "Mumbai Local Searches",
+    localSeoTitle: "Emergency car services by location in Mumbai.",
+    localSeoText: "Fast Mechanic supports high-intent roadside assistance searches across South Mumbai, western suburbs, central Mumbai, Thane and Navi Mumbai.",
+    localSeoCta: "Call now",
+    localSeoCtas: [
+      "Call for South Mumbai jump start",
+      "Call for Andheri towing",
+      "Call for Bandra petrol help",
+      "Call mechanic in Thane",
+      "Call Navi Mumbai assistance",
+      "Call key lock help",
+      "Call for Powai stepney",
+      "Call Chembur tyre help",
+      "Call Dadar jump start",
+      "Call Borivali towing",
+      "Call Malad petrol help",
+      "Call Ghatkopar car help",
+      "Call Kurla mechanic",
+      "Call Worli assistance",
+      "Call Mulund breakdown help",
+      "Call airport fuel help"
+    ],
     seoEyebrow: "Search Ready Contact",
     seoTitle: "Fast Mechanic service card details for search engines and customers.",
     seoText: "This website includes local business schema, service catalog schema, FAQ schema, canonical URLs, sitemap, robots file and a downloadable vCard. Google rich results are controlled by Google, but the site now gives crawlers the clearest possible business and service signals.",
     searchCard: ["Fast Mechanic", "24/7 Car Roadside Assistance in Mumbai"],
+    locationEyebrow: "Fast Mechanic Location",
+    locationTitle: "Fast Mechanic roadside assistance anywhere in Mumbai.",
+    locationText: "Use the map for the Fast Mechanic service point around New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010. For emergency roadside assistance anywhere in Mumbai, call before visiting so support can be coordinated at your vehicle location.",
+    locationAddressLabel: "Address",
+    locationActions: ["Open Google Maps", "Open Street Map"],
     faqEyebrow: "FAQ",
     faqTitle: "Answers for urgent car breakdown searches.",
     faqQuestions: [
@@ -75,10 +106,10 @@ const translations = {
       "Can customers save your number directly?"
     ],
     faqAnswers: [
-      "Yes. Call Fast Mechanic at +91 86918 80050 for dead battery and car jump start assistance across Mumbai.",
+      "Yes. Call Fast Mechanic at +91 70218 10153 for dead battery and car jump start assistance across Mumbai.",
       "Fast Mechanic can assist with car lockout and key lock situations. Call with your car model and location for guidance.",
       "Yes. If your car cannot be moved safely, Fast Mechanic can help arrange towing support in Mumbai, Thane and Navi Mumbai.",
-      "Yes. Use the Save Contact button to add Fast Mechanic, +91 86918 80050, directly to your device contacts."
+      "Yes. Use the Save Contact button to add Fast Mechanic, +91 70218 10153, directly to your device contacts."
     ],
     footerSmall: "Emergency car help Mumbai",
     footerText: "24/7 roadside assistance for battery jump start, key lockout, towing, petrol delivery, stepney change and car mechanic service in Mumbai.",
@@ -93,7 +124,7 @@ const translations = {
     dir: "ltr",
     brandSmall: "मुंबई रोडसाइड मदत",
     nav: ["सेवा", "आपत्कालीन", "मुंबई भाग", "प्रश्न"],
-  navCall: "कॉल +91 86918 80050",
+  navCall: "कॉल +91 70218 10153",
   whatsapp: "WhatsApp चैट",
     language: "भाषा",
     heroEyebrow: "मुंबईत 24/7 आपत्कालीन कार मदत",
@@ -133,14 +164,24 @@ const translations = {
     coverageEyebrow: "मुंबई कव्हरेज",
     coverageTitle: "मुंबईभर रोडसाइड मेकॅनिक आणि टोइंग मदत.",
     coverageText: "रहिवासी टॉवर्स, ऑफिस झोन, हायवे, स्टेशन परिसर, मॉल पार्किंग, एअरपोर्ट रूट्स आणि दक्षिण मुंबई बिझनेस भागांसाठी Fast Mechanic सेवा देते.",
+    coverageNote: "सेवा नियोजनासाठी मुख्य PIN codes दाखवले आहेत. काही मुंबई भागांमध्ये अनेक postal codes वापरले जातात.",
+    localSeoEyebrow: "मुंबई स्थानिक शोध",
+    localSeoTitle: "मुंबईत लोकेशननुसार आपत्कालीन कार सेवा.",
+    localSeoText: "Fast Mechanic South Mumbai, western suburbs, central Mumbai, Thane आणि Navi Mumbai साठी high-intent roadside assistance searches ला support करते.",
+    localSeoCta: "आता कॉल करा",
     seoEyebrow: "सर्च रेडी कॉन्टॅक्ट",
     seoTitle: "सर्च इंजिन आणि ग्राहकांसाठी Fast Mechanic सेवा कार्ड तपशील.",
     seoText: "या वेबसाइटमध्ये लोकल बिझनेस स्कीमा, सेवा कॅटलॉग, FAQ, साईटमॅप, robots फाइल आणि डाउनलोड होणारे vCard आहे.",
     searchCard: ["Fast Mechanic", "मुंबईत 24/7 कार रोडसाइड मदत"],
+    locationEyebrow: "Fast Mechanic लोकेशन",
+    locationTitle: "मुंबईत कुठेही Fast Mechanic roadside assistance.",
+    locationText: "New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010 जवळील Fast Mechanic service point साठी map वापरा. Emergency roadside assistance साठी येण्यापूर्वी call करा, जेणेकरून तुमच्या vehicle location वर support coordinate करता येईल.",
+    locationAddressLabel: "पत्ता",
+    locationActions: ["Google Maps उघडा", "Street Map उघडा"],
     faqEyebrow: "FAQ",
     faqTitle: "तातडीच्या कार ब्रेकडाउन प्रश्नांची उत्तरे.",
     faqQuestions: ["मुंबईत बॅटरी जंप स्टार्ट देता का?", "कारची किल्ली आत लॉक झाली तर मदत करता का?", "टोइंग सेवा आहे का?", "ग्राहक तुमचा नंबर सेव्ह करू शकतात का?"],
-    faqAnswers: ["हो. बॅटरी जंप स्टार्टसाठी +91 86918 80050 वर कॉल करा.", "हो. कार मॉडेल आणि लोकेशन सांगून की लॉक मदतीसाठी कॉल करा.", "हो. कार सुरक्षित हलू शकत नसेल तर टोइंग मदत मिळू शकते.", "हो. Save Contact बटन वापरून नंबर फोनमध्ये सेव्ह करता येतो."],
+    faqAnswers: ["हो. बॅटरी जंप स्टार्टसाठी +91 70218 10153 वर कॉल करा.", "हो. कार मॉडेल आणि लोकेशन सांगून की लॉक मदतीसाठी कॉल करा.", "हो. कार सुरक्षित हलू शकत नसेल तर टोइंग मदत मिळू शकते.", "हो. Save Contact बटन वापरून नंबर फोनमध्ये सेव्ह करता येतो."],
     footerSmall: "मुंबई आपत्कालीन कार मदत",
     footerText: "बॅटरी जंप स्टार्ट, की लॉकआउट, टोइंग, पेट्रोल डिलिव्हरी, स्टेपनी बदल आणि कार मेकॅनिकसाठी 24/7 रोडसाइड मदत.",
     footerHeads: ["सेवा", "लोकप्रिय शोध", "संपर्क"],
@@ -177,7 +218,7 @@ translations.ur = {
   dir: "rtl",
   brandSmall: "ممبئی روڈ سائیڈ مدد",
   nav: ["سروسز", "ایمرجنسی", "ممبئی علاقے", "FAQ"],
-  navCall: "کال +91 86918 80050",
+  navCall: "کال +91 70218 10153",
   whatsapp: "WhatsApp چیٹ",
   language: "زبان",
   heroEyebrow: "ممبئی میں 24/7 ایمرجنسی کار مدد",
@@ -235,6 +276,223 @@ translations.ta = {
   emergencyCall: "அவசர அழைப்பு"
 };
 
+Object.assign(translations.hi, {
+  navCall: `कॉल ${PHONE_DISPLAY}`,
+  whatsapp: "WhatsApp चैट",
+  trust: ["फोन पर सीधी सहायता", "पूरे मुंबई में कवरेज", "स्पष्ट कीमत"],
+  hotline: "फास्ट रिस्पॉन्स हेल्पलाइन",
+  rescueServices: ["बैटरी जंप स्टार्ट", "की लॉक सहायता", "टोइंग और पेट्रोल डिलीवरी"],
+  addContact: "Fast Mechanic को contacts में जोड़ें",
+  metrics: ["घंटे सहायता", "मुंबई जोन", "इमरजेंसी सेवाएं", "सीधा कॉल नंबर"],
+  servicesTitle: "मुंबई ट्रैफिक, बारिश और देर रात ब्रेकडाउन के लिए रोडसाइड सहायता.",
+  servicesText: "Fast Mechanic गैराज खोजने में समय गंवाए बिना कार शुरू करवाने या सुरक्षित टो करवाने पर ध्यान देता है.",
+  serviceBadges: ["जंप स्टार्ट", "की लॉक", "टोइंग", "फ्यूल हेल्प", "स्टेपनी", "मैकेनिक"],
+  serviceTexts: [
+    "घर, ऑफिस, पार्किंग, मॉल या सड़क पर फंसी कारों के लिए डेड बैटरी सहायता.",
+    "कार लॉकआउट, फंसी चाबी और जरूरी एक्सेस समस्याओं में मदद.",
+    "जो कार शुरू नहीं हो रही या सुरक्षित नहीं चल सकती, उसके लिए टोइंग सहायता.",
+    "मुंबई ट्रैफिक में पेट्रोल खत्म होने पर इमरजेंसी फ्यूल सहायता.",
+    "टायर खराब होने पर जल्दी स्पेयर व्हील बदलने की ऑन-रोड मदद.",
+    "छोटी खराबी, स्टार्टिंग समस्या और तुरंत जांच के लिए डोरस्टेप व रोडसाइड मैकेनिक."
+  ],
+  emergencyEyebrow: "अधिक इमरजेंसी मदद",
+  emergencyTitle: "ब्रेकडाउन के समय खोजी जाने वाली सेवाओं के लिए एक ही नंबर.",
+  emergencyText: "Fast Mechanic पूरे मुंबई में हाई-इंटेंट इमरजेंसी कार सेवाओं में सहायता देता है.",
+  emergencyActions: ["इमरजेंसी लाइन कॉल करें", "कॉन्टैक्ट कार्ड देखें"],
+  emergencyTitles: ["फ्लैट टायर मदद", "कार स्टार्ट नहीं हो रही", "एक्सीडेंट टोइंग", "गलत फ्यूल सहायता", "ओवरहीटिंग मदद", "ब्रेक समस्या मदद", "क्लच और गियर समस्या", "बेसमेंट रिकवरी"],
+  emergencyTexts: ["पंक्चर समन्वय और रोडसाइड टायर सहायता.", "बैटरी, स्टार्टर, फ्यूज और बेसिक जांच.", "ब्रेकडाउन या टक्कर के बाद सुरक्षित टो सहायता.", "गलत फ्यूल भरने पर मार्गदर्शन और मैकेनिक सहायता.", "कूलेंट लीक, रेडिएटर और वार्निंग लाइट जांच.", "वाहन हिलाने से पहले इमरजेंसी निरीक्षण.", "मैनुअल और ऑटोमैटिक कारों की रोडसाइड जांच.", "बिल्डिंग या मॉल पार्किंग में फंसी कारों के लिए मदद."],
+  processEyebrow: "कैसे काम करता है",
+  processTitle: "तेज, आसान और तनाव वाले समय के लिए बनाया गया.",
+  processTitles: ["Fast Mechanic को कॉल करें", "स्पष्ट मार्गदर्शन पाएं", "सहायता पहुंचती है"],
+  processTexts: ["अपनी कार मॉडल, समस्या और सही लोकेशन या नजदीकी लैंडमार्क बताएं.", "हम समझने में मदद करते हैं कि जंप स्टार्ट, मैकेनिक, टोइंग, फ्यूल या टायर सहायता चाहिए.", "सही रोडसाइड समाधान की व्यवस्था की जाती है ताकि कार चल सके या सुरक्षित ले जाई जा सके."],
+  coverageEyebrow: "मुंबई कवरेज",
+  coverageText: "Fast Mechanic residential towers, office zones, highways, station areas, mall parking, airport routes और South Mumbai business districts में कार ब्रेकडाउन सहायता देता है.",
+  coverageNote: "सेवा planning के लिए मुख्य PIN codes दिखाए गए हैं. कुछ Mumbai localities में multiple postal codes होते हैं.",
+  localSeoEyebrow: "मुंबई लोकल सर्च",
+  localSeoTitle: "मुंबई में location के हिसाब से emergency car services.",
+  localSeoText: "Fast Mechanic South Mumbai, western suburbs, central Mumbai, Thane और Navi Mumbai में high-intent roadside assistance searches को support करता है.",
+  localSeoCta: "अभी कॉल करें",
+  seoEyebrow: "सर्च रेडी कॉन्टैक्ट",
+  seoTitle: "सर्च इंजन और ग्राहकों के लिए Fast Mechanic सेवा कार्ड विवरण.",
+  seoText: "इस वेबसाइट में local business schema, service catalog schema, FAQ schema, canonical URL, sitemap, robots file और downloadable vCard शामिल है.",
+  searchCard: ["Fast Mechanic", "मुंबई में 24/7 कार रोडसाइड सहायता"],
+  locationEyebrow: "Fast Mechanic लोकेशन",
+  locationTitle: "मुंबई में कहीं भी Fast Mechanic roadside assistance.",
+  locationText: "New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010 के पास Fast Mechanic service point के लिए map देखें. Emergency roadside assistance के लिए आने से पहले call करें ताकि support आपकी vehicle location पर coordinate हो सके.",
+  locationAddressLabel: "पता",
+  locationActions: ["Google Maps खोलें", "Street Map खोलें"],
+  faqEyebrow: "FAQ",
+  faqTitle: "तुरंत कार ब्रेकडाउन searches के जवाब.",
+  faqQuestions: ["क्या आप मुंबई में बैटरी जंप स्टार्ट देते हैं?", "क्या कार की चाबी अंदर लॉक हो जाए तो मदद करते हैं?", "क्या towing service उपलब्ध है?", "क्या ग्राहक आपका नंबर सीधे सेव कर सकते हैं?"],
+  faqAnswers: [`हां. मुंबई में dead battery और car jump start के लिए Fast Mechanic को ${PHONE_DISPLAY} पर कॉल करें.`, "Fast Mechanic car lockout और key lock स्थिति में मदद कर सकता है. कार मॉडल और लोकेशन बताकर कॉल करें.", "हां. अगर कार सुरक्षित नहीं चल सकती, तो Fast Mechanic मुंबई, ठाणे और नवी मुंबई में towing support arrange कर सकता है.", `हां. Save Contact button से Fast Mechanic, ${PHONE_DISPLAY}, को सीधे contacts में सेव करें.`],
+  footerSmall: "मुंबई इमरजेंसी कार सहायता",
+  footerText: "बैटरी जंप स्टार्ट, key lockout, towing, petrol delivery, stepney change और car mechanic service के लिए 24/7 roadside assistance.",
+  footerServices: ["बैटरी जंप स्टार्ट", "टोइंग सेवा", "पेट्रोल डिलीवरी", "स्टेपनी बदलना"],
+  footerSearches: ["कार मैकेनिक near me मुंबई", "रोडसाइड असिस्टेंस मुंबई", "बैटरी जंप स्टार्ट मुंबई", "टोइंग सर्विस मुंबई"],
+  footerBottom: "Copyright 2026 Fast Mechanic. सभी अधिकार सुरक्षित."
+});
+
+Object.assign(translations.ur, {
+  metrics: ["گھنٹے مدد", "ممبئی زونز", "ایمرجنسی سروسز", "براہ راست کال نمبر"],
+  servicesEyebrow: "اہم سروسز",
+  servicesTitle: "ممبئی ٹریفک، بارش اور رات کے breakdowns کے لیے روڈ سائیڈ مدد.",
+  servicesText: "Fast Mechanic گیراج ڈھونڈنے میں وقت ضائع کیے بغیر گاڑی چلانے یا محفوظ tow کروانے میں مدد دیتا ہے.",
+  serviceBadges: ["جمپ اسٹارٹ", "کی لاک", "ٹوئنگ", "فیول مدد", "اسٹیپنی", "مکینک"],
+  serviceTexts: [
+    "گھر، دفتر، پارکنگ، مال یا سڑک پر پھنسی گاڑی کے لیے dead battery مدد.",
+    "car lockout، stuck keys اور urgent access issues میں مدد.",
+    "جو گاڑی start نہ ہو یا محفوظ طریقے سے move نہ ہو سکے اس کے لیے towing مدد.",
+    "ممبئی ٹریفک میں petrol ختم ہونے پر emergency fuel assistance.",
+    "tyre fail ہونے پر جلد spare wheel change support.",
+    "minor faults، starting trouble اور urgent diagnosis کے لیے doorstep اور roadside mechanic."
+  ],
+  emergencyEyebrow: "مزید ایمرجنسی مدد",
+  emergencyTitle: "breakdown کے وقت تلاش کی جانے والی سروسز کے لیے ایک نمبر.",
+  emergencyText: "Fast Mechanic ممبئی بھر میں high-intent emergency car services میں مدد دیتا ہے.",
+  emergencyActions: ["ایمرجنسی لائن کال کریں", "کانٹیکٹ کارڈ دیکھیں"],
+  emergencyTitles: ["فلیٹ ٹائر مدد", "گاڑی اسٹارٹ نہیں", "حادثہ ٹوئنگ", "غلط فیول مدد", "اوور ہیٹنگ مدد", "بریک مسئلہ مدد", "کلچ اور گیئر مسئلہ", "بیسمنٹ ریکوری"],
+  emergencyTexts: ["puncture coordination اور roadside tyre support.", "battery، starter، fuse اور basic diagnosis support.", "breakdown یا collision کے بعد safe tow coordination.", "refuelling mistake کے لیے guidance اور mechanic assistance.", "coolant leak، radiator اور warning-light checks.", "گاڑی move کرنے سے پہلے emergency inspection.", "manual اور automatic cars کے لیے roadside assessment.", "building یا mall parking میں پھنسی گاڑیوں کے لیے support."],
+  processEyebrow: "طریقہ کار",
+  processTitle: "تیز، آسان اور stressful moments کے لیے بنایا گیا.",
+  processTitles: ["Fast Mechanic کو کال کریں", "واضح رہنمائی لیں", "مدد پہنچتی ہے"],
+  processTexts: ["اپنی car model، issue اور exact location یا nearby landmark بتائیں.", "ہم identify کرتے ہیں کہ jump start، mechanic، towing، fuel یا tyre support چاہیے.", "مناسب roadside solution arrange کیا جاتا ہے تاکہ گاڑی move ہو سکے یا safely لے جائی جا سکے."],
+  coverageText: "Fast Mechanic residential towers، office zones، highways، station areas، mall parking، airport routes اور South Mumbai business districts میں car breakdown support دیتا ہے.",
+  coverageNote: "service planning کے لیے primary PIN codes دکھائے گئے ہیں. کچھ Mumbai localities میں multiple postal codes ہوتے ہیں.",
+  localSeoEyebrow: "ممبئی لوکل سرچز",
+  localSeoTitle: "ممبئی میں location کے حساب سے emergency car services.",
+  localSeoText: "Fast Mechanic South Mumbai، western suburbs، central Mumbai، Thane اور Navi Mumbai میں high-intent roadside assistance searches support کرتا ہے.",
+  localSeoCta: "ابھی کال کریں",
+  seoEyebrow: "سرچ ریڈی کانٹیکٹ",
+  seoTitle: "search engines اور customers کے لیے Fast Mechanic service card details.",
+  seoText: "اس website میں local business schema، service catalog schema، FAQ schema، canonical URLs، sitemap، robots file اور downloadable vCard شامل ہے.",
+  locationEyebrow: "Fast Mechanic لوکیشن",
+  locationTitle: "ممبئی میں کہیں بھی Fast Mechanic roadside assistance.",
+  locationText: "New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010 کے قریب Fast Mechanic service point کے لیے map استعمال کریں. Emergency roadside assistance کے لیے آنے سے پہلے call کریں تاکہ support آپ کی vehicle location پر coordinate ہو سکے.",
+  locationAddressLabel: "پتہ",
+  locationActions: ["Google Maps کھولیں", "Street Map کھولیں"],
+  faqEyebrow: "FAQ",
+  faqTitle: "urgent car breakdown searches کے جواب.",
+  faqQuestions: ["کیا آپ ممبئی میں battery jump start دیتے ہیں؟", "کیا car keys اندر locked ہوں تو مدد کرتے ہیں؟", "کیا towing service ہے؟", "کیا customers نمبر directly save کر سکتے ہیں؟"],
+  faqAnswers: [`جی ہاں. dead battery اور car jump start assistance کے لیے Fast Mechanic کو ${PHONE_DISPLAY} پر کال کریں.`, "Fast Mechanic car lockout اور key lock situations میں مدد کر سکتا ہے. car model اور location کے ساتھ call کریں.", "جی ہاں. اگر car safely move نہیں ہو سکتی تو Fast Mechanic ممبئی، تھانے اور نوی ممبئی میں towing support arrange کر سکتا ہے.", `جی ہاں. Save Contact button سے Fast Mechanic، ${PHONE_DISPLAY}، کو device contacts میں add کریں.`],
+  footerText: "battery jump start، key lockout، towing، petrol delivery، stepney change اور car mechanic service کے لیے 24/7 roadside assistance.",
+  footerHeads: ["سروسز", "مشہور سرچز", "کانٹیکٹ"],
+  footerServices: ["بیٹری جمپ اسٹارٹ", "ٹوئنگ سروس", "پیٹرول ڈیلیوری", "اسٹیپنی تبدیل"],
+  footerSearches: ["car mechanic near me Mumbai", "roadside assistance Mumbai", "battery jump start Mumbai", "towing service Mumbai"],
+  footerBottom: "Copyright 2026 Fast Mechanic. تمام حقوق محفوظ ہیں."
+});
+
+Object.assign(translations.gu, {
+  navCall: `કોલ ${PHONE_DISPLAY}`,
+  trust: ["ફોન પર સીધી મદદ", "સમગ્ર મુંબઈ કવરેજ", "સ્પષ્ટ ભાવ"],
+  hotline: "ફાસ્ટ રિસ્પોન્સ હેલ્પલાઇન",
+  rescueServices: ["બેટરી જમ્પ સ્ટાર્ટ", "કી લોક મદદ", "ટોઇંગ અને પેટ્રોલ ડિલિવરી"],
+  addContact: "Fast Mechanic ને contacts માં ઉમેરો",
+  metrics: ["કલાક સહાય", "મુંબઈ ઝોન", "ઇમરજન્સી સેવાઓ", "સીધો કોલ નંબર"],
+  servicesEyebrow: "મુખ્ય સેવાઓ",
+  servicesTitle: "મુંબઈ ટ્રાફિક, વરસાદ અને મોડી રાતના બ્રેકડાઉન માટે રોડસાઈડ સહાય.",
+  servicesText: "Fast Mechanic ગેરેજ શોધવામાં સમય બગાડ્યા વગર કાર ચાલુ કરાવવા અથવા સુરક્ષિત tow કરાવવામાં મદદ કરે છે.",
+  serviceBadges: ["જમ્પ સ્ટાર્ટ", "કી લોક", "ટોઇંગ", "ફ્યુઅલ મદદ", "સ્ટેપની", "મેકેનિક"],
+  serviceTexts: [
+    "ઘર, ઓફિસ, પાર્કિંગ, મોલ અથવા રસ્તા પર ફસાયેલી કાર માટે dead battery સહાય.",
+    "કાર લોકઆઉટ, અટકેલી ચાવી અને urgent access issues માટે મદદ.",
+    "કાર શરૂ ન થાય અથવા સુરક્ષિત ખસેડી ન શકાય ત્યારે towing સહાય.",
+    "મુંબઈ ટ્રાફિકમાં પેટ્રોલ ખતમ થાય ત્યારે emergency fuel assistance.",
+    "ટાયર ખરાબ થાય ત્યારે ઝડપી spare wheel change support.",
+    "નાની ખામી, starting trouble અને urgent diagnosis માટે doorstep અને roadside mechanic."
+  ],
+  emergencyEyebrow: "વધુ ઇમરજન્સી મદદ",
+  emergencyTitle: "બ્રેકડાઉન સમયે લોકો શોધે તેવી સેવાઓ માટે એક જ નંબર.",
+  emergencyText: "Fast Mechanic મુંબઈભરમાં high-intent emergency car services માટે મદદ આપે છે.",
+  emergencyActions: ["ઇમરજન્સી લાઇન કોલ કરો", "કૉન્ટેક્ટ કાર્ડ જુઓ"],
+  emergencyTitles: ["ફ્લેટ ટાયર મદદ", "કાર સ્ટાર્ટ નથી થતી", "એક્સિડન્ટ ટોઇંગ", "ખોટું ફ્યુઅલ મદદ", "ઓવરહીટિંગ મદદ", "બ્રેક સમસ્યા મદદ", "ક્લચ અને ગિયર સમસ્યા", "બેઝમેન્ટ રિકવરી"],
+  emergencyTexts: ["પંકચર coordination અને roadside tyre support.", "બેટરી, starter, fuse અને basic diagnosis support.", "breakdown અથવા collision પછી safe tow coordination.", "refuelling mistake માટે guidance અને mechanic assistance.", "coolant leak, radiator અને warning-light checks.", "વાહન ખસેડતા પહેલાં emergency inspection.", "manual અને automatic cars માટે roadside assessment.", "building અથવા mall parking માં ફસાયેલી કાર માટે support."],
+  processEyebrow: "કેવી રીતે કામ કરે છે",
+  processTitle: "ઝડપી, સરળ અને તણાવભરી ક્ષણો માટે બનાવેલું.",
+  processTitles: ["Fast Mechanic ને કોલ કરો", "સ્પષ્ટ માર્ગદર્શન મેળવો", "સહાય પહોંચે છે"],
+  processTexts: ["તમારી car model, issue અને exact location અથવા nearby landmark જણાવો.", "અમે identify કરવામાં મદદ કરીએ છીએ કે jump start, mechanic, towing, fuel અથવા tyre support જોઈએ.", "યોગ્ય roadside solution arrange થાય છે જેથી કાર ખસેડી શકાય અથવા સુરક્ષિત લઈ જઈ શકાય."],
+  coverageEyebrow: "મુંબઈ કવરેજ",
+  coverageText: "Fast Mechanic residential towers, office zones, highways, station areas, mall parking, airport routes અને South Mumbai business districts માટે car breakdown support આપે છે.",
+  coverageNote: "service planning માટે primary PIN codes બતાવ્યા છે. કેટલીક Mumbai localities માં multiple postal codes હોય છે.",
+  localSeoEyebrow: "મુંબઈ લોકલ સર્ચ",
+  localSeoTitle: "મુંબઈમાં location પ્રમાણે emergency car services.",
+  localSeoText: "Fast Mechanic South Mumbai, western suburbs, central Mumbai, Thane અને Navi Mumbai માં high-intent roadside assistance searches support કરે છે.",
+  localSeoCta: "હમણાં કોલ કરો",
+  seoEyebrow: "સર્ચ રેડી કૉન્ટેક્ટ",
+  seoTitle: "search engines અને customers માટે Fast Mechanic service card details.",
+  seoText: "આ website માં local business schema, service catalog schema, FAQ schema, canonical URLs, sitemap, robots file અને downloadable vCard છે.",
+  searchCard: ["Fast Mechanic", "મુંબઈમાં 24/7 કાર રોડસાઈડ મદદ"],
+  locationEyebrow: "Fast Mechanic location",
+  locationTitle: "મુંબઈમાં ક્યાંય પણ Fast Mechanic roadside assistance.",
+  locationText: "New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010 નજીકના Fast Mechanic service point માટે map જુઓ. Emergency roadside assistance માટે આવતાં પહેલાં call કરો જેથી support તમારી vehicle location પર coordinate થઈ શકે.",
+  locationAddressLabel: "સરનામું",
+  locationActions: ["Google Maps ખોલો", "Street Map ખોલો"],
+  faqEyebrow: "FAQ",
+  faqTitle: "urgent car breakdown searches માટે જવાબો.",
+  faqQuestions: ["શું તમે મુંબઈમાં battery jump start આપો છો?", "કારની keys અંદર locked હોય તો મદદ કરો છો?", "શું towing service છે?", "શું customers તમારો number directly save કરી શકે છે?"],
+  faqAnswers: [`હા. dead battery અને car jump start assistance માટે Fast Mechanic ને ${PHONE_DISPLAY} પર કોલ કરો.`, "Fast Mechanic car lockout અને key lock situations માં મદદ કરી શકે છે. car model અને location સાથે call કરો.", "હા. જો car safely move ન થઈ શકે તો Fast Mechanic Mumbai, Thane અને Navi Mumbai માં towing support arrange કરી શકે છે.", `હા. Save Contact button થી Fast Mechanic, ${PHONE_DISPLAY}, ને device contacts માં add કરો.`],
+  footerSmall: "મુંબઈ ઇમરજન્સી કાર મદદ",
+  footerText: "battery jump start, key lockout, towing, petrol delivery, stepney change અને car mechanic service માટે 24/7 roadside assistance.",
+  footerServices: ["બેટરી જમ્પ સ્ટાર્ટ", "ટોઇંગ સેવા", "પેટ્રોલ ડિલિવરી", "સ્ટેપની બદલાવ"],
+  footerSearches: ["car mechanic near me Mumbai", "roadside assistance Mumbai", "battery jump start Mumbai", "towing service Mumbai"],
+  footerBottom: "Copyright 2026 Fast Mechanic. બધા હકો અનામત."
+});
+
+Object.assign(translations.ta, {
+  navCall: `${PHONE_DISPLAY} அழைக்கவும்`,
+  trust: ["நேரடி தொலைபேசி உதவி", "மும்பை முழு கவரேஜ்", "தெளிவான கட்டணம்"],
+  hotline: "ஃபாஸ்ட் ரெஸ்பான்ஸ் ஹெல்ப்லைன்",
+  rescueServices: ["பேட்டரி ஜம்ப் ஸ்டார்ட்", "கீ லாக் உதவி", "டோயிங் மற்றும் பெட்ரோல் டெலிவரி"],
+  addContact: "Fast Mechanic ஐ contacts இல் சேர்க்கவும்",
+  metrics: ["மணி நேர உதவி", "மும்பை மண்டலங்கள்", "அவசர சேவைகள்", "நேரடி அழைப்பு எண்"],
+  servicesEyebrow: "முக்கிய சேவைகள்",
+  servicesTitle: "மும்பை போக்குவரத்து, மழை மற்றும் இரவு நேர breakdown களுக்கான சாலை உதவி.",
+  servicesText: "Garage தேட நேரம் வீணாக்காமல் கார் start ஆக அல்லது பாதுகாப்பாக tow செய்ய Fast Mechanic உதவுகிறது.",
+  serviceBadges: ["ஜம்ப் ஸ்டார்ட்", "கீ லாக்", "டோயிங்", "எரிபொருள் உதவி", "ஸ்டெப்னி", "மெக்கானிக்"],
+  serviceTexts: [
+    "வீடு, அலுவலகம், parking, mall அல்லது roadside இடங்களில் சிக்கிய கார்கள் க்கான dead battery support.",
+    "car lockout, stuck keys மற்றும் urgent access issues க்கான உதவி.",
+    "start ஆகாத அல்லது safe ஆக move செய்ய முடியாத கார்களுக்கு towing உதவி.",
+    "மும்பை traffic இல் petrol முடிந்தால் emergency fuel assistance.",
+    "tyre fail ஆகும் போது விரைவான spare wheel change support.",
+    "minor faults, starting trouble மற்றும் urgent diagnosis க்கான doorstep மற்றும் roadside mechanic."
+  ],
+  emergencyEyebrow: "மேலும் அவசர உதவி",
+  emergencyTitle: "breakdown நேரத்தில் மக்கள் தேடும் சேவைகளுக்கு ஒரு எண்.",
+  emergencyText: "Fast Mechanic மும்பை முழுவதும் high-intent emergency car services க்கு உதவுகிறது.",
+  emergencyActions: ["அவசர எண் அழைக்கவும்", "Contact Card பார்க்கவும்"],
+  emergencyTitles: ["Flat Tyre Help", "Car Not Starting", "Accident Towing", "Wrong Fuel Support", "Overheating Help", "Brake Issue Help", "Clutch and Gear Trouble", "Basement Recovery"],
+  emergencyTexts: ["puncture coordination மற்றும் roadside tyre support.", "battery, starter, fuse மற்றும் basic diagnosis support.", "breakdown அல்லது collision பிறகு safe tow coordination.", "refuelling mistakes க்கு guidance மற்றும் mechanic assistance.", "coolant leak, radiator மற்றும் warning-light checks.", "vehicle move செய்யும் முன் emergency inspection.", "manual மற்றும் automatic cars க்கான roadside assessment.", "building அல்லது mall parking இல் சிக்கிய கார்களுக்கு support."],
+  processEyebrow: "எப்படி செயல்படும்",
+  processTitle: "வேகமானது, எளிமையானது மற்றும் stressful moments க்காக வடிவமைக்கப்பட்டது.",
+  processTitles: ["Fast Mechanic ஐ அழைக்கவும்", "தெளிவான வழிகாட்டல் பெறவும்", "உதவி வரும்"],
+  processTexts: ["உங்கள் car model, issue மற்றும் exact location அல்லது nearby landmark பகிரவும்.", "jump start, mechanic, towing, fuel அல்லது tyre support தேவைதானா என்று உதவுகிறோம்.", "கார் move ஆக அல்லது safely எடுத்துச் செல்ல சரியான roadside solution arrange செய்யப்படும்."],
+  coverageEyebrow: "மும்பை கவரேஜ்",
+  coverageText: "Fast Mechanic residential towers, office zones, highways, station areas, mall parking, airport routes மற்றும் South Mumbai business districts இல் car breakdown support வழங்குகிறது.",
+  coverageNote: "service planning க்கு primary PIN codes காட்டப்பட்டுள்ளன. சில Mumbai localities பல postal codes பயன்படுத்துகின்றன.",
+  localSeoEyebrow: "மும்பை லோகல் தேடல்கள்",
+  localSeoTitle: "மும்பையில் location அடிப்படையிலான emergency car services.",
+  localSeoText: "Fast Mechanic South Mumbai, western suburbs, central Mumbai, Thane மற்றும் Navi Mumbai இல் high-intent roadside assistance searches support செய்கிறது.",
+  localSeoCta: "இப்போது அழைக்கவும்",
+  seoEyebrow: "Search Ready Contact",
+  seoTitle: "search engines மற்றும் customers க்கான Fast Mechanic service card details.",
+  seoText: "இந்த website local business schema, service catalog schema, FAQ schema, canonical URLs, sitemap, robots file மற்றும் downloadable vCard உடன் உள்ளது.",
+  searchCard: ["Fast Mechanic", "மும்பையில் 24/7 கார் சாலை உதவி"],
+  locationEyebrow: "Fast Mechanic Location",
+  locationTitle: "மும்பையில் எங்கும் Fast Mechanic roadside assistance.",
+  locationText: "New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010 அருகிலுள்ள Fast Mechanic service point க்கு map பயன்படுத்தவும். Emergency roadside assistance க்கு வருவதற்கு முன் call செய்யவும்; support உங்கள் vehicle location இல் coordinate செய்யப்படும்.",
+  locationAddressLabel: "முகவரி",
+  locationActions: ["Google Maps திறக்கவும்", "Street Map திறக்கவும்"],
+  faqEyebrow: "FAQ",
+  faqTitle: "urgent car breakdown searches க்கான பதில்கள்.",
+  faqQuestions: ["மும்பையில் battery jump start தருகிறீர்களா?", "car keys உள்ளே locked இருந்தால் உதவுவீர்களா?", "towing service இருக்கிறதா?", "customers உங்கள் number ஐ directly save செய்ய முடியுமா?"],
+  faqAnswers: [`ஆம். dead battery மற்றும் car jump start assistance க்கு Fast Mechanic ஐ ${PHONE_DISPLAY} இல் அழைக்கவும்.`, "Fast Mechanic car lockout மற்றும் key lock situations இல் உதவ முடியும். car model மற்றும் location உடன் call செய்யவும்.", "ஆம். car safely move ஆக முடியாவிட்டால் Fast Mechanic Mumbai, Thane மற்றும் Navi Mumbai இல் towing support arrange செய்ய முடியும்.", `ஆம். Save Contact button மூலம் Fast Mechanic, ${PHONE_DISPLAY}, ஐ device contacts இல் add செய்யலாம்.`],
+  footerSmall: "மும்பை அவசர கார் உதவி",
+  footerText: "battery jump start, key lockout, towing, petrol delivery, stepney change மற்றும் car mechanic service க்கு 24/7 roadside assistance.",
+  footerServices: ["பேட்டரி ஜம்ப் ஸ்டார்ட்", "டோயிங் சேவை", "பெட்ரோல் டெலிவரி", "ஸ்டெப்னி மாற்றம்"],
+  footerSearches: ["car mechanic near me Mumbai", "roadside assistance Mumbai", "battery jump start Mumbai", "towing service Mumbai"],
+  footerBottom: "Copyright 2026 Fast Mechanic. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
+});
+
 const setText = (selector, value) => {
   const element = document.querySelector(selector);
   if (element && value) element.textContent = value;
@@ -244,6 +502,27 @@ const setTextList = (selector, values) => {
   if (!values) return;
   document.querySelectorAll(selector).forEach((element, index) => {
     if (values[index]) element.textContent = values[index];
+  });
+};
+
+const setRepeatedText = (selector, value) => {
+  if (!value) return;
+  document.querySelectorAll(selector).forEach((element) => {
+    element.textContent = value;
+  });
+};
+
+const updateContactLinks = () => {
+  document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+    link.setAttribute("href", `tel:${PHONE_TEL}`);
+  });
+
+  document.querySelectorAll(".phone-number, .search-card a:first-of-type, .footer-grid > div:nth-child(4) a:first-of-type").forEach((link) => {
+    link.textContent = PHONE_DISPLAY;
+  });
+
+  document.querySelectorAll(".whatsapp-chat").forEach((link) => {
+    link.setAttribute("href", WHATSAPP_URL);
   });
 };
 
@@ -288,11 +567,25 @@ const applyLanguage = (lang) => {
   setText(".coverage-copy .eyebrow", text.coverageEyebrow);
   setText(".coverage-copy h2", text.coverageTitle);
   setText(".coverage-copy p:not(.eyebrow)", text.coverageText);
+  setText(".coverage-note", text.coverageNote);
+  setText(".local-seo-section .section-head .eyebrow", text.localSeoEyebrow);
+  setText(".local-seo-section .section-head h2", text.localSeoTitle);
+  setText(".local-seo-section .section-head p:not(.eyebrow)", text.localSeoText);
+  if (text.localSeoCtas) {
+    setTextList(".local-seo-card a", text.localSeoCtas);
+  } else {
+    setRepeatedText(".local-seo-card a", text.localSeoCta);
+  }
   setText(".seo-panel .eyebrow", text.seoEyebrow);
   setText(".seo-panel h2", text.seoTitle);
   setText(".seo-panel p:not(.eyebrow)", text.seoText);
   setTextList(".search-card strong, .search-card span", text.searchCard);
   setText(".search-card a:last-child", text.saveContact);
+  setText(".location-copy .eyebrow", text.locationEyebrow);
+  setText(".location-copy h2", text.locationTitle);
+  setText(".location-copy > p:not(.eyebrow)", text.locationText);
+  setText(".location-details strong", text.locationAddressLabel);
+  setTextList(".location-actions a", text.locationActions);
   setText(".faq-section .section-head .eyebrow", text.faqEyebrow);
   setText(".faq-section .section-head h2", text.faqTitle);
   setTextList("details summary", text.faqQuestions);
@@ -307,6 +600,7 @@ const applyLanguage = (lang) => {
   setText(".sticky-call a:first-child", text.navCall);
   setText(".sticky-call a:nth-child(2)", text.saveContact);
   setText(".whatsapp-chat span", text.whatsapp);
+  updateContactLinks();
 };
 
 const setHeaderState = () => {
@@ -328,11 +622,14 @@ navLinks?.addEventListener("click", (event) => {
   }
 });
 
-const savedLanguage = "en";
+const savedLanguage = localStorage.getItem("fastMechanicLanguage") || "en";
 if (languageSelect) {
   languageSelect.value = translations[savedLanguage] ? savedLanguage : "en";
   applyLanguage(languageSelect.value);
-  languageSelect.addEventListener("change", () => applyLanguage(languageSelect.value));
+  languageSelect.addEventListener("change", () => {
+    localStorage.setItem("fastMechanicLanguage", languageSelect.value);
+    applyLanguage(languageSelect.value);
+  });
 } else {
   applyLanguage(savedLanguage);
 }
