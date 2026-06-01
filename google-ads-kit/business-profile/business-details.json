@@ -1,0 +1,30 @@
+{
+  "businessName": "Fast Mechanic",
+  "website": "https://fastmech.in/",
+  "phone": "+91 70218 10153",
+  "tel": "+917021810153",
+  "address": "New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010, India",
+  "coordinates": {
+    "latitude": 18.9788291,
+    "longitude": 72.8482657
+  },
+  "serviceAreas": [
+    "Mumbai",
+    "Andheri",
+    "Thane",
+    "Vashi"
+  ],
+  "services": [
+    "Battery Jump Start",
+    "Towing Service",
+    "Petrol Delivery",
+    "Key Lock Assistance",
+    "Stepney Change",
+    "Car Mechanic",
+    "Flat Tyre Help",
+    "Car Not Starting Help",
+    "Basement Parking Recovery",
+    "Airport Route Breakdown",
+    "Late Night Breakdown Help"
+  ]
+}

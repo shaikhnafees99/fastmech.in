@@ -635,6 +635,61 @@ h3 {
   line-height: 1.55;
 }
 
+.scenario-section {
+  background: var(--paper);
+}
+
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.scenario-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 26px rgba(11, 23, 32, 0.05);
+}
+
+.scenario-card h3 {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.scenario-card p {
+  margin: 12px 0 18px;
+  color: var(--muted);
+  line-height: 1.58;
+  font-size: 0.94rem;
+}
+
+.scenario-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin-top: auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--amber);
+  font-size: 0.9rem;
+  font-weight: 950;
+  text-align: center;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.scenario-card a:hover {
+  color: var(--white);
+  background: var(--orange);
+  transform: translateY(-1px);
+}
+
 .process-section {
   background: var(--white);
 }
@@ -1177,6 +1232,7 @@ details p {
   }
 
   .service-grid,
+  .scenario-grid,
   .local-seo-grid,
   .process,
   .footer-grid {
@@ -1214,6 +1270,7 @@ details p {
 
   .metrics,
   .service-grid,
+  .scenario-grid,
   .local-seo-grid,
   .emergency-list,
   .process,
