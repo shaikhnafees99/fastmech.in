@@ -1132,6 +1132,271 @@ details p {
   flex: 0 0 auto;
 }
 
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 22px;
+  color: var(--orange);
+  font-weight: 950;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.silo-page {
+  background: var(--paper);
+}
+
+.silo-page .site-header {
+  position: sticky;
+  background: var(--ink);
+  box-shadow: 0 14px 34px rgba(11, 23, 32, 0.14);
+  padding: 10px 0;
+}
+
+.silo-page .site-header .brand strong,
+.silo-page .site-header .brand small,
+.silo-page .site-header .nav-links a {
+  color: var(--white);
+}
+
+.silo-page .site-header .nav-links .nav-call {
+  color: var(--ink);
+}
+
+.silo-hero {
+  overflow: hidden;
+  padding: 70px 0 76px;
+  color: var(--white);
+  background:
+    linear-gradient(115deg, rgba(7, 16, 24, 0.96), rgba(7, 16, 24, 0.84) 48%, rgba(255, 79, 31, 0.34)),
+    url("https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1600&q=78") center / cover;
+}
+
+.silo-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 42px;
+  align-items: start;
+}
+
+.silo-hero h1 {
+  max-width: 900px;
+  font-size: clamp(2.35rem, 5vw, 4.9rem);
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.88rem;
+  font-weight: 850;
+}
+
+.breadcrumb a {
+  color: var(--amber);
+}
+
+.breadcrumb span::before {
+  content: "/";
+  margin-right: 8px;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.silo-contact-card {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.silo-contact-card strong,
+.silo-contact-card span {
+  display: block;
+}
+
+.silo-contact-card span {
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.55;
+}
+
+.silo-contact-card .phone-number {
+  font-size: clamp(1.45rem, 4vw, 1.9rem);
+}
+
+.silo-contact-card .btn {
+  min-height: 46px;
+}
+
+.silo-section {
+  padding: 72px 0;
+}
+
+.silo-section.alt {
+  background: var(--white);
+}
+
+.silo-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.silo-copy p {
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1.03rem;
+}
+
+.silo-copy ul {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.silo-copy li {
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.silo-section.alt .silo-copy li {
+  background: var(--paper);
+}
+
+.silo-card-grid,
+.area-directory,
+.service-directory,
+.faq-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.silo-card,
+.area-directory a,
+.service-directory a,
+.faq-mini-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 158px;
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 26px rgba(11, 23, 32, 0.05);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.silo-section.alt .silo-card,
+.silo-section.alt .area-directory a,
+.silo-section.alt .service-directory a,
+.silo-section.alt .faq-mini-card {
+  background: var(--paper);
+}
+
+.silo-card:hover,
+.area-directory a:hover,
+.service-directory a:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 79, 31, 0.28);
+  box-shadow: 0 18px 42px rgba(11, 23, 32, 0.1);
+}
+
+.silo-card img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  margin-bottom: 18px;
+}
+
+.silo-card h2,
+.silo-card h3,
+.area-directory strong,
+.service-directory strong,
+.faq-mini-card h3 {
+  font-size: 1.03rem;
+  line-height: 1.25;
+}
+
+.silo-card p,
+.area-directory span,
+.service-directory span,
+.faq-mini-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.58;
+  font-size: 0.94rem;
+}
+
+.silo-card .service-cta {
+  margin-top: auto;
+}
+
+.area-directory,
+.service-directory {
+  margin-top: 28px;
+}
+
+.area-directory a,
+.service-directory a {
+  min-height: 126px;
+}
+
+.area-directory em,
+.service-directory em {
+  margin-top: auto;
+  color: var(--orange);
+  font-style: normal;
+  font-weight: 950;
+}
+
+.silo-map-frame {
+  min-height: 360px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: var(--white);
+}
+
+.silo-map-frame iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+}
+
+.silo-cta-band {
+  padding: 34px;
+  border-radius: 8px;
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgba(11, 23, 32, 0.96), rgba(11, 23, 32, 0.86)),
+    url("https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=1200&q=76") center / cover;
+}
+
+.silo-cta-band h2 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+.silo-cta-band p {
+  max-width: 780px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -1202,6 +1467,10 @@ details p {
     color: var(--ink);
   }
 
+  .silo-page .site-header .nav-links a {
+    color: var(--ink);
+  }
+
   .language-control {
     justify-content: space-between;
     color: var(--ink);
@@ -1218,7 +1487,9 @@ details p {
   .coverage-grid,
   .seo-panel,
   .location-grid,
-  .faq-grid {
+  .faq-grid,
+  .silo-hero-grid,
+  .silo-intro-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1235,7 +1506,11 @@ details p {
   .scenario-grid,
   .local-seo-grid,
   .process,
-  .footer-grid {
+  .footer-grid,
+  .silo-card-grid,
+  .area-directory,
+  .service-directory,
+  .faq-mini-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1274,7 +1549,11 @@ details p {
   .local-seo-grid,
   .emergency-list,
   .process,
-  .footer-grid {
+  .footer-grid,
+  .silo-card-grid,
+  .area-directory,
+  .service-directory,
+  .faq-mini-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1315,6 +1594,19 @@ details p {
 
   .sticky-call {
     display: grid;
+  }
+
+  .silo-hero {
+    padding: 42px 0 54px;
+  }
+
+  .silo-section {
+    padding: 58px 0;
+  }
+
+  .silo-contact-card,
+  .silo-cta-band {
+    padding: 22px;
   }
 
   .site-footer {
