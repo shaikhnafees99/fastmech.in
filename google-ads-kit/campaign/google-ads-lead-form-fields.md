@@ -9,6 +9,7 @@ Recommended fields:
 - Service needed
 
 Custom question options:
+- New Battery Sale
 - Battery Jump Start
 - Towing Service
 - Petrol Delivery

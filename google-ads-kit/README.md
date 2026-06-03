@@ -9,7 +9,7 @@ Prepared for Fast Mechanic Mumbai roadside assistance.
 - WhatsApp: https://wa.me/917021810153
 - Service areas: Mumbai, Andheri, Thane, Vashi
 - Address/service point: New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010
-- Services: Battery Jump Start, Towing Service, Petrol Delivery, Key Lock Assistance, Stepney Change, Car Mechanic, Flat Tyre Help, Car Not Starting Help, Basement Parking Recovery, Airport Route Breakdown, Late Night Breakdown Help
+- Services: New Battery Sale, Battery Jump Start, Towing Service, Petrol Delivery, Key Lock Assistance, Stepney Change, Car Mechanic, Flat Tyre Help, Car Not Starting Help, Basement Parking Recovery, Airport Route Breakdown, Late Night Breakdown Help
 
 ## Recommended Google Ads campaign
 - Campaign type: Search

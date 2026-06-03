@@ -15,6 +15,15 @@ const openGraphImage = `${siteUrl}/google-ads-kit/images/png-ready/fast-mechanic
 
 const services = [
   {
+    slug: "new-battery-sale",
+    name: "New Battery Sale",
+    short: "New car battery sale support with battery selection guidance, doorstep coordination and replacement help.",
+    image: "service-new-battery.svg",
+    cta: "Call for new battery",
+    intent: "new car battery, battery replacement, car battery sale near me, doorstep battery replacement",
+    price: "Battery price depends on brand, warranty, car model and availability"
+  },
+  {
     slug: "battery-jump-start",
     name: "Battery Jump Start",
     short: "Dead battery jump start support for cars stuck at home, office, basement parking or roadside.",
@@ -89,15 +98,25 @@ const areas = [
   area("churchgate", "Churchgate", "400020", "South Mumbai", ["Churchgate Station", "Oval Maidan", "Eros", "Marine Lines"], ["Maharshi Karve Road", "Veer Nariman Road"], "station roads, college parking and business district exits"),
   area("marine-lines", "Marine Lines", "400020", "South Mumbai", ["Marine Drive", "Churchgate", "Charni Road", "Girgaon Chowpatty"], ["Marine Drive", "Princess Street Flyover"], "coastal traffic, event parking and evening breakdowns"),
   area("nariman-point", "Nariman Point", "400021", "South Mumbai", ["NCPA", "Mantralaya", "Marine Drive", "Churchgate"], ["Free Press Journal Marg", "Madame Cama Road"], "corporate parking, office towers and sea-facing roads"),
+  area("mantralaya", "Mantralaya", "400032", "South Mumbai", ["Mantralaya", "Nariman Point", "Churchgate", "Marine Drive"], ["Madame Cama Road", "Maharshi Karve Road"], "government office parking, coastal roads and official vehicle routes"),
   area("kalbadevi", "Kalbadevi", "400002", "South Mumbai", ["Zaveri Bazaar", "Bhuleshwar", "Crawford Market", "Marine Lines"], ["Kalbadevi Road", "Princess Street"], "market lanes, older buildings and crowded parking"),
   area("crawford-market", "Crawford Market", "400003", "South Mumbai", ["Crawford Market", "CST", "Masjid Bunder", "Kalbadevi"], ["Lokmanya Tilak Marg", "JJ Flyover"], "market traffic, loading lanes and narrow turns"),
   area("masjid-bunder", "Masjid Bunder", "400003", "South Mumbai", ["Masjid Station", "Crawford Market", "Mandvi", "Pydhonie"], ["Mohammed Ali Road", "P D'Mello Road"], "market pickup points, port roads and evening congestion"),
+  area("mandvi", "Mandvi", "400003", "South Mumbai", ["Mandvi", "Masjid Bunder", "Pydhonie", "Crawford Market"], ["Mohammed Ali Road", "P D'Mello Road"], "trading lanes, loading points and compact market parking"),
+  area("pydhonie", "Pydhonie", "400003", "South Mumbai", ["Pydhonie", "Bhendi Bazaar", "Masjid Bunder", "Crawford Market"], ["Mohammed Ali Road", "SVP Road"], "crowded market roads, narrow turns and evening congestion"),
+  area("bhendi-bazaar", "Bhendi Bazaar", "400003", "South Mumbai", ["Bhendi Bazaar", "Dongri", "Pydhonie", "Crawford Market"], ["Mohammed Ali Road", "JJ Flyover"], "market routes, older buildings and tight roadside pickup points"),
+  area("dongri", "Dongri", "400009", "South Mumbai", ["Dongri", "Umerkhadi", "Mazgaon", "Bhendi Bazaar"], ["JJ Flyover", "Nesbit Road"], "narrow residential lanes, port-side roads and central market traffic"),
   area("girgaon", "Girgaon", "400004", "South Mumbai", ["Girgaon Chowpatty", "Charni Road", "Opera House", "Kalbadevi"], ["SVP Road", "Marine Drive"], "coastal parking, society lanes and festival traffic"),
   area("charni-road", "Charni Road", "400004", "South Mumbai", ["Charni Road Station", "Girgaon", "Marine Lines", "Opera House"], ["Maharshi Karve Road", "SVP Road"], "station roads, residential lanes and beach-side movement"),
   area("opera-house", "Opera House", "400004", "South Mumbai", ["Royal Opera House", "Girgaon", "Grant Road", "Charni Road"], ["SVP Road", "Lamington Road"], "market parking, theatre-area traffic and compact lanes"),
   area("grant-road", "Grant Road", "400007", "South Mumbai", ["Grant Road Station", "Lamington Road", "Opera House", "Tardeo"], ["Lamington Road", "Nana Chowk"], "electronics market traffic, station roads and older car parking"),
+  area("lamington-road", "Lamington Road", "400007", "South Mumbai", ["Lamington Road", "Grant Road", "Opera House", "Mumbai Central"], ["Lamington Road", "DB Marg"], "electronics market parking, repair lanes and station traffic"),
+  area("nana-chowk", "Nana Chowk", "400007", "South Mumbai", ["Nana Chowk", "Grant Road", "Tardeo", "Opera House"], ["Nana Chowk Road", "Lamington Road"], "junction traffic, building parking and quick roadside stops"),
   area("mumbai-central", "Mumbai Central", "400008", "South Mumbai", ["Mumbai Central Station", "Nagpada", "Tardeo", "Byculla"], ["Bellasis Road", "JJ Flyover"], "station rush, taxi corridors and long-stop parking"),
+  area("nagpada", "Nagpada", "400008", "South Mumbai", ["Nagpada", "Mumbai Central", "Byculla", "Agripada"], ["Bellasis Road", "JJ Flyover"], "dense residential roads, taxi routes and late-night traffic"),
+  area("agripada", "Agripada", "400011", "South Mumbai", ["Agripada", "Mumbai Central", "Mahalaxmi", "Byculla"], ["Dr Anandrao Nair Road", "Arthur Road"], "hospital roads, society parking and central Mumbai lanes"),
   area("tardeo", "Tardeo", "400034", "South Mumbai", ["Tardeo Road", "Haji Ali", "Mumbai Central", "Mahalaxmi"], ["Tardeo Road", "Dr E Moses Road"], "uphill roads, office buildings and residential towers"),
+  area("haji-ali", "Haji Ali", "400034", "Central Mumbai", ["Haji Ali", "Tardeo", "Mahalaxmi", "Worli"], ["Lala Lajpatrai Marg", "Dr E Moses Road"], "coastal junction traffic, flyover exits and premium tower parking"),
   area("mahalaxmi", "Mahalaxmi", "400011", "Central Mumbai", ["Mahalaxmi Racecourse", "Haji Ali", "Lower Parel", "Byculla"], ["Dr E Moses Road", "Keshavrao Khadye Marg"], "racecourse traffic, flyovers and parking exits"),
   area("byculla", "Byculla", "400008", "Central Mumbai", ["Byculla Station", "Mahalaxmi", "Mazgaon", "Rani Baug"], ["Dr Babasaheb Ambedkar Road", "JJ Flyover"], "station roads, older buildings and central Mumbai routes"),
   area("mazgaon", "Mazgaon", "400010", "Central Mumbai", ["Mazgaon Dock", "Byculla", "Darukhana", "Reay Road"], ["Nesbit Road", "P D'Mello Road"], "dock roads, commercial lanes and mixed traffic"),
@@ -106,13 +125,20 @@ const areas = [
   area("parel", "Parel", "400012", "Central Mumbai", ["Parel Station", "Lalbaug", "Lower Parel", "Dadar"], ["Dr Babasaheb Ambedkar Road", "NM Joshi Marg"], "office towers, hospital routes and central traffic"),
   area("lalbaug", "Lalbaug", "400012", "Central Mumbai", ["Lalbaug Market", "Parel", "Byculla", "Cotton Green"], ["Dr BA Road", "Ganesh Gully"], "festival routes, market lanes and building parking"),
   area("lower-parel", "Lower Parel", "400013", "Central Mumbai", ["Phoenix Mills", "Kamala Mills", "Worli", "Prabhadevi"], ["Senapati Bapat Marg", "NM Joshi Marg"], "office towers, mall basements and evening traffic"),
+  area("elphinstone-road", "Elphinstone Road", "400013", "Central Mumbai", ["Elphinstone Road", "Lower Parel", "Prabhadevi", "Parel"], ["Senapati Bapat Marg", "NM Joshi Marg"], "office roads, mill compounds and central railway access"),
   area("worli", "Worli", "400018", "Central Mumbai", ["Worli Sea Face", "Haji Ali", "Lower Parel", "Prabhadevi"], ["Annie Besant Road", "Worli Sea Link approach"], "sea link routes, corporate parking and flyover exits"),
+  area("worli-sea-face", "Worli Sea Face", "400030", "Central Mumbai", ["Worli Sea Face", "Haji Ali", "Prabhadevi", "Sea Link"], ["Worli Sea Face Road", "Annie Besant Road"], "coastal parking, sea-link feeder routes and evening traffic"),
+  area("worli-naka", "Worli Naka", "400018", "Central Mumbai", ["Worli Naka", "Lower Parel", "Haji Ali", "Prabhadevi"], ["Dr E Moses Road", "Annie Besant Road"], "junction traffic, commercial parking and flyover movement"),
   area("prabhadevi", "Prabhadevi", "400025", "Central Mumbai", ["Siddhivinayak Temple", "Worli", "Dadar", "Lower Parel"], ["Veer Savarkar Marg", "Kakasaheb Gadgil Marg"], "temple traffic, society towers and central routes"),
   area("dadar-east", "Dadar East", "400014", "Central Mumbai", ["Dadar TT", "Parel", "Matunga", "Hindmata"], ["Dr BA Road", "Eastern Express Highway connector"], "station crowd, market roads and central junctions"),
+  area("hindmata", "Hindmata", "400014", "Central Mumbai", ["Hindmata", "Dadar East", "Parel", "Lalbaug"], ["Dr BA Road", "Dadasaheb Phalke Road"], "market roads, bridge traffic and central station movement"),
+  area("dadar-tt", "Dadar TT", "400014", "Central Mumbai", ["Dadar TT", "Dadar East", "Matunga", "Sion"], ["Dr BA Road", "Tilak Road"], "busy junctions, taxi routes and central railway access"),
   area("dadar-west", "Dadar West", "400028", "Central Mumbai", ["Shivaji Park", "Dadar Station", "Prabhadevi", "Mahim"], ["Gokhale Road", "Senapati Bapat Marg"], "market parking, station exits and residential lanes"),
   area("shivaji-park", "Shivaji Park", "400028", "Central Mumbai", ["Shivaji Park", "Dadar West", "Prabhadevi", "Mahim"], ["Keluskar Road", "Lady Jamshedji Road"], "residential parking, ground-side roads and evening traffic"),
   area("matunga", "Matunga", "400019", "Central Mumbai", ["Matunga Station", "Dadar", "Sion", "King's Circle"], ["Dr BA Road", "Lakhamsi Nappu Road"], "college roads, station lanes and central traffic"),
+  area("kings-circle", "King's Circle", "400019", "Central Mumbai", ["King's Circle", "Matunga", "Sion", "Wadala"], ["Dr BA Road", "Lady Jamshedji Road"], "college traffic, garden-side roads and residential parking"),
   area("sion", "Sion", "400022", "Central Mumbai", ["Sion Circle", "Sion Hospital", "Kurla", "Matunga"], ["Eastern Express Highway", "Sion-Panvel Highway"], "highway connectors, hospital routes and flyover traffic"),
+  area("chunabhatti", "Chunabhatti", "400022", "Central Mumbai", ["Chunabhatti", "Sion", "BKC Connector", "Kurla"], ["Sion-Trombay Road", "Eastern Express Highway"], "connector routes, society parking and highway-side stops"),
   area("wadala", "Wadala", "400031", "Central Mumbai", ["Wadala Station", "Sion", "Matunga", "Sewri"], ["Rafi Ahmed Kidwai Road", "Eastern Freeway connector"], "truck routes, station roads and society parking"),
   area("sewri", "Sewri", "400015", "Central Mumbai", ["Sewri Station", "Cotton Green", "Wadala", "Eastern Freeway"], ["Sewri-Chembur Road", "Eastern Freeway"], "industrial lanes, freeway access and parking sheds"),
   area("cotton-green", "Cotton Green", "400033", "Central Mumbai", ["Cotton Green Station", "Reay Road", "Lalbaug", "Sewri"], ["Barrister Nath Pai Road", "Dr BA Road"], "warehouse routes, station roads and central lanes"),
@@ -120,22 +146,41 @@ const areas = [
   area("bandra-west", "Bandra West", "400050", "Western Mumbai", ["Linking Road", "Hill Road", "Carter Road", "Bandstand"], ["SV Road", "Turner Road"], "shopping streets, restaurant parking and coastal traffic"),
   area("bandra-east", "Bandra East", "400051", "Western Mumbai", ["Bandra Station", "BKC", "Kalanagar", "Kurla"], ["Western Express Highway", "BKC Connector"], "office traffic, station roads and highway exits"),
   area("bkc", "BKC", "400051", "Western Mumbai", ["Bandra Kurla Complex", "Jio World Drive", "MCA Club", "Kalina"], ["BKC Road", "BKC Connector"], "corporate parking, event exits and late-night office calls"),
+  area("kalina", "Kalina", "400098", "Western Mumbai", ["Kalina", "BKC", "Santacruz East", "Vakola"], ["CST Road", "BKC Connector"], "university roads, office parking and airport-side traffic"),
+  area("vakola", "Vakola", "400055", "Western Mumbai", ["Vakola", "Santacruz East", "Kalina", "BKC"], ["Western Express Highway", "CST Road"], "highway traffic, airport-side lanes and residential parking"),
   area("khar", "Khar", "400052", "Western Mumbai", ["Khar Station", "Bandra", "Santacruz", "Linking Road"], ["SV Road", "16th Road"], "residential towers, station roads and shopping lanes"),
   area("santacruz", "Santacruz", "400054", "Western Mumbai", ["Santacruz Station", "Kalina", "Juhu", "Vile Parle"], ["SV Road", "Western Express Highway"], "airport-side traffic, station roads and residential parking"),
   area("juhu", "Juhu", "400049", "Western Mumbai", ["Juhu Beach", "JVPD", "Vile Parle", "Santacruz"], ["Juhu Tara Road", "Gulmohar Road"], "beach traffic, bungalow lanes and evening congestion"),
+  area("jvpd", "JVPD", "400049", "Western Mumbai", ["JVPD", "Juhu", "Vile Parle", "Andheri West"], ["Gulmohar Road", "Juhu Tara Road"], "premium society lanes, beach routes and late-night parking calls"),
+  area("irla", "Irla", "400056", "Western Mumbai", ["Irla", "Vile Parle West", "Juhu", "Andheri West"], ["SV Road", "Gulmohar Road"], "shopping lanes, station traffic and residential parking"),
   area("vile-parle", "Vile Parle", "400057", "Western Mumbai", ["Vile Parle Station", "Airport", "Juhu", "Andheri"], ["SV Road", "Western Express Highway"], "airport routes, station lanes and residential parking"),
   area("mumbai-airport", "Mumbai Airport", "400099", "Western Mumbai", ["T1 Domestic Airport", "T2 International Airport", "Sahar", "Marol"], ["Sahar Road", "Western Express Highway"], "airport pickups, hotel parking and late-night travel"),
   area("sahar", "Sahar", "400099", "Western Mumbai", ["Sahar Village", "T2 Airport", "Marol", "Andheri East"], ["Sahar Road", "Andheri-Kurla Road"], "airport access roads, hotel basements and night breakdowns"),
   area("andheri-east", "Andheri East", "400059", "Western Mumbai", ["Marol", "MIDC", "Chakala", "Sahar"], ["Andheri-Kurla Road", "Western Express Highway"], "industrial estates, airport traffic and office parking"),
+  area("chakala", "Chakala", "400093", "Western Mumbai", ["Chakala", "Andheri East", "MIDC", "JB Nagar"], ["Andheri-Kurla Road", "Western Express Highway"], "metro routes, office parking and highway access"),
+  area("jb-nagar", "JB Nagar", "400059", "Western Mumbai", ["JB Nagar", "Chakala", "Andheri East", "Airport Road"], ["Andheri-Kurla Road", "Airport Road Metro"], "airport road traffic, office lanes and hotel parking"),
   area("andheri-west", "Andheri West", "400053", "Western Mumbai", ["DN Nagar", "Lokhandwala", "Versova", "Oshiwara"], ["JP Road", "Link Road"], "media offices, market lanes and residential towers"),
+  area("lokhandwala-andheri", "Lokhandwala Andheri", "400053", "Western Mumbai", ["Lokhandwala Complex", "Andheri West", "Oshiwara", "Versova"], ["New Link Road", "Lokhandwala Road"], "society towers, market streets and media office parking"),
+  area("oshiwara", "Oshiwara", "400102", "Western Mumbai", ["Oshiwara", "Andheri West", "Lokhandwala", "Jogeshwari"], ["New Link Road", "SV Road"], "link-road traffic, residential towers and commercial parking"),
+  area("four-bungalows", "Four Bungalows", "400053", "Western Mumbai", ["Four Bungalows", "Andheri West", "DN Nagar", "Versova"], ["JP Road", "New Link Road"], "metro roads, society lanes and evening traffic"),
+  area("seven-bungalows", "Seven Bungalows", "400061", "Western Mumbai", ["Seven Bungalows", "Versova", "Andheri West", "Yari Road"], ["JP Road", "Yari Road"], "coastal lanes, society parking and late-night traffic"),
   area("marol", "Marol", "400059", "Western Mumbai", ["Marol Naka", "Saki Naka", "Airport", "Andheri East"], ["Andheri-Kurla Road", "Military Road"], "hotel parking, airport-side roads and office routes"),
   area("midc-andheri", "MIDC Andheri", "400093", "Western Mumbai", ["MIDC", "Seepz", "Chakala", "Andheri East"], ["Mahakali Caves Road", "Andheri-Kurla Road"], "industrial parking, business parks and tight internal roads"),
+  area("seepz", "SEEPZ", "400096", "Western Mumbai", ["SEEPZ", "MIDC Andheri", "Powai", "Marol"], ["JVLR", "Mahakali Caves Road"], "business park parking, security gates and office route breakdowns"),
+  area("mahakali-caves", "Mahakali Caves", "400093", "Western Mumbai", ["Mahakali Caves", "MIDC Andheri", "Chakala", "Jogeshwari"], ["Mahakali Caves Road", "JVLR"], "office routes, hill-side roads and industrial parking"),
   area("dn-nagar", "DN Nagar", "400053", "Western Mumbai", ["DN Nagar Metro", "Andheri West", "Versova", "Lokhandwala"], ["JP Road", "New Link Road"], "metro roads, society parking and evening traffic"),
   area("versova", "Versova", "400061", "Western Mumbai", ["Versova Beach", "Yari Road", "DN Nagar", "Andheri West"], ["JP Road", "Yari Road"], "coastal lanes, residential parking and late-night routes"),
+  area("yari-road", "Yari Road", "400061", "Western Mumbai", ["Yari Road", "Versova", "Seven Bungalows", "Andheri West"], ["Yari Road", "JP Road"], "coastal society lanes, beach-side parking and night calls"),
   area("saki-naka", "Saki Naka", "400072", "Western Mumbai", ["Saki Naka Junction", "Marol", "Powai", "Kurla"], ["Andheri-Kurla Road", "Saki Vihar Road"], "junction traffic, commercial lanes and airport connectors"),
+  area("chandivali", "Chandivali", "400072", "Eastern Mumbai", ["Chandivali", "Powai", "Saki Naka", "Hiranandani"], ["Saki Vihar Road", "JVLR"], "office parks, residential towers and hill-side roads"),
+  area("asalpha", "Asalpha", "400084", "Eastern Mumbai", ["Asalpha", "Ghatkopar West", "Saki Naka", "Andheri-Ghatkopar Link Road"], ["Andheri-Ghatkopar Link Road", "LBS Marg"], "steep lanes, metro roads and link-road breakdowns"),
   area("kurla", "Kurla", "400070", "Eastern Mumbai", ["Kurla Station", "Phoenix Marketcity", "BKC Connector", "Saki Naka"], ["LBS Marg", "CST Road"], "market roads, mall parking and connector traffic"),
   area("chembur", "Chembur", "400071", "Eastern Mumbai", ["Chembur Station", "Tilak Nagar", "Sion", "Eastern Freeway"], ["Eastern Express Highway", "VN Purav Marg"], "freeway routes, society parking and station roads"),
   area("tilak-nagar", "Tilak Nagar", "400089", "Eastern Mumbai", ["Tilak Nagar Station", "Chembur", "Kurla", "Sion"], ["Santacruz-Chembur Link Road", "Shell Colony Road"], "residential lanes, station roads and link-road traffic"),
+  area("govandi", "Govandi", "400088", "Eastern Mumbai", ["Govandi", "Chembur", "Deonar", "Mankhurd"], ["Sion-Trombay Road", "VN Purav Marg"], "station routes, highway connectors and residential parking"),
+  area("deonar", "Deonar", "400088", "Eastern Mumbai", ["Deonar", "Govandi", "Chembur", "Trombay"], ["Sion-Trombay Road", "Eastern Freeway connector"], "freeway access, depot routes and residential roads"),
+  area("mankhurd", "Mankhurd", "400043", "Eastern Mumbai", ["Mankhurd", "Govandi", "Vashi Bridge", "Trombay"], ["Sion-Panvel Highway", "Mankhurd Link Road"], "Vashi bridge approach, highway stops and station traffic"),
+  area("trombay", "Trombay", "400088", "Eastern Mumbai", ["Trombay", "Chembur", "Deonar", "Mankhurd"], ["Sion-Trombay Road", "Eastern Freeway"], "industrial routes, freeway access and long roadside stops"),
   area("ghatkopar-east", "Ghatkopar East", "400077", "Eastern Mumbai", ["Pant Nagar", "Ghatkopar Station", "Chembur", "Vidyavihar"], ["LBS Marg", "Eastern Express Highway"], "station traffic, society roads and highway access"),
   area("ghatkopar-west", "Ghatkopar West", "400086", "Eastern Mumbai", ["LBS Marg", "Vidyavihar", "Asalpha", "Saki Naka"], ["LBS Marg", "Andheri-Ghatkopar Link Road"], "link-road traffic, market parking and hill-side roads"),
   area("vidyavihar", "Vidyavihar", "400086", "Eastern Mumbai", ["Vidyavihar Station", "Ghatkopar", "Kurla", "Somaiya"], ["LBS Marg", "Rajawadi Road"], "campus roads, station lanes and residential parking"),
@@ -149,14 +194,24 @@ const areas = [
   area("thane-west", "Thane West", "400601", "Thane Corridor", ["Naupada", "Majiwada", "Ghodbunder Road", "Teen Hath Naka"], ["Eastern Express Highway", "Ghodbunder Road"], "highway traffic, mall parking and large residential towers"),
   area("thane-east", "Thane East", "400603", "Thane Corridor", ["Kopri", "Thane Station", "Mulund East", "Airoli"], ["Eastern Express Highway", "Kopri Bridge"], "station access, bridge routes and residential pockets"),
   area("naupada", "Naupada", "400602", "Thane Corridor", ["Naupada", "Thane Station", "Panch Pakhadi", "Teen Hath Naka"], ["Gokhale Road", "Eastern Express Highway"], "station-side roads, market parking and office exits"),
+  area("panch-pakhadi", "Panch Pakhadi", "400602", "Thane Corridor", ["Panch Pakhadi", "Naupada", "Teen Hath Naka", "Thane West"], ["Eastern Express Highway", "Gokhale Road"], "office roads, tower parking and Thane station access"),
+  area("teen-hath-naka", "Teen Hath Naka", "400604", "Thane Corridor", ["Teen Hath Naka", "Naupada", "Wagle Estate", "Thane West"], ["Eastern Express Highway", "LBS Marg"], "junction traffic, highway breakdowns and office parking"),
   area("majiwada", "Majiwada", "400601", "Thane Corridor", ["Majiwada Junction", "Viviana Mall", "Kapurbawdi", "Thane West"], ["Eastern Express Highway", "Ghodbunder Road"], "junction traffic, mall basements and highway breakdowns"),
+  area("kapurbawdi", "Kapurbawdi", "400607", "Thane Corridor", ["Kapurbawdi", "Majiwada", "Manpada", "Thane West"], ["Ghodbunder Road", "Eastern Express Highway"], "flyover traffic, mall routes and residential tower parking"),
+  area("manpada-thane", "Manpada Thane", "400607", "Thane Corridor", ["Manpada", "Kapurbawdi", "Ghodbunder Road", "Thane West"], ["Ghodbunder Road", "Pokhran Road"], "residential towers, highway connectors and evening congestion"),
+  area("vartak-nagar", "Vartak Nagar", "400606", "Thane Corridor", ["Vartak Nagar", "Pokhran Road", "Thane West", "Majiwada"], ["Pokhran Road", "Eastern Express Highway"], "society parking, hill-side roads and Thane commuter routes"),
+  area("kolshet", "Kolshet", "400607", "Thane Corridor", ["Kolshet", "Kapurbawdi", "Manpada", "Thane West"], ["Kolshet Road", "Ghodbunder Road"], "tower parking, internal roads and highway access"),
   area("wagle-estate", "Wagle Estate", "400604", "Thane Corridor", ["Wagle Estate", "Teen Hath Naka", "Mulund", "Thane West"], ["LBS Marg", "Eastern Express Highway"], "industrial roads, office parking and commercial lanes"),
   area("kalwa", "Kalwa", "400605", "Thane Corridor", ["Kalwa Station", "Thane", "Airoli", "Parsik Nagar"], ["Kalwa Bridge", "Thane-Belapur Road"], "bridge traffic, station roads and residential towers"),
   area("airoli", "Airoli", "400708", "Vashi Corridor", ["Airoli Bridge", "Airoli Station", "Rabale", "Mulund"], ["Thane-Belapur Road", "Airoli Bridge Road"], "bridge routes, office parks and highway connectors"),
+  area("rabale", "Rabale", "400701", "Vashi Corridor", ["Rabale", "Airoli", "Ghansoli", "Thane-Belapur Road"], ["Thane-Belapur Road", "Rabale MIDC Road"], "MIDC parking, highway connectors and office route breakdowns"),
+  area("ghansoli", "Ghansoli", "400701", "Vashi Corridor", ["Ghansoli", "Rabale", "Kopar Khairane", "Airoli"], ["Thane-Belapur Road", "Palm Beach Road connector"], "station roads, office parks and residential tower parking"),
+  area("kopar-khairane", "Kopar Khairane", "400709", "Vashi Corridor", ["Kopar Khairane", "Ghansoli", "Vashi", "Turbhe"], ["Thane-Belapur Road", "Palm Beach Road"], "residential roads, station access and Navi Mumbai connector traffic"),
   area("vashi", "Vashi", "400703", "Vashi Corridor", ["Vashi Station", "Palm Beach Road", "APMC Market", "Turbhe"], ["Palm Beach Road", "Sion-Panvel Highway"], "market roads, highway access and mall parking"),
   area("apmc-vashi", "APMC Vashi", "400703", "Vashi Corridor", ["APMC Market", "Vashi", "Turbhe", "Sanpada"], ["APMC Road", "Sion-Panvel Highway"], "market loading lanes, wholesale parking and early morning traffic"),
   area("turbhe", "Turbhe", "400705", "Vashi Corridor", ["Turbhe Station", "APMC", "Vashi", "Sanpada"], ["Thane-Belapur Road", "Turbhe MIDC Road"], "industrial roads, market routes and parking exits"),
-  area("sanpada", "Sanpada", "400705", "Vashi Corridor", ["Sanpada Station", "Vashi", "Palm Beach Road", "Turbhe"], ["Palm Beach Road", "Sion-Panvel Highway"], "residential towers, station roads and highway-side stops")
+  area("sanpada", "Sanpada", "400705", "Vashi Corridor", ["Sanpada Station", "Vashi", "Palm Beach Road", "Turbhe"], ["Palm Beach Road", "Sion-Panvel Highway"], "residential towers, station roads and highway-side stops"),
+  area("juinagar", "Juinagar", "400705", "Vashi Corridor", ["Juinagar", "Sanpada", "Nerul", "Sion-Panvel Highway"], ["Sion-Panvel Highway", "Palm Beach Road"], "station roads, highway access and residential parking near Vashi")
 ];
 
 function area(slug, name, pin, group, landmarks, roads, issue) {
@@ -262,11 +317,11 @@ function siteFooter(prefix) {
               <small>Emergency car help Mumbai</small>
             </span>
           </a>
-          <p>24/7 roadside assistance for battery jump start, key lockout, towing, petrol delivery, stepney change and car mechanic service in Mumbai.</p>
+          <p>24/7 roadside assistance for new battery sale, battery jump start, key lockout, towing, petrol delivery, stepney change and car mechanic service in Mumbai.</p>
         </div>
         <div>
           <h2>Services</h2>
-          ${services.slice(0, 4).map((service) => `<a href="${prefix}car-services/mumbai/${service.slug}/">${service.name}</a>`).join("")}
+          ${services.slice(0, 5).map((service) => `<a href="${prefix}car-services/mumbai/${service.slug}/">${service.name}</a>`).join("")}
         </div>
         <div>
           <h2>Area Pages</h2>
@@ -324,7 +379,7 @@ function hero({ eyebrow, title, lede, breadcrumbs, depth }) {
         <aside class="silo-contact-card" aria-label="Fast Mechanic contact card">
           <strong>Fast Mechanic Hotline</strong>
           <a class="phone-number" href="tel:${phoneTel}">${phoneDisplay}</a>
-          <span>Battery jump start, towing, petrol delivery, key lock, stepney change and roadside mechanic assistance.</span>
+          <span>New battery sale, battery jump start, towing, petrol delivery, key lock, stepney change and roadside mechanic assistance.</span>
           <a class="btn btn-primary" href="${whatsappUrl}" target="_blank" rel="noopener">Chat WhatsApp</a>
         </aside>
       </div>
@@ -340,7 +395,7 @@ function breadcrumb(items) {
 }
 
 function serviceCards(prefix = "") {
-  return services.slice(0, 6).map((service) => `<article class="silo-card">
+  return services.map((service) => `<article class="silo-card">
         <img src="${prefix}${service.image}" alt="${escapeHtml(service.name)} illustration" loading="lazy">
         <h3>${escapeHtml(service.name)}</h3>
         <p>${escapeHtml(service.short)}</p>
@@ -361,6 +416,23 @@ function serviceDirectory(prefix = "") {
       <strong>${escapeHtml(service.name)}</strong>
       <span>${escapeHtml(service.short)}</span>
       <em>View service page</em>
+    </a>`).join("");
+}
+
+function areaServiceCards(item, prefix = "") {
+  return services.map((service) => `<article class="silo-card">
+        <img src="${prefix}${service.image}" alt="${escapeHtml(service.name)} in ${escapeHtml(item.name)} illustration" loading="lazy">
+        <h3>${escapeHtml(service.name)} in ${escapeHtml(item.name)}</h3>
+        <p>${escapeHtml(service.short)}</p>
+        <a class="service-cta" href="${prefix}car-services/mumbai/${item.slug}/${service.slug}/">View ${escapeHtml(item.name)} page</a>
+      </article>`).join("");
+}
+
+function areaServiceDirectory(areaList, service, prefix = "") {
+  return areaList.map((item) => `<a href="${prefix}car-services/mumbai/${item.slug}/${service.slug}/">
+      <strong>${escapeHtml(service.name)} in ${escapeHtml(item.name)}</strong>
+      <span>PIN ${escapeHtml(item.pin)} - ${escapeHtml(item.landmarks.slice(0, 3).join(", "))}</span>
+      <em>View local service page</em>
     </a>`).join("");
 }
 
@@ -478,7 +550,7 @@ function mergeSchema(base, additions) {
 function categoryPage() {
   const canonicalPath = "/car-services/";
   const title = "Car Services in Mumbai | Fast Mechanic Roadside Assistance";
-  const description = "Fast Mechanic car services in Mumbai include battery jump start, towing, petrol delivery, key lock, stepney change and roadside mechanic help. Call +91 70218 10153.";
+  const description = "Fast Mechanic car services in Mumbai include new battery sale, battery jump start, towing, petrol delivery, key lock, stepney change and roadside mechanic help. Call +91 70218 10153.";
   const schema = mergeSchema(
     businessSchema({
       canonicalPath,
@@ -527,13 +599,13 @@ function categoryPage() {
       </section>
     </main>`;
 
-  return pageShell({ title, description, keywords: "car services Mumbai, car mechanic Mumbai, roadside assistance Mumbai, towing Mumbai, battery jump start Mumbai", canonicalPath, depth: 1, body, schema });
+  return pageShell({ title, description, keywords: "car services Mumbai, new battery sale Mumbai, car mechanic Mumbai, roadside assistance Mumbai, towing Mumbai, battery jump start Mumbai", canonicalPath, depth: 1, body, schema });
 }
 
 function cityPage() {
   const canonicalPath = "/car-services/mumbai/";
   const title = "Best Car Workshop & Doorstep Repair in Mumbai | Fast Mechanic";
-  const description = "Fast Mechanic provides emergency car repair, roadside assistance, towing, battery jump start, petrol delivery and doorstep mechanic help across Mumbai, Andheri, Thane and Vashi.";
+  const description = "Fast Mechanic provides emergency car repair, new battery sale, roadside assistance, towing, battery jump start, petrol delivery and doorstep mechanic help across Mumbai, Andheri, Thane and Vashi.";
   const groups = [...new Set(areas.map((item) => item.group))];
   const schema = mergeSchema(
     businessSchema({
@@ -552,7 +624,7 @@ function cityPage() {
       faqSchema([
         {
           q: "Does Fast Mechanic provide roadside assistance across Mumbai?",
-          a: `Yes. Fast Mechanic provides battery jump start, towing, petrol delivery, key lock assistance, stepney change and roadside mechanic help across the active Mumbai radius. Call ${phoneDisplay}.`
+          a: `Yes. Fast Mechanic provides new battery sale, battery jump start, towing, petrol delivery, key lock assistance, stepney change and roadside mechanic help across the active Mumbai radius. Call ${phoneDisplay}.`
         },
         {
           q: "Which Mumbai areas are covered?",
@@ -612,7 +684,7 @@ function cityPage() {
             <div class="section-head">
               <p class="eyebrow">${escapeHtml(group)}</p>
               <h2>${escapeHtml(group)} car breakdown coverage.</h2>
-              <p>Open a dedicated local page for car mechanic, towing, jump start, petrol delivery and stepney help in each named area.</p>
+              <p>Open a dedicated local page for new battery sale, car mechanic, towing, jump start, petrol delivery and stepney help in each named area.</p>
             </div>
             <div class="area-directory">${areaDirectory(groupAreas, "../../")}</div>
           </div>
@@ -628,7 +700,7 @@ function cityPage() {
       </section>
     </main>`;
 
-  return pageShell({ title, description, keywords: "car service Mumbai, doorstep car repair Mumbai, roadside assistance Mumbai, car workshop Mumbai, emergency mechanic Mumbai, towing Mumbai", canonicalPath, depth: 2, body, schema });
+  return pageShell({ title, description, keywords: "car service Mumbai, new battery sale Mumbai, doorstep car repair Mumbai, roadside assistance Mumbai, car workshop Mumbai, emergency mechanic Mumbai, towing Mumbai", canonicalPath, depth: 2, body, schema });
 }
 
 function servicePage(service) {
@@ -709,7 +781,7 @@ function servicePage(service) {
             <h2>${escapeHtml(service.name)} area coverage.</h2>
             <p>These pages help customers and search engines connect the service with specific Mumbai localities inside the active radius.</p>
           </div>
-          <div class="area-directory">${areaDirectory(topAreas, "../../../")}</div>
+          <div class="area-directory">${areaServiceDirectory(topAreas, service, "../../../")}</div>
           <a class="text-link" href="../">View complete Mumbai area directory</a>
         </div>
       </section>
@@ -730,12 +802,16 @@ function servicePage(service) {
 function areaPage(item, index) {
   const canonicalPath = `/car-services/mumbai/${item.slug}/`;
   const title = `Car Mechanic & Roadside Assistance in ${item.name} | Fast Mechanic`;
-  const description = `Fast Mechanic provides battery jump start, towing, petrol delivery, key lock, stepney change and roadside car mechanic help in ${item.name}, Mumbai. Call ${phoneDisplay}.`;
+  const description = `Fast Mechanic provides new battery sale, battery jump start, towing, petrol delivery, key lock, stepney change and roadside car mechanic help in ${item.name}, Mumbai. Call ${phoneDisplay}.`;
   const nearby = nearbyAreas(item, index);
   const faqs = [
     {
       q: `Do you provide battery jump start in ${item.name}?`,
       a: `Yes. Fast Mechanic provides dead battery jump start support in ${item.name} and nearby locations including ${item.landmarks.slice(0, 3).join(", ")}.`
+    },
+    {
+      q: `Do you sell new car batteries in ${item.name}?`,
+      a: `Yes. Fast Mechanic provides new battery sale coordination in ${item.name}. Call ${phoneDisplay} with your car model, battery type if known and exact location.`
     },
     {
       q: `Can Fast Mechanic arrange towing from ${item.name}?`,
@@ -768,7 +844,7 @@ function areaPage(item, index) {
   const body = `${hero({
     eyebrow: `PIN ${item.pin} Roadside Help`,
     title: `Car mechanic and roadside assistance in ${item.name}.`,
-    lede: `Fast Mechanic helps with battery jump start, towing, petrol delivery, key lock, stepney change and urgent car mechanic calls around ${item.landmarks.join(", ")}.`,
+    lede: `Fast Mechanic helps with new battery sale, battery jump start, towing, petrol delivery, key lock, stepney change and urgent car mechanic calls around ${item.landmarks.join(", ")}.`,
     breadcrumbs: [
       { label: "Home", href: "../../../" },
       { label: "Car Services", href: "../../" },
@@ -784,14 +860,14 @@ function areaPage(item, index) {
             <p class="eyebrow">${escapeHtml(item.group)}</p>
             <h2>Emergency car help around ${escapeHtml(item.name)} landmarks.</h2>
             <p>Drivers call Fast Mechanic in ${escapeHtml(item.name)} for ${escapeHtml(item.issue)}. The local response focus includes ${escapeHtml(item.landmarks.join(", "))} and nearby routes such as ${escapeHtml(item.roads.join(", "))}.</p>
-            <p>Use this dedicated page for searches like car mechanic near me in ${escapeHtml(item.name)}, towing service in ${escapeHtml(item.name)}, battery jump start in ${escapeHtml(item.name)} and petrol delivery near ${escapeHtml(item.name)}.</p>
+            <p>Use this dedicated page for searches like new battery sale in ${escapeHtml(item.name)}, car mechanic near me in ${escapeHtml(item.name)}, towing service in ${escapeHtml(item.name)}, battery jump start in ${escapeHtml(item.name)} and petrol delivery near ${escapeHtml(item.name)}.</p>
             <ul>
               <li>Primary PIN code: ${escapeHtml(item.pin)}</li>
               <li>Service point: ${escapeHtml(address)}</li>
               <li>Direct call: <a href="tel:${phoneTel}">${phoneDisplay}</a></li>
             </ul>
           </div>
-          <div class="silo-card-grid">${serviceCards("../../../")}</div>
+          <div class="silo-card-grid">${areaServiceCards(item, "../../../")}</div>
         </div>
       </section>
       <section class="silo-section alt">
@@ -802,7 +878,7 @@ function areaPage(item, index) {
             <p>These are the urgent search scenarios this page is structured to answer clearly.</p>
           </div>
           <div class="faq-mini-grid">
-            ${services.slice(0, 6).map((service) => `<article class="faq-mini-card"><h3>${escapeHtml(service.name)} in ${escapeHtml(item.name)}</h3><p>${escapeHtml(service.short)} Call ${phoneDisplay} with your exact location near ${escapeHtml(item.landmarks[0])}.</p></article>`).join("")}
+            ${services.map((service) => `<article class="faq-mini-card"><h3>${escapeHtml(service.name)} in ${escapeHtml(item.name)}</h3><p>${escapeHtml(service.short)} Call ${phoneDisplay} with your exact location near ${escapeHtml(item.landmarks[0])}.</p></article>`).join("")}
           </div>
         </div>
       </section>
@@ -832,13 +908,111 @@ function areaPage(item, index) {
         <div class="container silo-cta-band">
           <p class="eyebrow">Call Lead Ready</p>
           <h2>Need car help in ${escapeHtml(item.name)}?</h2>
-          <p>Call Fast Mechanic now for battery, towing, petrol, key lock, stepney or mechanic support. The fastest call is the direct number below.</p>
+          <p>Call Fast Mechanic now for new battery sale, battery, towing, petrol, key lock, stepney or mechanic support. The fastest call is the direct number below.</p>
           <div class="hero-actions"><a class="btn btn-primary" href="tel:${phoneTel}">Call ${phoneDisplay}</a><a class="btn btn-secondary" href="${whatsappUrl}" target="_blank" rel="noopener">Chat WhatsApp</a></div>
         </div>
       </section>
     </main>`;
 
-  return pageShell({ title, description, keywords: `car mechanic ${item.name}, roadside assistance ${item.name}, towing service ${item.name}, battery jump start ${item.name}, petrol delivery ${item.name}, stepney change ${item.name}, Fast Mechanic ${item.name}`, canonicalPath, depth: 3, body, schema });
+  return pageShell({ title, description, keywords: `new battery sale ${item.name}, car battery ${item.name}, car mechanic ${item.name}, roadside assistance ${item.name}, towing service ${item.name}, battery jump start ${item.name}, petrol delivery ${item.name}, stepney change ${item.name}, Fast Mechanic ${item.name}`, canonicalPath, depth: 3, body, schema });
+}
+
+function areaServicePage(item, service, index) {
+  const canonicalPath = `/car-services/mumbai/${item.slug}/${service.slug}/`;
+  const title = `${service.name} in ${item.name} | Fast Mechanic`;
+  const description = `Fast Mechanic provides ${service.name.toLowerCase()} in ${item.name}, Mumbai. ${service.short} Call ${phoneDisplay} for local car help.`;
+  const nearby = nearbyAreas(item, index);
+  const schema = mergeSchema(
+    businessSchema({
+      canonicalPath,
+      name: `${service.name} in ${item.name}`,
+      description,
+      pageType: "Service",
+      areaServed: [item.name]
+    }),
+    [
+      breadcrumbSchema([
+        { label: "Home", path: "/" },
+        { label: "Car Services", path: "/car-services/" },
+        { label: "Mumbai", path: "/car-services/mumbai/" },
+        { label: item.name, path: `/car-services/mumbai/${item.slug}/` },
+        { label: service.name, path: canonicalPath }
+      ]),
+      faqSchema([
+        {
+          q: `Is ${service.name.toLowerCase()} available in ${item.name}?`,
+          a: `Yes. Fast Mechanic supports ${service.name.toLowerCase()} calls in ${item.name} and nearby locations around ${item.landmarks.slice(0, 3).join(", ")}.`
+        },
+        {
+          q: `How do I book ${service.name.toLowerCase()} in ${item.name}?`,
+          a: `Call ${phoneDisplay}, share your car model, exact location in ${item.name} and the nearest landmark.`
+        },
+        {
+          q: `What is the price for ${service.name.toLowerCase()} in ${item.name}?`,
+          a: service.price
+        }
+      ])
+    ]
+  );
+
+  const body = `${hero({
+    eyebrow: `PIN ${item.pin} Local Service`,
+    title: `${service.name} in ${item.name}.`,
+    lede: `${service.short} Fast Mechanic supports ${service.name.toLowerCase()} around ${item.landmarks.join(", ")} and nearby ${item.group} routes.`,
+    breadcrumbs: [
+      { label: "Home", href: "../../../../" },
+      { label: "Car Services", href: "../../../" },
+      { label: "Mumbai", href: "../../" },
+      { label: item.name, href: "../" },
+      { label: service.name }
+    ],
+    depth: 4
+  })}
+    <main>
+      <section class="silo-section">
+        <div class="container silo-intro-grid">
+          <div class="silo-copy">
+            <p class="eyebrow">${escapeHtml(item.group)}</p>
+            <h2>${escapeHtml(service.name)} support near ${escapeHtml(item.landmarks[0])}.</h2>
+            <p>This local page is focused on ${escapeHtml(service.name.toLowerCase())} searches in ${escapeHtml(item.name)}. It covers ${escapeHtml(item.issue)} and routes such as ${escapeHtml(item.roads.join(", "))}.</p>
+            <ul>
+              <li>Area: ${escapeHtml(item.name)}, Mumbai</li>
+              <li>Primary PIN code: ${escapeHtml(item.pin)}</li>
+              <li>Service: ${escapeHtml(service.name)}</li>
+              <li>Direct call: <a href="tel:${phoneTel}">${phoneDisplay}</a></li>
+              <li>Pricing: ${escapeHtml(service.price)}</li>
+            </ul>
+          </div>
+          <div class="silo-card">
+            <img src="../../../../${service.image}" alt="${escapeHtml(service.name)} in ${escapeHtml(item.name)} illustration" loading="lazy">
+            <h3>${escapeHtml(service.name)} in ${escapeHtml(item.name)}</h3>
+            <p>${escapeHtml(service.short)}</p>
+            <a class="service-cta" href="tel:${phoneTel}">${escapeHtml(service.cta)}</a>
+          </div>
+        </div>
+      </section>
+      <section class="silo-section alt">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Same Service Nearby</p>
+            <h2>${escapeHtml(service.name)} pages near ${escapeHtml(item.name)}.</h2>
+            <p>These links help search engines understand that Fast Mechanic covers this service across nearby service-area localities.</p>
+          </div>
+          <div class="area-directory">${areaServiceDirectory(nearby, service, "../../../../")}</div>
+        </div>
+      </section>
+      <section class="silo-section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Other ${escapeHtml(item.name)} Services</p>
+            <h2>All Fast Mechanic services in ${escapeHtml(item.name)}.</h2>
+          </div>
+          <div class="service-directory">${services.map((other) => `<a href="../../${item.slug}/${other.slug}/"><strong>${escapeHtml(other.name)} in ${escapeHtml(item.name)}</strong><span>${escapeHtml(other.short)}</span><em>View local service</em></a>`).join("")}</div>
+        </div>
+      </section>
+    </main>`;
+
+  return pageShell({ title, description, keywords: `${service.name} ${item.name}, ${service.intent}, ${item.name}, car service ${item.name}, Fast Mechanic`, canonicalPath, depth: 4, body, schema });
 }
 
 function nearbyAreas(item, index) {
@@ -870,7 +1044,8 @@ function sitemapXml() {
     { loc: "/car-services/", priority: "0.95", changefreq: "weekly" },
     { loc: "/car-services/mumbai/", priority: "0.95", changefreq: "weekly" },
     ...services.map((service) => ({ loc: `/car-services/mumbai/${service.slug}/`, priority: "0.88", changefreq: "weekly" })),
-    ...areas.map((item) => ({ loc: `/car-services/mumbai/${item.slug}/`, priority: "0.84", changefreq: "weekly" }))
+    ...areas.map((item) => ({ loc: `/car-services/mumbai/${item.slug}/`, priority: "0.84", changefreq: "weekly" })),
+    ...areas.flatMap((item) => services.map((service) => ({ loc: `/car-services/mumbai/${item.slug}/${service.slug}/`, priority: "0.78", changefreq: "weekly" })))
   ];
 
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -896,13 +1071,16 @@ async function main() {
 
   for (const [index, item] of areas.entries()) {
     await writePage(`car-services/mumbai/${item.slug}/index.html`, areaPage(item, index));
+    for (const service of services) {
+      await writePage(`car-services/mumbai/${item.slug}/${service.slug}/index.html`, areaServicePage(item, service, index));
+    }
   }
 
   const sitemap = sitemapXml();
   await writePage("sitemap.xml", sitemap);
   await writePage("google-ads-kit/site-files/sitemap.xml", sitemap);
 
-  console.log(`Generated ${areas.length} area pages, ${services.length} service pages, category pages and sitemap.`);
+  console.log(`Generated ${areas.length} area pages, ${services.length} service pages, ${areas.length * services.length} area-service pages, category pages and sitemap.`);
 }
 
 main().catch((error) => {

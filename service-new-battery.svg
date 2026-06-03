@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">New car battery sale and fitting</title>
+  <desc id="desc">Illustration of a new automotive battery with charging bolt.</desc>
+  <rect width="640" height="400" fill="#0b1720"/>
+  <rect y="286" width="640" height="114" fill="#203a49"/>
+  <rect x="150" y="118" width="340" height="190" rx="22" fill="#f8c948"/>
+  <rect x="172" y="150" width="116" height="68" fill="#fff7dc"/>
+  <rect x="320" y="150" width="116" height="68" fill="#fff7dc"/>
+  <rect x="178" y="244" width="254" height="22" rx="11" fill="#0b1720"/>
+  <rect x="108" y="166" width="42" height="80" rx="10" fill="#f8c948"/>
+  <rect x="490" y="166" width="42" height="80" rx="10" fill="#f8c948"/>
+  <rect x="114" y="138" width="30" height="36" rx="8" fill="#ff4f1f"/>
+  <rect x="496" y="138" width="30" height="36" rx="8" fill="#36f08b"/>
+  <path d="M331 78 238 226h82l-34 106 116-166h-82z" fill="#ff4f1f"/>
+  <circle cx="152" cy="324" r="28" fill="#071018"/>
+  <circle cx="152" cy="324" r="12" fill="#f6f8f4"/>
+  <circle cx="490" cy="324" r="28" fill="#071018"/>
+  <circle cx="490" cy="324" r="12" fill="#f6f8f4"/>
+</svg>
