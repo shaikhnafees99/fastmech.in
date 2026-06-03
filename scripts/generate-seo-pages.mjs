@@ -88,6 +88,62 @@ const services = [
   }
 ];
 
+const brandSeoServiceSlugs = new Set([
+  "new-battery-sale",
+  "battery-jump-start",
+  "towing-service",
+  "car-mechanic",
+  "roadside-assistance"
+]);
+
+const brandSeoAreaSlugs = new Set([
+  "south-mumbai",
+  "colaba",
+  "fort",
+  "churchgate",
+  "nariman-point",
+  "lower-parel",
+  "bandra-west",
+  "bandra-east",
+  "bkc",
+  "andheri-east",
+  "andheri-west",
+  "chakala",
+  "marol",
+  "powai",
+  "kurla",
+  "chembur",
+  "ghatkopar-east",
+  "thane-west",
+  "vashi",
+  "airoli"
+]);
+
+const carBrands = [
+  brand("maruti-suzuki", "Maruti Suzuki", ["Swift", "Baleno", "WagonR", "Dzire", "Ertiga"]),
+  brand("hyundai", "Hyundai", ["i20", "Creta", "Venue", "Verna", "Grand i10"]),
+  brand("tata", "Tata", ["Nexon", "Punch", "Tiago", "Altroz", "Harrier"]),
+  brand("mahindra", "Mahindra", ["Scorpio", "XUV700", "XUV300", "Bolero", "Thar"]),
+  brand("honda", "Honda", ["City", "Amaze", "Jazz", "WR-V", "Elevate"]),
+  brand("toyota", "Toyota", ["Innova", "Fortuner", "Glanza", "Urban Cruiser", "Etios"]),
+  brand("kia", "Kia", ["Seltos", "Sonet", "Carens", "Carnival"]),
+  brand("mg", "MG", ["Hector", "Astor", "ZS EV", "Gloster"]),
+  brand("skoda", "Skoda", ["Rapid", "Slavia", "Kushaq", "Octavia"]),
+  brand("volkswagen", "Volkswagen", ["Polo", "Vento", "Virtus", "Taigun"]),
+  brand("renault", "Renault", ["Kwid", "Kiger", "Triber", "Duster"]),
+  brand("nissan", "Nissan", ["Magnite", "Sunny", "Terrano", "Micra"]),
+  brand("ford", "Ford", ["EcoSport", "Figo", "Endeavour", "Aspire"]),
+  brand("chevrolet", "Chevrolet", ["Beat", "Spark", "Cruze", "Enjoy"]),
+  brand("mercedes-benz", "Mercedes-Benz", ["C-Class", "E-Class", "GLA", "GLC"]),
+  brand("bmw", "BMW", ["3 Series", "5 Series", "X1", "X3"]),
+  brand("audi", "Audi", ["A3", "A4", "Q3", "Q5"]),
+  brand("jeep", "Jeep", ["Compass", "Meridian", "Wrangler"]),
+  brand("fiat", "Fiat", ["Punto", "Linea", "Avventura"]),
+  brand("citroen", "Citroen", ["C3", "C3 Aircross", "C5 Aircross"])
+];
+
+const priorityCarBrands = carBrands.slice(0, 10);
+
 const areas = [
   area("south-mumbai", "South Mumbai", "400001-400010", "South Mumbai", ["Fort", "Colaba", "Churchgate", "Marine Lines", "Nariman Point"], ["Marine Drive", "P D'Mello Road", "Free Press Journal Marg"], "business district parking, station roads and late-night office exits"),
   area("colaba", "Colaba", "400005", "South Mumbai", ["Gateway of India", "Colaba Causeway", "Cuffe Parade", "Sassoon Dock"], ["Shahid Bhagat Singh Road", "Nathalal Parekh Marg"], "tourist traffic, hotel parking and narrow market lanes"),
@@ -218,6 +274,10 @@ function area(slug, name, pin, group, landmarks, roads, issue) {
   return { slug, name, pin, group, landmarks, roads, issue };
 }
 
+function brand(slug, name, models) {
+  return { slug, name, models };
+}
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -232,6 +292,26 @@ function slugTitle(slug) {
 
 function relativePrefix(depth) {
   return "../".repeat(depth);
+}
+
+function flatAreaServiceSlug(item, service) {
+  return `${service.slug}-in-${item.slug}`;
+}
+
+function flatAreaServicePath(item, service) {
+  return `/car-services/mumbai/${flatAreaServiceSlug(item, service)}/`;
+}
+
+function brandServicePath(item, service, carBrand) {
+  return `/car-services/mumbai/${flatAreaServiceSlug(item, service)}/${carBrand.slug}/`;
+}
+
+function brandEnabled(service) {
+  return brandSeoServiceSlugs.has(service.slug);
+}
+
+function brandPageEnabled(item, service) {
+  return brandEnabled(service) && brandSeoAreaSlugs.has(item.slug);
 }
 
 function pageShell({ title, description, keywords, canonicalPath, depth, body, schema }) {
@@ -424,15 +504,32 @@ function areaServiceCards(item, prefix = "") {
         <img src="${prefix}${service.image}" alt="${escapeHtml(service.name)} in ${escapeHtml(item.name)} illustration" loading="lazy">
         <h3>${escapeHtml(service.name)} in ${escapeHtml(item.name)}</h3>
         <p>${escapeHtml(service.short)}</p>
-        <a class="service-cta" href="${prefix}car-services/mumbai/${item.slug}/${service.slug}/">View ${escapeHtml(item.name)} page</a>
+        <a class="service-cta" href="${prefix}car-services/mumbai/${flatAreaServiceSlug(item, service)}/">View ${escapeHtml(item.name)} page</a>
       </article>`).join("");
 }
 
 function areaServiceDirectory(areaList, service, prefix = "") {
-  return areaList.map((item) => `<a href="${prefix}car-services/mumbai/${item.slug}/${service.slug}/">
+  return areaList.map((item) => `<a href="${prefix}car-services/mumbai/${flatAreaServiceSlug(item, service)}/">
       <strong>${escapeHtml(service.name)} in ${escapeHtml(item.name)}</strong>
       <span>PIN ${escapeHtml(item.pin)} - ${escapeHtml(item.landmarks.slice(0, 3).join(", "))}</span>
       <em>View local service page</em>
+    </a>`).join("");
+}
+
+function brandDirectory(item, service, prefix = "") {
+  if (!brandPageEnabled(item, service)) return "";
+  return priorityCarBrands.map((carBrand) => `<a href="${prefix}car-services/mumbai/${flatAreaServiceSlug(item, service)}/${carBrand.slug}/">
+      <strong>${escapeHtml(carBrand.name)} ${escapeHtml(service.name)} in ${escapeHtml(item.name)}</strong>
+      <span>Popular models: ${escapeHtml(carBrand.models.slice(0, 4).join(", "))}</span>
+      <em>View car brand page</em>
+    </a>`).join("");
+}
+
+function brandAreaDirectory(areaList, service, carBrand, prefix = "") {
+  return areaList.map((item) => `<a href="${prefix}car-services/mumbai/${flatAreaServiceSlug(item, service)}/${carBrand.slug}/">
+      <strong>${escapeHtml(carBrand.name)} ${escapeHtml(service.name)} in ${escapeHtml(item.name)}</strong>
+      <span>PIN ${escapeHtml(item.pin)} - ${escapeHtml(item.landmarks.slice(0, 3).join(", "))}</span>
+      <em>View nearby brand page</em>
     </a>`).join("");
 }
 
@@ -917,8 +1014,8 @@ function areaPage(item, index) {
   return pageShell({ title, description, keywords: `new battery sale ${item.name}, car battery ${item.name}, car mechanic ${item.name}, roadside assistance ${item.name}, towing service ${item.name}, battery jump start ${item.name}, petrol delivery ${item.name}, stepney change ${item.name}, Fast Mechanic ${item.name}`, canonicalPath, depth: 3, body, schema });
 }
 
-function areaServicePage(item, service, index) {
-  const canonicalPath = `/car-services/mumbai/${item.slug}/${service.slug}/`;
+function flatAreaServicePage(item, service, index) {
+  const canonicalPath = flatAreaServicePath(item, service);
   const title = `${service.name} in ${item.name} | Fast Mechanic`;
   const description = `Fast Mechanic provides ${service.name.toLowerCase()} in ${item.name}, Mumbai. ${service.short} Call ${phoneDisplay} for local car help.`;
   const nearby = nearbyAreas(item, index);
@@ -960,13 +1057,13 @@ function areaServicePage(item, service, index) {
     title: `${service.name} in ${item.name}.`,
     lede: `${service.short} Fast Mechanic supports ${service.name.toLowerCase()} around ${item.landmarks.join(", ")} and nearby ${item.group} routes.`,
     breadcrumbs: [
-      { label: "Home", href: "../../../../" },
-      { label: "Car Services", href: "../../../" },
-      { label: "Mumbai", href: "../../" },
-      { label: item.name, href: "../" },
+      { label: "Home", href: "../../../" },
+      { label: "Car Services", href: "../../" },
+      { label: "Mumbai", href: "../" },
+      { label: item.name, href: `../${item.slug}/` },
       { label: service.name }
     ],
-    depth: 4
+    depth: 3
   })}
     <main>
       <section class="silo-section">
@@ -984,7 +1081,7 @@ function areaServicePage(item, service, index) {
             </ul>
           </div>
           <div class="silo-card">
-            <img src="../../../../${service.image}" alt="${escapeHtml(service.name)} in ${escapeHtml(item.name)} illustration" loading="lazy">
+            <img src="../../../${service.image}" alt="${escapeHtml(service.name)} in ${escapeHtml(item.name)} illustration" loading="lazy">
             <h3>${escapeHtml(service.name)} in ${escapeHtml(item.name)}</h3>
             <p>${escapeHtml(service.short)}</p>
             <a class="service-cta" href="tel:${phoneTel}">${escapeHtml(service.cta)}</a>
@@ -998,21 +1095,177 @@ function areaServicePage(item, service, index) {
             <h2>${escapeHtml(service.name)} pages near ${escapeHtml(item.name)}.</h2>
             <p>These links help search engines understand that Fast Mechanic covers this service across nearby service-area localities.</p>
           </div>
-          <div class="area-directory">${areaServiceDirectory(nearby, service, "../../../../")}</div>
+          <div class="area-directory">${areaServiceDirectory(nearby, service, "../../../")}</div>
         </div>
       </section>
+      ${brandPageEnabled(item, service) ? `<section class="silo-section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Car Brand Pages</p>
+            <h2>${escapeHtml(service.name)} in ${escapeHtml(item.name)} by car brand.</h2>
+            <p>These pages target high-intent searches such as Maruti Suzuki ${escapeHtml(service.name.toLowerCase())} in ${escapeHtml(item.name)} and Hyundai ${escapeHtml(service.name.toLowerCase())} in ${escapeHtml(item.name)}.</p>
+          </div>
+          <div class="area-directory">${brandDirectory(item, service, "../../../")}</div>
+        </div>
+      </section>` : ""}
       <section class="silo-section">
         <div class="container">
           <div class="section-head">
             <p class="eyebrow">Other ${escapeHtml(item.name)} Services</p>
             <h2>All Fast Mechanic services in ${escapeHtml(item.name)}.</h2>
           </div>
-          <div class="service-directory">${services.map((other) => `<a href="../../${item.slug}/${other.slug}/"><strong>${escapeHtml(other.name)} in ${escapeHtml(item.name)}</strong><span>${escapeHtml(other.short)}</span><em>View local service</em></a>`).join("")}</div>
+          <div class="service-directory">${services.map((other) => `<a href="../${flatAreaServiceSlug(item, other)}/"><strong>${escapeHtml(other.name)} in ${escapeHtml(item.name)}</strong><span>${escapeHtml(other.short)}</span><em>View local service</em></a>`).join("")}</div>
         </div>
       </section>
     </main>`;
 
-  return pageShell({ title, description, keywords: `${service.name} ${item.name}, ${service.intent}, ${item.name}, car service ${item.name}, Fast Mechanic`, canonicalPath, depth: 4, body, schema });
+  return pageShell({ title, description, keywords: `${service.name} ${item.name}, ${service.intent}, ${item.name}, car service ${item.name}, Fast Mechanic`, canonicalPath, depth: 3, body, schema });
+}
+
+function brandServicePage(item, service, carBrand, index) {
+  const canonicalPath = brandServicePath(item, service, carBrand);
+  const title = `${carBrand.name} ${service.name} in ${item.name} | Fast Mechanic`;
+  const description = `Fast Mechanic provides ${carBrand.name} ${service.name.toLowerCase()} in ${item.name}, Mumbai. Support for models like ${carBrand.models.slice(0, 4).join(", ")}. Call ${phoneDisplay}.`;
+  const nearby = nearbyAreas(item, index);
+  const modelText = carBrand.models.join(", ");
+  const schema = mergeSchema(
+    businessSchema({
+      canonicalPath,
+      name: `${carBrand.name} ${service.name} in ${item.name}`,
+      description,
+      pageType: "Service",
+      areaServed: [item.name]
+    }),
+    [
+      breadcrumbSchema([
+        { label: "Home", path: "/" },
+        { label: "Car Services", path: "/car-services/" },
+        { label: "Mumbai", path: "/car-services/mumbai/" },
+        { label: `${service.name} in ${item.name}`, path: flatAreaServicePath(item, service) },
+        { label: carBrand.name, path: canonicalPath }
+      ]),
+      faqSchema([
+        {
+          q: `Is ${carBrand.name} ${service.name.toLowerCase()} available in ${item.name}?`,
+          a: `Yes. Fast Mechanic supports ${carBrand.name} ${service.name.toLowerCase()} calls in ${item.name}, including common models such as ${modelText}.`
+        },
+        {
+          q: `What details should I share for ${carBrand.name} ${service.name.toLowerCase()}?`,
+          a: `Call ${phoneDisplay} with your ${carBrand.name} model, fuel type if known, current issue, exact ${item.name} location and nearest landmark.`
+        },
+        {
+          q: `Does Fast Mechanic support ${carBrand.name} roadside calls near ${item.landmarks[0]}?`,
+          a: `Yes. Fast Mechanic supports roadside and doorstep coordination around ${item.landmarks.slice(0, 3).join(", ")} and nearby ${item.group} roads.`
+        }
+      ]),
+      {
+        "@type": "Service",
+        name: `${carBrand.name} ${service.name} in ${item.name}`,
+        serviceType: `${service.name} for ${carBrand.name} cars`,
+        provider: { "@id": `${siteUrl}/#business` },
+        areaServed: item.name,
+        brand: {
+          "@type": "Brand",
+          name: carBrand.name
+        }
+      }
+    ]
+  );
+
+  const body = `${hero({
+    eyebrow: `${carBrand.name} Car Help`,
+    title: `${carBrand.name} ${service.name} in ${item.name}.`,
+    lede: `Fast Mechanic supports ${carBrand.name} ${service.name.toLowerCase()} calls around ${item.landmarks.join(", ")} for models such as ${modelText}.`,
+    breadcrumbs: [
+      { label: "Home", href: "../../../../" },
+      { label: "Car Services", href: "../../../" },
+      { label: "Mumbai", href: "../../" },
+      { label: `${service.name} in ${item.name}`, href: "../" },
+      { label: carBrand.name }
+    ],
+    depth: 4
+  })}
+    <main>
+      <section class="silo-section">
+        <div class="container silo-intro-grid">
+          <div class="silo-copy">
+            <p class="eyebrow">${escapeHtml(item.group)} Brand Page</p>
+            <h2>${escapeHtml(carBrand.name)} ${escapeHtml(service.name.toLowerCase())} support near ${escapeHtml(item.landmarks[0])}.</h2>
+            <p>This page targets specific searches such as ${escapeHtml(carBrand.name)} ${escapeHtml(service.name.toLowerCase())} in ${escapeHtml(item.name)}, ${escapeHtml(carBrand.name)} car help in ${escapeHtml(item.name)} and ${escapeHtml(carBrand.name)} roadside assistance near ${escapeHtml(item.landmarks[0])}.</p>
+            <p>Common ${escapeHtml(carBrand.name)} models include ${escapeHtml(modelText)}. Share your model name, exact location and current issue when calling.</p>
+            <ul>
+              <li>Brand: ${escapeHtml(carBrand.name)}</li>
+              <li>Service: ${escapeHtml(service.name)}</li>
+              <li>Area: ${escapeHtml(item.name)}, Mumbai</li>
+              <li>Nearby landmarks: ${escapeHtml(item.landmarks.slice(0, 4).join(", "))}</li>
+              <li>Direct call: <a href="tel:${phoneTel}">${phoneDisplay}</a></li>
+            </ul>
+          </div>
+          <div class="silo-card">
+            <img src="../../../../${service.image}" alt="${escapeHtml(carBrand.name)} ${escapeHtml(service.name)} in ${escapeHtml(item.name)} illustration" loading="lazy">
+            <h3>${escapeHtml(carBrand.name)} ${escapeHtml(service.name)}</h3>
+            <p>${escapeHtml(service.short)} Support can depend on model, location, vehicle condition and current availability.</p>
+            <a class="service-cta" href="tel:${phoneTel}">${escapeHtml(service.cta)}</a>
+          </div>
+        </div>
+      </section>
+      <section class="silo-section alt">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Model Search Intent</p>
+            <h2>Popular ${escapeHtml(carBrand.name)} model searches in ${escapeHtml(item.name)}.</h2>
+            <p>These internal signals help connect Fast Mechanic with realistic car-owner searches, without creating a separate thin page for every model variant.</p>
+          </div>
+          <div class="faq-mini-grid">
+            ${carBrand.models.map((model) => `<article class="faq-mini-card"><h3>${escapeHtml(model)} ${escapeHtml(service.name)} in ${escapeHtml(item.name)}</h3><p>Call ${phoneDisplay} for ${escapeHtml(model)} ${escapeHtml(service.name.toLowerCase())} support near ${escapeHtml(item.landmarks[0])}, ${escapeHtml(item.name)}.</p></article>`).join("")}
+          </div>
+        </div>
+      </section>
+      <section class="silo-section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Same Brand Nearby</p>
+            <h2>${escapeHtml(carBrand.name)} ${escapeHtml(service.name)} pages near ${escapeHtml(item.name)}.</h2>
+            <p>These nearby links support the local radius for brand-specific roadside and doorstep car help.</p>
+          </div>
+          <div class="area-directory">${brandAreaDirectory(nearby, service, carBrand, "../../../../")}</div>
+        </div>
+      </section>
+      <section class="silo-section alt">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Other Brands</p>
+            <h2>Other car brands for ${escapeHtml(service.name)} in ${escapeHtml(item.name)}.</h2>
+          </div>
+          <div class="area-directory">${brandDirectory(item, service, "../../../../")}</div>
+        </div>
+      </section>
+    </main>`;
+
+  return pageShell({ title, description, keywords: `${carBrand.name} ${service.name} ${item.name}, ${carBrand.name} car help ${item.name}, ${service.intent}, ${item.name}, Fast Mechanic`, canonicalPath, depth: 4, body, schema });
+}
+
+function legacyAreaServicePage(item, service) {
+  const targetPath = flatAreaServicePath(item, service);
+  const targetRelative = `../../../../car-services/mumbai/${flatAreaServiceSlug(item, service)}/`;
+  const title = `${service.name} in ${item.name} | Fast Mechanic`;
+  return `<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${escapeHtml(title)}</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="${siteUrl}${targetPath}">
+    <meta http-equiv="refresh" content="0; url=${targetRelative}">
+    <script>window.location.replace("${targetRelative}");</script>
+  </head>
+  <body>
+    <p>${escapeHtml(title)} moved to <a href="${targetRelative}">${escapeHtml(`${siteUrl}${targetPath}`)}</a>.</p>
+    <p>For urgent Fast Mechanic help, call <a href="tel:${phoneTel}">${phoneDisplay}</a>.</p>
+  </body>
+</html>
+`;
 }
 
 function nearbyAreas(item, index) {
@@ -1038,16 +1291,7 @@ async function writePage(relativePath, html) {
   await writeFile(fullPath, html, "utf8");
 }
 
-function sitemapXml() {
-  const urls = [
-    { loc: "/", priority: "1.0", changefreq: "weekly" },
-    { loc: "/car-services/", priority: "0.95", changefreq: "weekly" },
-    { loc: "/car-services/mumbai/", priority: "0.95", changefreq: "weekly" },
-    ...services.map((service) => ({ loc: `/car-services/mumbai/${service.slug}/`, priority: "0.88", changefreq: "weekly" })),
-    ...areas.map((item) => ({ loc: `/car-services/mumbai/${item.slug}/`, priority: "0.84", changefreq: "weekly" })),
-    ...areas.flatMap((item) => services.map((service) => ({ loc: `/car-services/mumbai/${item.slug}/${service.slug}/`, priority: "0.78", changefreq: "weekly" })))
-  ];
-
+function sitemapUrlset(urls) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((url) => `  <url>
@@ -1060,8 +1304,37 @@ ${urls.map((url) => `  <url>
 `;
 }
 
+function sitemapIndexXml(files) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${files.map((file) => `  <sitemap>
+    <loc>${siteUrl}/sitemap/${file}</loc>
+    <lastmod>${lastmod}</lastmod>
+  </sitemap>`).join("\n")}
+</sitemapindex>
+`;
+}
+
+function sitemapGroups() {
+  const modelServices = services.filter((service) => brandEnabled(service));
+  const modelAreas = areas.filter((item) => brandSeoAreaSlugs.has(item.slug));
+  return {
+    "main.xml": [
+      { loc: "/", priority: "1.0", changefreq: "weekly" },
+      { loc: "/car-services/", priority: "0.95", changefreq: "weekly" },
+      { loc: "/car-services/mumbai/", priority: "0.95", changefreq: "weekly" },
+      ...services.map((service) => ({ loc: `/car-services/mumbai/${service.slug}/`, priority: "0.88", changefreq: "weekly" }))
+    ],
+    "mumbai-areas.xml": areas.map((item) => ({ loc: `/car-services/mumbai/${item.slug}/`, priority: "0.84", changefreq: "weekly" })),
+    "mumbai-services.xml": areas.flatMap((item) => services.map((service) => ({ loc: flatAreaServicePath(item, service), priority: "0.80", changefreq: "weekly" }))),
+    "mumbai-car-brands.xml": modelAreas.flatMap((item) => modelServices.flatMap((service) => priorityCarBrands.map((carBrand) => ({ loc: brandServicePath(item, service, carBrand), priority: "0.72", changefreq: "weekly" }))))
+  };
+}
+
 async function main() {
   await rm(path.join(root, "car-services"), { recursive: true, force: true });
+  await rm(path.join(root, "sitemap"), { recursive: true, force: true });
+  await rm(path.join(root, "google-ads-kit/site-files/sitemap"), { recursive: true, force: true });
   await writePage("car-services/index.html", categoryPage());
   await writePage("car-services/mumbai/index.html", cityPage());
 
@@ -1069,18 +1342,37 @@ async function main() {
     await writePage(`car-services/mumbai/${service.slug}/index.html`, servicePage(service));
   }
 
+  const modelServices = services.filter((service) => brandEnabled(service));
+  const modelAreas = areas.filter((item) => brandSeoAreaSlugs.has(item.slug));
   for (const [index, item] of areas.entries()) {
     await writePage(`car-services/mumbai/${item.slug}/index.html`, areaPage(item, index));
     for (const service of services) {
-      await writePage(`car-services/mumbai/${item.slug}/${service.slug}/index.html`, areaServicePage(item, service, index));
+      await writePage(`car-services/mumbai/${flatAreaServiceSlug(item, service)}/index.html`, flatAreaServicePage(item, service, index));
+      await writePage(`car-services/mumbai/${item.slug}/${service.slug}/index.html`, legacyAreaServicePage(item, service));
     }
   }
 
-  const sitemap = sitemapXml();
-  await writePage("sitemap.xml", sitemap);
-  await writePage("google-ads-kit/site-files/sitemap.xml", sitemap);
+  for (const item of modelAreas) {
+    const index = areas.findIndex((candidate) => candidate.slug === item.slug);
+    for (const service of modelServices) {
+      for (const carBrand of priorityCarBrands) {
+        await writePage(`car-services/mumbai/${flatAreaServiceSlug(item, service)}/${carBrand.slug}/index.html`, brandServicePage(item, service, carBrand, index));
+      }
+    }
+  }
 
-  console.log(`Generated ${areas.length} area pages, ${services.length} service pages, ${areas.length * services.length} area-service pages, category pages and sitemap.`);
+  const groups = sitemapGroups();
+  const sitemapFiles = Object.keys(groups);
+  const sitemapIndex = sitemapIndexXml(sitemapFiles);
+  await writePage("sitemap.xml", sitemapIndex);
+  await writePage("google-ads-kit/site-files/sitemap.xml", sitemapIndex);
+  for (const [file, urls] of Object.entries(groups)) {
+    const xml = sitemapUrlset(urls);
+    await writePage(`sitemap/${file}`, xml);
+    await writePage(`google-ads-kit/site-files/sitemap/${file}`, xml);
+  }
+
+  console.log(`Generated ${areas.length} area pages, ${services.length} service pages, ${areas.length * services.length} flat area-service pages, ${areas.length * services.length} legacy pages, ${modelAreas.length * modelServices.length * priorityCarBrands.length} brand pages and ${sitemapFiles.length} sitemap files.`);
 }
 
 main().catch((error) => {

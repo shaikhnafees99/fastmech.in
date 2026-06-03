@@ -27,4 +27,4 @@ Prepared for Fast Mechanic Mumbai roadside assistance.
 - business-profile/google-business-profile-details.md
 - tracking/google-ads-conversion-tracking-needed.md
 - images/png-ready/ image assets for ads and profile uploads
-- site-files/ verification, sitemap, robots, vCard copies
+- site-files/ verification file, sitemap index, split sitemap folder, robots, vCard copies
