@@ -8,7 +8,7 @@ const siteUrl = "https://fastmech.in";
 const phoneDisplay = "+91 70218 10153";
 const phoneTel = "+917021810153";
 const whatsappUrl = "https://wa.me/917021810153?text=Hi%20Fast%20Mechanic%2C%20I%20need%20roadside%20assistance%20in%20Mumbai.";
-const lastmod = "2026-06-03";
+const lastmod = "2026-07-07";
 const address = "New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010, India";
 const mapUrl = "https://www.google.com/maps?q=18.9788291,72.8482657";
 const openGraphImage = `${siteUrl}/google-ads-kit/images/png-ready/fast-mechanic-search-ad-1200x628.png`;
@@ -87,6 +87,89 @@ const services = [
     price: "Call for quote and available support options"
   }
 ];
+
+const serviceGuidance = {
+  "new-battery-sale": {
+    scope: "Battery fitment depends on the vehicle variant, battery tray size, terminal layout, warranty preference and current stock.",
+    safety: "Do not touch or attempt to charge a battery that is swollen, leaking, unusually hot or producing a strong smell.",
+    modelAdvice: "Share the model year, fuel type and whether the car has start-stop technology so the correct battery specification can be checked.",
+    checks: [
+      ["Vehicle details", "Share the car make, model, model year and fuel type."],
+      ["Battery condition", "Describe whether the battery is weak, completely dead, swollen, leaking or showing a dashboard warning."],
+      ["Access details", "Mention basement height, society gate, roadside position or any parking restriction before assistance is arranged."]
+    ]
+  },
+  "battery-jump-start": {
+    scope: "Jump-start suitability depends on battery condition, terminal access and whether the vehicle uses a conventional 12-volt system.",
+    safety: "Keep hands and metal objects away from battery terminals. Do not attempt a jump start if the battery is cracked, leaking or swollen.",
+    modelAdvice: "Share the model year, fuel type, dashboard warning lights and whether the starter clicks or remains silent.",
+    checks: [
+      ["Starting symptom", "Tell us whether the starter clicks, cranks slowly, remains silent or the dashboard lights are completely off."],
+      ["Vehicle details", "Share the car make, model, model year and fuel type."],
+      ["Safe access", "Move passengers to a safe place, switch off accessories and describe the exact parking or roadside position."]
+    ]
+  },
+  "towing-service": {
+    scope: "The towing method depends on transmission, drivetrain, wheel condition, ground clearance and access at the pickup point.",
+    safety: "Do not continue driving after a collision, severe overheating, brake failure, major fluid leak or damaged wheel.",
+    modelAdvice: "Share whether the vehicle is automatic or manual, whether the steering and wheels move, and the intended drop location.",
+    checks: [
+      ["Pickup and drop", "Share exact pickup and destination locations with nearby landmarks."],
+      ["Vehicle condition", "Tell us whether the car rolls, steers, has locked wheels or has accident damage."],
+      ["Access restrictions", "Mention basement height, narrow lanes, traffic restrictions or society entry requirements."]
+    ]
+  },
+  "petrol-delivery": {
+    scope: "Fuel assistance depends on route access, current availability and a safe stopping position for the vehicle.",
+    safety: "Switch off the ignition, avoid smoking or open flames and wait away from moving traffic where possible.",
+    modelAdvice: "Confirm the correct fuel type before assistance is arranged; never add petrol to a diesel vehicle or diesel to a petrol vehicle.",
+    checks: [
+      ["Fuel type", "Confirm whether the vehicle requires petrol or diesel before assistance is arranged."],
+      ["Exact location", "Share a live location, road direction and nearest landmark."],
+      ["Vehicle position", "Tell us whether the car is safely parked, blocking traffic or stopped on a flyover or highway shoulder."]
+    ]
+  },
+  "key-lock-assistance": {
+    scope: "Lockout assistance depends on the key type, vehicle model, lock condition and whether a spare key is available.",
+    safety: "Do not force the window, door frame or electronic lock because this can cause costly damage.",
+    modelAdvice: "Share whether the key is locked inside, lost, broken, not detected or the remote battery appears weak.",
+    checks: [
+      ["Key situation", "Explain whether the key is inside the car, lost, broken or not detected by the vehicle."],
+      ["Vehicle details", "Share the make, model, model year and key type if known."],
+      ["Ownership details", "Keep vehicle identification or ownership proof available when assistance is requested."]
+    ]
+  },
+  "stepney-change": {
+    scope: "A spare-wheel change depends on a usable stepney, wheel tools, wheel condition and a stable place to lift the car.",
+    safety: "Do not stand on the traffic side of the vehicle or attempt to use a jack on a slope, soft ground or an unsafe highway lane.",
+    modelAdvice: "Share whether the spare wheel and factory toolkit are present and whether any wheel nut is damaged or locked.",
+    checks: [
+      ["Tyre condition", "Describe whether the tyre is punctured, torn, off the rim or affected by wheel damage."],
+      ["Spare and tools", "Confirm whether the stepney, jack and wheel spanner are available."],
+      ["Safe position", "Share the road surface, traffic conditions and exact vehicle location."]
+    ]
+  },
+  "car-mechanic": {
+    scope: "Roadside diagnosis is intended for starting trouble, warning lights, overheating and minor faults; major repairs may require towing.",
+    safety: "Stop driving if the temperature warning is high, brakes feel unsafe, oil pressure is low or fluid is leaking heavily.",
+    modelAdvice: "Share the warning lights, sounds, smells and events immediately before the fault appeared.",
+    checks: [
+      ["Symptoms", "Describe warning lights, unusual sounds, smells, leaks and whether the engine starts."],
+      ["Recent events", "Mention recent repairs, battery replacement, overheating, water exposure or an impact."],
+      ["Vehicle details", "Share the make, model, model year, fuel type and transmission."]
+    ]
+  },
+  "roadside-assistance": {
+    scope: "The first call is used to identify whether the safest response is a jump start, battery replacement, towing, fuel help, stepney change, lockout help or mechanic visit.",
+    safety: "Turn on hazard lights, move away from active traffic when possible and avoid standing between the vehicle and moving traffic.",
+    modelAdvice: "Share the vehicle model, exact symptom, warning lights and whether the car can roll, steer or start.",
+    checks: [
+      ["Immediate problem", "Describe what happened and whether the vehicle can start, steer, roll or move safely."],
+      ["Exact position", "Share a live location, road direction, nearest landmark and parking access details."],
+      ["Vehicle details", "Share the make, model, model year, fuel type and transmission."]
+    ]
+  }
+};
 
 const brandSeoServiceSlugs = new Set([
   "new-battery-sale",
@@ -314,7 +397,7 @@ function brandPageEnabled(item, service) {
   return brandEnabled(service) && brandSeoAreaSlugs.has(item.slug);
 }
 
-function pageShell({ title, description, keywords, canonicalPath, depth, body, schema }) {
+function pageShell({ title, description, canonicalPath, depth, body, schema }) {
   const prefix = relativePrefix(depth);
   const canonical = `${siteUrl}${canonicalPath}`;
   return `<!doctype html>
@@ -324,14 +407,14 @@ function pageShell({ title, description, keywords, canonicalPath, depth, body, s
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}">
-    <meta name="keywords" content="${escapeHtml(keywords)}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="format-detection" content="telephone=yes">
     <meta name="geo.region" content="IN-MH">
     <meta name="geo.placename" content="Mumbai">
     <link rel="canonical" href="${canonical}">
+    <link rel="alternate" hreflang="en-IN" href="${canonical}">
     <link rel="icon" type="image/svg+xml" href="${prefix}logo.svg?v=realistic-20260526">
-    <link rel="stylesheet" href="${prefix}styles.css?v=20260603-silo">
+    <link rel="stylesheet" href="${prefix}styles.css?v=20260704-indexing">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Fast Mechanic">
     <meta property="og:title" content="${escapeHtml(title)}">
@@ -600,6 +683,7 @@ function businessSchema({ canonicalPath, name, description, pageType = "AutoRepa
         name,
         url: `${siteUrl}${canonicalPath}`,
         description,
+        dateModified: lastmod,
         provider: { "@id": `${siteUrl}/#business` },
         isPartOf: { "@id": `${siteUrl}/#website` }
       },
@@ -663,7 +747,7 @@ function categoryPage() {
   );
 
   const body = `${hero({
-    eyebrow: "Car Service Silo",
+    eyebrow: "Mumbai Car Services",
     title: "Car services and roadside assistance in Mumbai.",
     lede: "Use this service hub to reach emergency car help pages for Mumbai, South Mumbai, Andheri, Thane, Vashi and every named locality in the active Fast Mechanic radius.",
     breadcrumbs: [
@@ -677,8 +761,8 @@ function categoryPage() {
         <div class="container silo-intro-grid">
           <div class="silo-copy">
             <p class="eyebrow">Service Categories</p>
-            <h2>Emergency help pages for high-intent car breakdown searches.</h2>
-            <p>Fast Mechanic separates each major emergency service so Google and customers can understand exactly what is available before calling. Every service page links into the Mumbai area pages for stronger local relevance.</p>
+            <h2>Choose the service that matches your car problem.</h2>
+            <p>Open a service below for safety guidance, information to share on the call, coverage areas and direct contact options. If you are unsure which service is needed, call roadside assistance and describe the vehicle symptoms.</p>
           </div>
           <div class="silo-card-grid">${serviceCards("../")}</div>
         </div>
@@ -750,13 +834,13 @@ function cityPage() {
       <section class="silo-section">
         <div class="container silo-intro-grid">
           <div class="silo-copy">
-            <p class="eyebrow">Mumbai Local SEO Page</p>
+            <p class="eyebrow">Mumbai Service Coverage</p>
             <h2>Doorstep and roadside car repair for Mumbai breakdown locations.</h2>
-            <p>Fast Mechanic targets real Mumbai emergency points: residential towers, office basements, mall parking, railway station roads, airport routes, Eastern Express Highway, Western Express Highway, Sion-Panvel Highway and South Mumbai business districts.</p>
+            <p>Fast Mechanic handles calls from residential towers, office basements, mall parking, railway station roads, airport routes, Eastern Express Highway, Western Express Highway, Sion-Panvel Highway and South Mumbai business districts.</p>
             <ul>
-              <li>Localized support from New Tank Bandar Road, Darukhana, Mumbai 400010.</li>
-              <li>Service radius built around South Mumbai, Andheri, Thane and Vashi.</li>
-              <li>Call leads, WhatsApp leads, vCard saving and service schema are included for search engines.</li>
+              <li>Service point: New Tank Bandar Road, Darukhana, Mumbai 400010.</li>
+              <li>Active radius: South Mumbai, Andheri, Thane, Vashi and the listed connecting areas.</li>
+              <li>Call directly, send the vehicle location on WhatsApp or save the Fast Mechanic contact card.</li>
             </ul>
           </div>
           <div class="silo-map-frame">
@@ -769,7 +853,7 @@ function cityPage() {
           <div class="section-head">
             <p class="eyebrow">Mumbai Services</p>
             <h2>Emergency service pages for Mumbai drivers.</h2>
-            <p>Each service page is written for Mumbai-specific breakdown intent and links to all active locality pages.</p>
+            <p>Choose a service to see practical call details, safety guidance and the Mumbai localities currently covered.</p>
           </div>
           <div class="service-directory">${serviceDirectory("../../")}</div>
         </div>
@@ -789,7 +873,7 @@ function cityPage() {
       }).join("")}
       <section class="silo-section alt">
         <div class="container silo-cta-band">
-          <p class="eyebrow">Direct Call Lead</p>
+          <p class="eyebrow">Direct Assistance</p>
           <h2>Need car help in Mumbai right now?</h2>
           <p>Call Fast Mechanic before visiting the service point so assistance can be coordinated at your exact vehicle location.</p>
           <div class="hero-actions"><a class="btn btn-primary" href="tel:${phoneTel}">Call ${phoneDisplay}</a><a class="btn btn-secondary" href="../../fast-mechanic.vcf" download="Fast-Mechanic.vcf">Save Contact</a></div>
@@ -804,6 +888,7 @@ function servicePage(service) {
   const canonicalPath = `/car-services/mumbai/${service.slug}/`;
   const title = `${service.name} in Mumbai | Fast Mechanic`;
   const description = `${service.name} in Mumbai from Fast Mechanic. ${service.short} Service areas include South Mumbai, Andheri, Thane and Vashi. Call ${phoneDisplay}.`;
+  const guidance = serviceGuidance[service.slug];
   const schema = mergeSchema(
     businessSchema({
       canonicalPath,
@@ -855,10 +940,10 @@ function servicePage(service) {
           <div class="silo-copy">
             <p class="eyebrow">Service Detail</p>
             <h2>${escapeHtml(service.name)} for urgent Mumbai car breakdowns.</h2>
-            <p>${escapeHtml(service.short)} This page is optimized for searches such as ${escapeHtml(service.intent)} in Mumbai and nearby service-area locations.</p>
+            <p>${escapeHtml(service.short)} ${escapeHtml(guidance.scope)}</p>
             <ul>
-              <li>Call lead: <a href="tel:${phoneTel}">${phoneDisplay}</a></li>
-              <li>WhatsApp lead: <a href="${whatsappUrl}" target="_blank" rel="noopener">Chat Fast Mechanic</a></li>
+              <li>Call: <a href="tel:${phoneTel}">${phoneDisplay}</a></li>
+              <li>WhatsApp: <a href="${whatsappUrl}" target="_blank" rel="noopener">Chat Fast Mechanic</a></li>
               <li>Service point: ${escapeHtml(address)}</li>
               <li>Pricing: ${escapeHtml(service.price)}</li>
             </ul>
@@ -874,9 +959,21 @@ function servicePage(service) {
       <section class="silo-section alt">
         <div class="container">
           <div class="section-head">
+            <p class="eyebrow">Before You Call</p>
+            <h2>Details that help arrange ${escapeHtml(service.name.toLowerCase())}.</h2>
+            <p>${escapeHtml(guidance.safety)}</p>
+          </div>
+          <div class="faq-mini-grid">
+            ${guidance.checks.map(([heading, text]) => `<article class="faq-mini-card"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(text)}</p></article>`).join("")}
+          </div>
+        </div>
+      </section>
+      <section class="silo-section alt">
+        <div class="container">
+          <div class="section-head">
             <p class="eyebrow">Where Available</p>
             <h2>${escapeHtml(service.name)} area coverage.</h2>
-            <p>These pages help customers and search engines connect the service with specific Mumbai localities inside the active radius.</p>
+            <p>Choose the nearest listed locality to see landmarks, road access notes and direct contact details for that area.</p>
           </div>
           <div class="area-directory">${areaServiceDirectory(topAreas, service, "../../../")}</div>
           <a class="text-link" href="../">View complete Mumbai area directory</a>
@@ -957,7 +1054,7 @@ function areaPage(item, index) {
             <p class="eyebrow">${escapeHtml(item.group)}</p>
             <h2>Emergency car help around ${escapeHtml(item.name)} landmarks.</h2>
             <p>Drivers call Fast Mechanic in ${escapeHtml(item.name)} for ${escapeHtml(item.issue)}. The local response focus includes ${escapeHtml(item.landmarks.join(", "))} and nearby routes such as ${escapeHtml(item.roads.join(", "))}.</p>
-            <p>Use this dedicated page for searches like new battery sale in ${escapeHtml(item.name)}, car mechanic near me in ${escapeHtml(item.name)}, towing service in ${escapeHtml(item.name)}, battery jump start in ${escapeHtml(item.name)} and petrol delivery near ${escapeHtml(item.name)}.</p>
+            <p>Available help includes new battery sale, battery jump start, towing, petrol delivery, key lock assistance, stepney change and roadside mechanic support. Share the exact vehicle position and nearest landmark when calling.</p>
             <ul>
               <li>Primary PIN code: ${escapeHtml(item.pin)}</li>
               <li>Service point: ${escapeHtml(address)}</li>
@@ -970,9 +1067,9 @@ function areaPage(item, index) {
       <section class="silo-section alt">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">Popular ${escapeHtml(item.name)} Searches</p>
-            <h2>Service intent covered for ${escapeHtml(item.name)} car owners.</h2>
-            <p>These are the urgent search scenarios this page is structured to answer clearly.</p>
+            <p class="eyebrow">${escapeHtml(item.name)} Services</p>
+            <h2>Choose the help your vehicle needs.</h2>
+            <p>If the problem is unclear, call roadside assistance and describe the warning lights, sounds and whether the car can move safely.</p>
           </div>
           <div class="faq-mini-grid">
             ${services.map((service) => `<article class="faq-mini-card"><h3>${escapeHtml(service.name)} in ${escapeHtml(item.name)}</h3><p>${escapeHtml(service.short)} Call ${phoneDisplay} with your exact location near ${escapeHtml(item.landmarks[0])}.</p></article>`).join("")}
@@ -984,7 +1081,7 @@ function areaPage(item, index) {
           <div class="section-head">
             <p class="eyebrow">Nearby Coverage</p>
             <h2>Related service-area pages near ${escapeHtml(item.name)}.</h2>
-            <p>Internal area links help Google understand the real local radius and give customers nearby options.</p>
+            <p>Use the nearby area list when the vehicle is outside ${escapeHtml(item.name)} or close to a connecting road.</p>
           </div>
           <div class="area-directory">${areaDirectory(nearby, "../../../")}</div>
           <a class="text-link" href="../">Back to complete Mumbai directory</a>
@@ -1003,7 +1100,7 @@ function areaPage(item, index) {
       </section>
       <section class="silo-section">
         <div class="container silo-cta-band">
-          <p class="eyebrow">Call Lead Ready</p>
+          <p class="eyebrow">Call Fast Mechanic</p>
           <h2>Need car help in ${escapeHtml(item.name)}?</h2>
           <p>Call Fast Mechanic now for new battery sale, battery, towing, petrol, key lock, stepney or mechanic support. The fastest call is the direct number below.</p>
           <div class="hero-actions"><a class="btn btn-primary" href="tel:${phoneTel}">Call ${phoneDisplay}</a><a class="btn btn-secondary" href="${whatsappUrl}" target="_blank" rel="noopener">Chat WhatsApp</a></div>
@@ -1019,6 +1116,7 @@ function flatAreaServicePage(item, service, index) {
   const title = `${service.name} in ${item.name} | Fast Mechanic`;
   const description = `Fast Mechanic provides ${service.name.toLowerCase()} in ${item.name}, Mumbai. ${service.short} Call ${phoneDisplay} for local car help.`;
   const nearby = nearbyAreas(item, index);
+  const guidance = serviceGuidance[service.slug];
   const schema = mergeSchema(
     businessSchema({
       canonicalPath,
@@ -1071,7 +1169,8 @@ function flatAreaServicePage(item, service, index) {
           <div class="silo-copy">
             <p class="eyebrow">${escapeHtml(item.group)}</p>
             <h2>${escapeHtml(service.name)} support near ${escapeHtml(item.landmarks[0])}.</h2>
-            <p>This local page is focused on ${escapeHtml(service.name.toLowerCase())} searches in ${escapeHtml(item.name)}. It covers ${escapeHtml(item.issue)} and routes such as ${escapeHtml(item.roads.join(", "))}.</p>
+            <p>Fast Mechanic handles ${escapeHtml(service.name.toLowerCase())} calls around ${escapeHtml(item.name)} for situations involving ${escapeHtml(item.issue)}. Common access routes include ${escapeHtml(item.roads.join(", "))}.</p>
+            <p>${escapeHtml(guidance.scope)}</p>
             <ul>
               <li>Area: ${escapeHtml(item.name)}, Mumbai</li>
               <li>Primary PIN code: ${escapeHtml(item.pin)}</li>
@@ -1091,9 +1190,21 @@ function flatAreaServicePage(item, service, index) {
       <section class="silo-section alt">
         <div class="container">
           <div class="section-head">
+            <p class="eyebrow">Before Assistance Arrives</p>
+            <h2>Information to share from ${escapeHtml(item.name)}.</h2>
+            <p>${escapeHtml(guidance.safety)}</p>
+          </div>
+          <div class="faq-mini-grid">
+            ${guidance.checks.map(([heading, text]) => `<article class="faq-mini-card"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(text)} Include the nearest ${escapeHtml(item.name)} landmark when relevant.</p></article>`).join("")}
+          </div>
+        </div>
+      </section>
+      <section class="silo-section alt">
+        <div class="container">
+          <div class="section-head">
             <p class="eyebrow">Same Service Nearby</p>
             <h2>${escapeHtml(service.name)} pages near ${escapeHtml(item.name)}.</h2>
-            <p>These links help search engines understand that Fast Mechanic covers this service across nearby service-area localities.</p>
+            <p>Choose a nearby locality if the vehicle is outside ${escapeHtml(item.name)} or close to a connecting road.</p>
           </div>
           <div class="area-directory">${areaServiceDirectory(nearby, service, "../../../")}</div>
         </div>
@@ -1103,7 +1214,7 @@ function flatAreaServicePage(item, service, index) {
           <div class="section-head">
             <p class="eyebrow">Car Brand Pages</p>
             <h2>${escapeHtml(service.name)} in ${escapeHtml(item.name)} by car brand.</h2>
-            <p>These pages target high-intent searches such as Maruti Suzuki ${escapeHtml(service.name.toLowerCase())} in ${escapeHtml(item.name)} and Hyundai ${escapeHtml(service.name.toLowerCase())} in ${escapeHtml(item.name)}.</p>
+            <p>Select the vehicle manufacturer for model examples and the details that help confirm suitable ${escapeHtml(service.name.toLowerCase())} support.</p>
           </div>
           <div class="area-directory">${brandDirectory(item, service, "../../../")}</div>
         </div>
@@ -1128,6 +1239,7 @@ function brandServicePage(item, service, carBrand, index) {
   const description = `Fast Mechanic provides ${carBrand.name} ${service.name.toLowerCase()} in ${item.name}, Mumbai. Support for models like ${carBrand.models.slice(0, 4).join(", ")}. Call ${phoneDisplay}.`;
   const nearby = nearbyAreas(item, index);
   const modelText = carBrand.models.join(", ");
+  const guidance = serviceGuidance[service.slug];
   const schema = mergeSchema(
     businessSchema({
       canonicalPath,
@@ -1189,10 +1301,10 @@ function brandServicePage(item, service, carBrand, index) {
       <section class="silo-section">
         <div class="container silo-intro-grid">
           <div class="silo-copy">
-            <p class="eyebrow">${escapeHtml(item.group)} Brand Page</p>
+            <p class="eyebrow">${escapeHtml(item.group)} Vehicle Support</p>
             <h2>${escapeHtml(carBrand.name)} ${escapeHtml(service.name.toLowerCase())} support near ${escapeHtml(item.landmarks[0])}.</h2>
-            <p>This page targets specific searches such as ${escapeHtml(carBrand.name)} ${escapeHtml(service.name.toLowerCase())} in ${escapeHtml(item.name)}, ${escapeHtml(carBrand.name)} car help in ${escapeHtml(item.name)} and ${escapeHtml(carBrand.name)} roadside assistance near ${escapeHtml(item.landmarks[0])}.</p>
-            <p>Common ${escapeHtml(carBrand.name)} models include ${escapeHtml(modelText)}. Share your model name, exact location and current issue when calling.</p>
+            <p>${escapeHtml(guidance.scope)} For ${escapeHtml(carBrand.name)} vehicles, ${escapeHtml(guidance.modelAdvice)}</p>
+            <p>Common ${escapeHtml(carBrand.name)} models include ${escapeHtml(modelText)}. Share the model name, exact ${escapeHtml(item.name)} location and current issue when calling.</p>
             <ul>
               <li>Brand: ${escapeHtml(carBrand.name)}</li>
               <li>Service: ${escapeHtml(service.name)}</li>
@@ -1212,12 +1324,23 @@ function brandServicePage(item, service, carBrand, index) {
       <section class="silo-section alt">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">Model Search Intent</p>
-            <h2>Popular ${escapeHtml(carBrand.name)} model searches in ${escapeHtml(item.name)}.</h2>
-            <p>These internal signals help connect Fast Mechanic with realistic car-owner searches, without creating a separate thin page for every model variant.</p>
+            <p class="eyebrow">Popular Models</p>
+            <h2>${escapeHtml(carBrand.name)} model details to share.</h2>
+            <p>${escapeHtml(guidance.safety)}</p>
           </div>
           <div class="faq-mini-grid">
-            ${carBrand.models.map((model) => `<article class="faq-mini-card"><h3>${escapeHtml(model)} ${escapeHtml(service.name)} in ${escapeHtml(item.name)}</h3><p>Call ${phoneDisplay} for ${escapeHtml(model)} ${escapeHtml(service.name.toLowerCase())} support near ${escapeHtml(item.landmarks[0])}, ${escapeHtml(item.name)}.</p></article>`).join("")}
+            ${carBrand.models.map((model) => `<article class="faq-mini-card"><h3>${escapeHtml(model)} ${escapeHtml(service.name)}</h3><p>For a ${escapeHtml(carBrand.name)} ${escapeHtml(model)}, ${escapeHtml(guidance.modelAdvice)} Call ${phoneDisplay} from near ${escapeHtml(item.landmarks[0])}, ${escapeHtml(item.name)}.</p></article>`).join("")}
+          </div>
+        </div>
+      </section>
+      <section class="silo-section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Before You Call</p>
+            <h2>Details needed for ${escapeHtml(carBrand.name)} ${escapeHtml(service.name.toLowerCase())}.</h2>
+          </div>
+          <div class="faq-mini-grid">
+            ${guidance.checks.map(([heading, text]) => `<article class="faq-mini-card"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(text)}</p></article>`).join("")}
           </div>
         </div>
       </section>
@@ -1226,7 +1349,7 @@ function brandServicePage(item, service, carBrand, index) {
           <div class="section-head">
             <p class="eyebrow">Same Brand Nearby</p>
             <h2>${escapeHtml(carBrand.name)} ${escapeHtml(service.name)} pages near ${escapeHtml(item.name)}.</h2>
-            <p>These nearby links support the local radius for brand-specific roadside and doorstep car help.</p>
+            <p>Choose a nearby locality when the vehicle is outside ${escapeHtml(item.name)} or close to a connecting road.</p>
           </div>
           <div class="area-directory">${brandAreaDirectory(nearby, service, carBrand, "../../../../")}</div>
         </div>
