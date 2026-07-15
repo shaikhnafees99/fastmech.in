@@ -2,68 +2,104 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fastmech.in/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://fastmech.in/car-services/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://fastmech.in/car-services/mumbai/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://fastmech.in/car-services/mumbai/new-battery-sale/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
     <loc>https://fastmech.in/car-services/mumbai/battery-jump-start/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
     <loc>https://fastmech.in/car-services/mumbai/towing-service/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
     <loc>https://fastmech.in/car-services/mumbai/petrol-delivery/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
     <loc>https://fastmech.in/car-services/mumbai/key-lock-assistance/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
     <loc>https://fastmech.in/car-services/mumbai/stepney-change/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
     <loc>https://fastmech.in/car-services/mumbai/car-mechanic/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
     <loc>https://fastmech.in/car-services/mumbai/roadside-assistance/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://fastmech.in/guides/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+  </url>
+  <url>
+    <loc>https://fastmech.in/guides/car-battery-jump-start-near-me-mumbai/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://fastmech.in/guides/battery-jump-start-cost-safety-mumbai/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://fastmech.in/guides/car-not-starting-battery-or-starter/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://fastmech.in/guides/basement-parking-jump-start-mumbai/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://fastmech.in/guides/towing-or-jump-start-which-help/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
   </url>
 </urlset>

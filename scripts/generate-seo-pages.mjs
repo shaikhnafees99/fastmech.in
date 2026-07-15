@@ -8,7 +8,7 @@ const siteUrl = "https://fastmech.in";
 const phoneDisplay = "+91 70218 10153";
 const phoneTel = "+917021810153";
 const whatsappUrl = "https://wa.me/917021810153?text=Hi%20Fast%20Mechanic%2C%20I%20need%20roadside%20assistance%20in%20Mumbai.";
-const lastmod = "2026-07-07";
+const lastmod = "2026-07-15";
 const address = "New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010, India";
 const mapUrl = "https://www.google.com/maps?q=18.9788291,72.8482657";
 const openGraphImage = `${siteUrl}/google-ads-kit/images/png-ready/fast-mechanic-search-ad-1200x628.png`;
@@ -227,6 +227,104 @@ const carBrands = [
 
 const priorityCarBrands = carBrands.slice(0, 10);
 
+const guides = [
+  {
+    slug: "car-battery-jump-start-near-me-mumbai",
+    title: "Car Battery Jump Start Near Me in Mumbai",
+    description: `What to do when your car battery is dead in Mumbai. Learn safe jump-start steps, details to share, and when to call Fast Mechanic at ${phoneDisplay}.`,
+    eyebrow: "Battery Help Guide",
+    h1: "Car battery jump start near me in Mumbai.",
+    lede: "A weak or dead battery is one of the most common reasons a car will not start in Mumbai parking basements, office towers, malls and roadside stops.",
+    sections: [
+      ["When a jump start may help", "A jump start may help when dashboard lights are weak, the starter clicks, the engine cranks slowly or the car was parked for several days. It is not suitable when the battery is leaking, swollen, cracked or unusually hot."],
+      ["What to share on the call", "Share the car model, fuel type, exact location, parking access, basement height if relevant and whether the starter clicks or stays silent. A live location and nearest landmark help reduce confusion."],
+      ["Safety before assistance arrives", "Switch off lights, AC, music system and accessories. Keep passengers away from moving traffic and do not touch battery terminals with tools or metal objects."]
+    ],
+    faq: [
+      ["How fast can I get battery jump start help in Mumbai?", `Call ${phoneDisplay} and share your exact location. Timing depends on traffic, parking access and current availability.`],
+      ["Can every dead battery be jump started?", "No. A damaged, leaking, swollen or deeply failed battery may need replacement instead of a jump start."],
+      ["Do you also provide new battery sale?", "Yes. Fast Mechanic provides new battery sale coordination when replacement is safer than a jump start."]
+    ],
+    relatedService: "battery-jump-start"
+  },
+  {
+    slug: "battery-jump-start-cost-safety-mumbai",
+    title: "Battery Jump Start Cost and Safety in Mumbai",
+    description: "Understand battery jump start pricing factors, safety checks and when a new battery is a better option for Mumbai roadside assistance.",
+    eyebrow: "Jump Start Pricing",
+    h1: "Battery jump start cost and safety in Mumbai.",
+    lede: "Jump-start cost depends on the vehicle, access, route, time, battery condition and whether replacement support is needed.",
+    sections: [
+      ["What affects price", "Pricing can change by location, parking difficulty, late-night access, vehicle type, battery condition and whether the car is in a basement, highway shoulder or tight lane."],
+      ["When replacement is better", "If the battery repeatedly fails, is old, leaks, swells or cannot hold charge after starting, a new battery may be more reliable than another boost."],
+      ["Avoid unsafe attempts", "Do not connect random cables without checking polarity, battery condition and vehicle type. Incorrect jump-start attempts can damage electronics."]
+    ],
+    faq: [
+      ["Is jump start cheaper than a new battery?", "Usually yes, but a failed battery can leave the vehicle stuck again. Call with the battery age and symptoms for guidance."],
+      ["Can Fast Mechanic help in basement parking?", "Yes. Share basement height, building entry rules and parking level before assistance is arranged."],
+      ["What if the car starts and stops again?", "That may indicate battery, alternator, starter, fuse or wiring trouble. A mechanic check or towing may be safer."]
+    ],
+    relatedService: "battery-jump-start"
+  },
+  {
+    slug: "car-not-starting-battery-or-starter",
+    title: "Car Not Starting: Battery, Starter or Fuse?",
+    description: "A practical guide for Mumbai drivers when the car will not start. Identify battery, starter, fuse and warning-light symptoms before calling.",
+    eyebrow: "Car Not Starting",
+    h1: "Car not starting: battery, starter or fuse?",
+    lede: "The first symptoms tell a lot. A clicking sound, dim dashboard, silence or repeated crank can point to different roadside help.",
+    sections: [
+      ["Clicking sound", "Rapid clicking often points to a weak battery or poor terminal contact. One hard click may also involve starter or relay trouble."],
+      ["Dashboard completely off", "No lights can mean a flat battery, loose terminal, blown main fuse or an electrical connection issue."],
+      ["Engine cranks but does not start", "If the engine turns normally but does not fire, fuel, ignition, sensor or immobilizer issues may be involved, and jump start may not solve it."]
+    ],
+    faq: [
+      ["Should I ask for jump start or mechanic help?", "If lights are weak or starter clicks, jump start may be first. If the engine cranks normally, ask for mechanic diagnosis."],
+      ["Can towing be needed for a car that will not start?", "Yes. If the fault cannot be corrected safely at the location, towing may be needed."],
+      ["What details should I share?", "Share warning lights, sounds, smells, fuel level, recent repairs and exact vehicle location."]
+    ],
+    relatedService: "car-mechanic"
+  },
+  {
+    slug: "basement-parking-jump-start-mumbai",
+    title: "Basement Parking Jump Start in Mumbai",
+    description: "Dead battery in a Mumbai building or mall basement? Learn what access details to share before arranging jump-start or battery help.",
+    eyebrow: "Basement Battery Help",
+    h1: "Basement parking jump start in Mumbai.",
+    lede: "Basement parking calls need extra access details because height limits, ramps, security gates and tight parking slots can affect assistance.",
+    sections: [
+      ["Access details matter", "Share the building name, gate, parking level, basement height, ramp access, society rules and whether visitor entry is allowed."],
+      ["Prepare the vehicle", "Keep the bonnet accessible if possible, unlock the car, switch off accessories and keep the parking area clear for safe work."],
+      ["When towing is difficult", "Some basement locations cannot be accessed by towing vehicles. In such cases, jump start, battery replacement or mechanic diagnosis may be the safer first option."]
+    ],
+    faq: [
+      ["Can Fast Mechanic help in mall parking?", "Yes. Share the mall name, parking zone, level and nearest lift or gate."],
+      ["What if the bonnet cannot be opened?", "Mention this before assistance is arranged because lock, cable or access issues may require different help."],
+      ["Can a battery be replaced in basement parking?", "Often yes, if the correct battery is available and there is safe access around the vehicle."]
+    ],
+    relatedService: "battery-jump-start"
+  },
+  {
+    slug: "towing-or-jump-start-which-help",
+    title: "Towing or Jump Start: Which Help Do You Need?",
+    description: "Learn whether your Mumbai car breakdown needs towing, jump start, mechanic diagnosis, fuel help or stepney change before calling.",
+    eyebrow: "Breakdown Decision Guide",
+    h1: "Towing or jump start: which help do you need?",
+    lede: "The safest service depends on whether the car can start, steer, roll and stop safely.",
+    sections: [
+      ["Choose jump start first", "Choose jump start when the car was parked, lights are weak, starter clicks or the battery appears discharged but the vehicle is otherwise safe."],
+      ["Choose towing first", "Choose towing after an accident, severe overheating, brake trouble, fluid leak, wheel damage or when the car cannot be driven safely."],
+      ["Choose mechanic diagnosis", "Choose mechanic help when warning lights, unusual sounds, overheating, fuse issues or starting trouble needs a roadside check before moving the car."]
+    ],
+    faq: [
+      ["Can Fast Mechanic decide after a call?", "Yes. Share symptoms, location and vehicle condition so the safest service can be suggested."],
+      ["Can towing and mechanic help both be needed?", "Yes. A mechanic may inspect first, and towing may be arranged if roadside repair is not safe."],
+      ["What if I am stopped on a flyover or highway?", "Move to a safer position only if possible, keep hazard lights on and call with road direction and landmark."]
+    ],
+    relatedService: "roadside-assistance"
+  }
+];
+
 const areas = [
   area("south-mumbai", "South Mumbai", "400001-400010", "South Mumbai", ["Fort", "Colaba", "Churchgate", "Marine Lines", "Nariman Point"], ["Marine Drive", "P D'Mello Road", "Free Press Journal Marg"], "business district parking, station roads and late-night office exits"),
   area("colaba", "Colaba", "400005", "South Mumbai", ["Gateway of India", "Colaba Causeway", "Cuffe Parade", "Sassoon Dock"], ["Shahid Bhagat Singh Road", "Nathalal Parekh Marg"], "tourist traffic, hotel parking and narrow market lanes"),
@@ -394,7 +492,11 @@ function brandEnabled(service) {
 }
 
 function brandPageEnabled(item, service) {
-  return brandEnabled(service) && brandSeoAreaSlugs.has(item.slug);
+  return brandEnabled(service);
+}
+
+function guidePath(guide) {
+  return `/guides/${guide.slug}/`;
 }
 
 function pageShell({ title, description, canonicalPath, depth, body, schema }) {
@@ -462,6 +564,7 @@ function siteHeader(prefix) {
           <a href="${prefix}#services">Services</a>
           <a href="${prefix}#coverage">Mumbai Areas</a>
           <a href="${prefix}car-services/">Car Services</a>
+          <a href="${prefix}guides/">Guides</a>
           <a href="${prefix}car-services/mumbai/">Mumbai Hub</a>
           <a class="nav-call" href="tel:${phoneTel}">Call ${phoneDisplay}</a>
         </div>
@@ -492,6 +595,12 @@ function siteFooter(prefix) {
           <a href="${prefix}car-services/mumbai/andheri-east/">Andheri East</a>
           <a href="${prefix}car-services/mumbai/thane-west/">Thane West</a>
           <a href="${prefix}car-services/mumbai/vashi/">Vashi</a>
+        </div>
+        <div>
+          <h2>Guides</h2>
+          <a href="${prefix}guides/car-battery-jump-start-near-me-mumbai/">Battery jump start near me</a>
+          <a href="${prefix}guides/car-not-starting-battery-or-starter/">Car not starting</a>
+          <a href="${prefix}guides/towing-or-jump-start-which-help/">Towing or jump start</a>
         </div>
         <div>
           <h2>Contact</h2>
@@ -1368,6 +1477,156 @@ function brandServicePage(item, service, carBrand, index) {
   return pageShell({ title, description, keywords: `${carBrand.name} ${service.name} ${item.name}, ${carBrand.name} car help ${item.name}, ${service.intent}, ${item.name}, Fast Mechanic`, canonicalPath, depth: 4, body, schema });
 }
 
+function guidesIndexPage() {
+  const canonicalPath = "/guides/";
+  const title = "Mumbai Car Breakdown Guides | Fast Mechanic";
+  const description = `Practical Fast Mechanic guides for battery jump start, car not starting, towing decisions and basement parking breakdown help in Mumbai. Call ${phoneDisplay}.`;
+  const schema = mergeSchema(
+    businessSchema({
+      canonicalPath,
+      name: "Fast Mechanic Mumbai Car Breakdown Guides",
+      description,
+      pageType: "CollectionPage",
+      areaServed: areas.map((item) => item.name)
+    }),
+    [breadcrumbSchema([
+      { label: "Home", path: "/" },
+      { label: "Guides", path: "/guides/" }
+    ])]
+  );
+
+  const body = `${hero({
+    eyebrow: "Mumbai Breakdown Guides",
+    title: "Helpful car breakdown guides for Mumbai drivers.",
+    lede: "Use these guides to understand common battery, towing, basement parking and car-not-starting situations before calling roadside assistance.",
+    breadcrumbs: [
+      { label: "Home", href: "../" },
+      { label: "Guides" }
+    ],
+    depth: 1
+  })}
+    <main>
+      <section class="silo-section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Practical Help</p>
+            <h2>Choose the guide that matches your situation.</h2>
+            <p>Each guide explains symptoms, safety checks, details to share on the call and related Fast Mechanic services in Mumbai.</p>
+          </div>
+          <div class="area-directory">
+            ${guides.map((guide) => `<a href="../guides/${guide.slug}/"><strong>${escapeHtml(guide.title)}</strong><span>${escapeHtml(guide.description)}</span><em>Read guide</em></a>`).join("")}
+          </div>
+        </div>
+      </section>
+      <section class="silo-section alt">
+        <div class="container silo-cta-band">
+          <p class="eyebrow">Need Help Now?</p>
+          <h2>Call Fast Mechanic for live roadside guidance.</h2>
+          <p>Share your exact location, car model and current symptoms so the right service can be suggested.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="tel:${phoneTel}">Call ${phoneDisplay}</a><a class="btn btn-secondary" href="../fast-mechanic.vcf" download="Fast-Mechanic.vcf">Save Contact</a></div>
+        </div>
+      </section>
+    </main>`;
+
+  return pageShell({ title, description, canonicalPath, depth: 1, body, schema });
+}
+
+function guidePage(guide) {
+  const canonicalPath = guidePath(guide);
+  const related = services.find((service) => service.slug === guide.relatedService) || services[0];
+  const schema = mergeSchema(
+    businessSchema({
+      canonicalPath,
+      name: guide.title,
+      description: guide.description,
+      pageType: "Article",
+      areaServed: ["Mumbai", "South Mumbai", "Andheri", "Thane", "Vashi"]
+    }),
+    [
+      breadcrumbSchema([
+        { label: "Home", path: "/" },
+        { label: "Guides", path: "/guides/" },
+        { label: guide.title, path: canonicalPath }
+      ]),
+      faqSchema(guide.faq.map(([q, a]) => ({ q, a }))),
+      {
+        "@type": "Article",
+        headline: guide.title,
+        description: guide.description,
+        dateModified: lastmod,
+        author: { "@id": `${siteUrl}/#business` },
+        publisher: { "@id": `${siteUrl}/#business` },
+        mainEntityOfPage: `${siteUrl}${canonicalPath}`,
+        about: related.name
+      }
+    ]
+  );
+
+  const body = `${hero({
+    eyebrow: guide.eyebrow,
+    title: guide.h1,
+    lede: guide.lede,
+    breadcrumbs: [
+      { label: "Home", href: "../../" },
+      { label: "Guides", href: "../" },
+      { label: guide.title }
+    ],
+    depth: 2
+  })}
+    <main>
+      <section class="silo-section">
+        <div class="container silo-intro-grid">
+          <div class="silo-copy">
+            <p class="eyebrow">What To Check</p>
+            <h2>Make the call easier and safer.</h2>
+            <p>These checks are written for everyday Mumbai breakdown situations. For urgent help, call Fast Mechanic and share the location before trying anything risky.</p>
+            <ul>
+              <li>Direct call: <a href="tel:${phoneTel}">${phoneDisplay}</a></li>
+              <li>WhatsApp: <a href="${whatsappUrl}" target="_blank" rel="noopener">Chat Fast Mechanic</a></li>
+              <li>Related service: <a href="../../car-services/mumbai/${related.slug}/">${escapeHtml(related.name)} in Mumbai</a></li>
+            </ul>
+          </div>
+          <div class="silo-card">
+            <img src="../../${related.image}" alt="${escapeHtml(related.name)} illustration" loading="lazy">
+            <h3>${escapeHtml(related.name)}</h3>
+            <p>${escapeHtml(related.short)}</p>
+            <a class="service-cta" href="tel:${phoneTel}">${escapeHtml(related.cta)}</a>
+          </div>
+        </div>
+      </section>
+      <section class="silo-section alt">
+        <div class="container">
+          <div class="faq-mini-grid">
+            ${guide.sections.map(([heading, text]) => `<article class="faq-mini-card"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(text)}</p></article>`).join("")}
+          </div>
+        </div>
+      </section>
+      <section class="silo-section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Questions</p>
+            <h2>Common questions before calling.</h2>
+          </div>
+          <div class="faq-mini-grid">
+            ${guide.faq.map(([q, a]) => `<article class="faq-mini-card"><h3>${escapeHtml(q)}</h3><p>${escapeHtml(a)}</p></article>`).join("")}
+          </div>
+        </div>
+      </section>
+      <section class="silo-section alt">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Popular Areas</p>
+            <h2>Battery and roadside help across Mumbai.</h2>
+            <p>Open a local page if you already know the vehicle area.</p>
+          </div>
+          <div class="area-directory">${areaServiceDirectory(areas.slice(0, 24), related, "../../")}</div>
+        </div>
+      </section>
+    </main>`;
+
+  return pageShell({ title: guide.title, description: guide.description, canonicalPath, depth: 2, body, schema });
+}
+
 function legacyAreaServicePage(item, service) {
   const targetPath = flatAreaServicePath(item, service);
   const targetRelative = `../../../../car-services/mumbai/${flatAreaServiceSlug(item, service)}/`;
@@ -1440,13 +1699,15 @@ ${files.map((file) => `  <sitemap>
 
 function sitemapGroups() {
   const modelServices = services.filter((service) => brandEnabled(service));
-  const modelAreas = areas.filter((item) => brandSeoAreaSlugs.has(item.slug));
+  const modelAreas = areas;
   return {
     "main.xml": [
       { loc: "/", priority: "1.0", changefreq: "weekly" },
       { loc: "/car-services/", priority: "0.95", changefreq: "weekly" },
       { loc: "/car-services/mumbai/", priority: "0.95", changefreq: "weekly" },
-      ...services.map((service) => ({ loc: `/car-services/mumbai/${service.slug}/`, priority: "0.88", changefreq: "weekly" }))
+      ...services.map((service) => ({ loc: `/car-services/mumbai/${service.slug}/`, priority: "0.88", changefreq: "weekly" })),
+      { loc: "/guides/", priority: "0.86", changefreq: "weekly" },
+      ...guides.map((guide) => ({ loc: guidePath(guide), priority: "0.78", changefreq: "weekly" }))
     ],
     "mumbai-areas.xml": areas.map((item) => ({ loc: `/car-services/mumbai/${item.slug}/`, priority: "0.84", changefreq: "weekly" })),
     "mumbai-services.xml": areas.flatMap((item) => services.map((service) => ({ loc: flatAreaServicePath(item, service), priority: "0.80", changefreq: "weekly" }))),
@@ -1456,17 +1717,22 @@ function sitemapGroups() {
 
 async function main() {
   await rm(path.join(root, "car-services"), { recursive: true, force: true });
+  await rm(path.join(root, "guides"), { recursive: true, force: true });
   await rm(path.join(root, "sitemap"), { recursive: true, force: true });
   await rm(path.join(root, "google-ads-kit/site-files/sitemap"), { recursive: true, force: true });
   await writePage("car-services/index.html", categoryPage());
   await writePage("car-services/mumbai/index.html", cityPage());
+  await writePage("guides/index.html", guidesIndexPage());
+  for (const guide of guides) {
+    await writePage(`guides/${guide.slug}/index.html`, guidePage(guide));
+  }
 
   for (const service of services) {
     await writePage(`car-services/mumbai/${service.slug}/index.html`, servicePage(service));
   }
 
   const modelServices = services.filter((service) => brandEnabled(service));
-  const modelAreas = areas.filter((item) => brandSeoAreaSlugs.has(item.slug));
+  const modelAreas = areas;
   for (const [index, item] of areas.entries()) {
     await writePage(`car-services/mumbai/${item.slug}/index.html`, areaPage(item, index));
     for (const service of services) {
