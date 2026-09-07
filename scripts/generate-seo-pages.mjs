@@ -8,7 +8,7 @@ const siteUrl = "https://fastmech.in";
 const phoneDisplay = "+91 70218 10153";
 const phoneTel = "+917021810153";
 const whatsappUrl = "https://wa.me/917021810153?text=Hi%20Fast%20Mechanic%2C%20I%20need%20roadside%20assistance%20in%20Mumbai.";
-const lastmod = "2026-07-15";
+const lastmod = "2026-09-07";
 const address = "New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010, India";
 const mapUrl = "https://www.google.com/maps?q=18.9788291,72.8482657";
 const openGraphImage = `${siteUrl}/google-ads-kit/images/png-ready/fast-mechanic-search-ad-1200x628.png`;
@@ -21,7 +21,7 @@ const services = [
     image: "service-new-battery.svg",
     cta: "Call for new battery",
     intent: "new car battery, battery replacement, car battery sale near me, doorstep battery replacement",
-    price: "Battery price depends on brand, warranty, car model and availability"
+    confirmation: "Call with the car model, model year and current battery condition so availability can be checked"
   },
   {
     slug: "battery-jump-start",
@@ -30,7 +30,7 @@ const services = [
     image: "service-jump-start.svg",
     cta: "Call battery jump start",
     intent: "dead battery, weak battery, jump start near me, car battery boost",
-    price: "Call for quote after location and vehicle details"
+    confirmation: "Call with the exact location, car model and starting symptoms so suitable help can be arranged"
   },
   {
     slug: "towing-service",
@@ -39,7 +39,7 @@ const services = [
     image: "service-towing.svg",
     cta: "Call towing service",
     intent: "towing near me, car towing, emergency tow, accident towing",
-    price: "Quote depends on pickup point, drop point and vehicle condition"
+    confirmation: "Call with the pickup point, destination, vehicle condition and access restrictions"
   },
   {
     slug: "petrol-delivery",
@@ -48,7 +48,7 @@ const services = [
     image: "service-petrol.svg",
     cta: "Call petrol help",
     intent: "petrol delivery, fuel help, petrol finished, emergency petrol",
-    price: "Call for current assistance charges and route availability"
+    confirmation: "Call with the correct fuel type, exact location and safe access details"
   },
   {
     slug: "key-lock-assistance",
@@ -57,7 +57,7 @@ const services = [
     image: "service-key-lock.svg",
     cta: "Call key lock help",
     intent: "car lockout, key locked inside car, key lock help, car key assistance",
-    price: "Call with car model and lock issue for guidance"
+    confirmation: "Call with the car model, key type and exact lockout situation for guidance"
   },
   {
     slug: "stepney-change",
@@ -66,7 +66,7 @@ const services = [
     image: "service-stepney.svg",
     cta: "Call stepney help",
     intent: "stepney change, flat tyre help, puncture help, spare wheel change",
-    price: "Call for quote based on location and tyre condition"
+    confirmation: "Call with the location, tyre condition and whether a usable spare wheel and toolkit are available"
   },
   {
     slug: "car-mechanic",
@@ -75,7 +75,7 @@ const services = [
     image: "service-mechanic.svg",
     cta: "Call car mechanic",
     intent: "car mechanic near me, roadside mechanic, car not starting, emergency mechanic",
-    price: "Inspection and repair quote depends on issue and vehicle model"
+    confirmation: "Call with the car model, warning lights, sounds and current vehicle condition"
   },
   {
     slug: "roadside-assistance",
@@ -84,7 +84,7 @@ const services = [
     image: "logo.svg",
     cta: "Call roadside assistance",
     intent: "roadside assistance near me, car breakdown help, on road car rescue, emergency car help",
-    price: "Call for quote and available support options"
+    confirmation: "Call with the exact location and symptoms so the appropriate roadside service can be identified"
   }
 ];
 
@@ -230,10 +230,10 @@ const priorityCarBrands = carBrands.slice(0, 10);
 const guides = [
   {
     slug: "car-battery-jump-start-near-me-mumbai",
-    title: "Car Battery Jump Start Near Me in Mumbai",
-    description: `What to do when your car battery is dead in Mumbai. Learn safe jump-start steps, details to share, and when to call Fast Mechanic at ${phoneDisplay}.`,
-    eyebrow: "Battery Help Guide",
-    h1: "Car battery jump start near me in Mumbai.",
+    title: "Car Battery Dead in Mumbai: Safe Next Steps",
+    description: `Car battery dead or car not starting in Mumbai? Check the symptoms, follow safe next steps and learn what to share when calling Fast Mechanic at ${phoneDisplay}.`,
+    eyebrow: "Dead Battery Guide",
+    h1: "Car battery dead in Mumbai: what to do next.",
     lede: "A weak or dead battery is one of the most common reasons a car will not start in Mumbai parking basements, office towers, malls and roadside stops.",
     sections: [
       ["When a jump start may help", "A jump start may help when dashboard lights are weak, the starter clicks, the engine cranks slowly or the car was parked for several days. It is not suitable when the battery is leaking, swollen, cracked or unusually hot."],
@@ -249,18 +249,18 @@ const guides = [
   },
   {
     slug: "battery-jump-start-cost-safety-mumbai",
-    title: "Battery Jump Start Cost and Safety in Mumbai",
-    description: "Understand battery jump start pricing factors, safety checks and when a new battery is a better option for Mumbai roadside assistance.",
-    eyebrow: "Jump Start Pricing",
-    h1: "Battery jump start cost and safety in Mumbai.",
-    lede: "Jump-start cost depends on the vehicle, access, route, time, battery condition and whether replacement support is needed.",
+    title: "Battery Jump Start Safety Guide for Mumbai Drivers",
+    description: "Understand battery jump start safety, what information to share and when battery replacement or towing may be the safer option in Mumbai.",
+    eyebrow: "Jump Start Safety",
+    h1: "Battery jump start safety guide for Mumbai drivers.",
+    lede: "The correct next step depends on the vehicle, access, battery condition, warning signs and whether replacement or towing support is needed.",
     sections: [
-      ["What affects price", "Pricing can change by location, parking difficulty, late-night access, vehicle type, battery condition and whether the car is in a basement, highway shoulder or tight lane."],
+      ["Information to share", "Share the exact location, parking difficulty, vehicle type, battery condition and whether the car is in a basement, highway shoulder or tight lane."],
       ["When replacement is better", "If the battery repeatedly fails, is old, leaks, swells or cannot hold charge after starting, a new battery may be more reliable than another boost."],
       ["Avoid unsafe attempts", "Do not connect random cables without checking polarity, battery condition and vehicle type. Incorrect jump-start attempts can damage electronics."]
     ],
     faq: [
-      ["Is jump start cheaper than a new battery?", "Usually yes, but a failed battery can leave the vehicle stuck again. Call with the battery age and symptoms for guidance."],
+      ["When should I avoid another jump start?", "A battery that repeatedly fails, leaks, swells or cannot hold charge may need replacement. Call with the battery age and symptoms for guidance."],
       ["Can Fast Mechanic help in basement parking?", "Yes. Share basement height, building entry rules and parking level before assistance is arranged."],
       ["What if the car starts and stops again?", "That may indicate battery, alternator, starter, fuse or wiring trouble. A mechanic check or towing may be safer."]
     ],
@@ -598,7 +598,7 @@ function siteFooter(prefix) {
         </div>
         <div>
           <h2>Guides</h2>
-          <a href="${prefix}guides/car-battery-jump-start-near-me-mumbai/">Battery jump start near me</a>
+          <a href="${prefix}guides/car-battery-jump-start-near-me-mumbai/">Dead battery safety guide</a>
           <a href="${prefix}guides/car-not-starting-battery-or-starter/">Car not starting</a>
           <a href="${prefix}guides/towing-or-jump-start-which-help/">Towing or jump start</a>
         </div>
@@ -737,7 +737,6 @@ function businessSchema({ canonicalPath, name, description, pageType = "AutoRepa
         telephone: phoneTel,
         logo: `${siteUrl}/logo.svg`,
         image: openGraphImage,
-        priceRange: "Call for quote",
         description: "24/7 emergency car roadside assistance and doorstep mechanic services in Mumbai.",
         address: {
           "@type": "PostalAddress",
@@ -995,8 +994,18 @@ function cityPage() {
 
 function servicePage(service) {
   const canonicalPath = `/car-services/mumbai/${service.slug}/`;
-  const title = `${service.name} in Mumbai | Fast Mechanic`;
-  const description = `${service.name} in Mumbai from Fast Mechanic. ${service.short} Service areas include South Mumbai, Andheri, Thane and Vashi. Call ${phoneDisplay}.`;
+  const isJumpStart = service.slug === "battery-jump-start";
+  const isRoadside = service.slug === "roadside-assistance";
+  const title = isJumpStart
+    ? "Car Battery Jump Start Near Me in Mumbai | Fast Mechanic"
+    : isRoadside
+      ? "24/7 Roadside Assistance Near Me in Mumbai | Fast Mechanic"
+      : `${service.name} in Mumbai | Fast Mechanic`;
+  const description = isJumpStart
+    ? `Need a car battery jump start near you in Mumbai? Fast Mechanic provides 24/7 phone support for dead batteries at home, office, basement parking and roadside locations. Call ${phoneDisplay}.`
+    : isRoadside
+      ? `Need 24/7 roadside assistance near you in Mumbai? Call Fast Mechanic for battery jump start, towing, petrol delivery, key lockout, stepney change and mechanic help at ${phoneDisplay}.`
+      : `${service.name} in Mumbai from Fast Mechanic. ${service.short} Service areas include South Mumbai, Andheri, Thane and Vashi. Call ${phoneDisplay}.`;
   const guidance = serviceGuidance[service.slug];
   const schema = mergeSchema(
     businessSchema({
@@ -1023,8 +1032,8 @@ function servicePage(service) {
           a: `Call ${phoneDisplay}, share your car model, exact location and nearby landmark. Fast Mechanic will guide the next step.`
         },
         {
-          q: `What is the price for ${service.name.toLowerCase()}?`,
-          a: service.price
+          q: `What information is needed to arrange ${service.name.toLowerCase()}?`,
+          a: service.confirmation
         }
       ])
     ]
@@ -1033,7 +1042,11 @@ function servicePage(service) {
   const topAreas = areas.filter((item) => ["South Mumbai", "Western Mumbai", "Thane Corridor", "Vashi Corridor"].includes(item.group)).slice(0, 30);
   const body = `${hero({
     eyebrow: "Mumbai Emergency Service",
-    title: `${service.name} in Mumbai.`,
+    title: isJumpStart
+      ? "24/7 car battery jump start service in Mumbai."
+      : isRoadside
+        ? "24/7 emergency roadside assistance in Mumbai."
+        : `${service.name} in Mumbai.`,
     lede: `${service.short} Fast Mechanic supports this service across South Mumbai, Central Mumbai, Bandra, Andheri, Powai, Mulund, Thane and Vashi.`,
     breadcrumbs: [
       { label: "Home", href: "../../../" },
@@ -1054,7 +1067,7 @@ function servicePage(service) {
               <li>Call: <a href="tel:${phoneTel}">${phoneDisplay}</a></li>
               <li>WhatsApp: <a href="${whatsappUrl}" target="_blank" rel="noopener">Chat Fast Mechanic</a></li>
               <li>Service point: ${escapeHtml(address)}</li>
-              <li>Pricing: ${escapeHtml(service.price)}</li>
+              <li>To arrange help: ${escapeHtml(service.confirmation)}</li>
             </ul>
           </div>
           <div class="silo-card">
@@ -1065,6 +1078,34 @@ function servicePage(service) {
           </div>
         </div>
       </section>
+      ${isJumpStart ? `<section class="silo-section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Dead Battery Help</p>
+            <h2>Need a car battery jump start near you in Mumbai?</h2>
+            <p>Call from the vehicle location and share a live location or nearby landmark. Fast Mechanic supports jump-start requests at homes, offices, residential societies, mall parking, basement parking and roadside stopping points within the active Mumbai service radius.</p>
+          </div>
+          <div class="faq-mini-grid">
+            <article class="faq-mini-card"><h3>Describe the symptom</h3><p>Tell us whether the dashboard is dim, the starter clicks, the engine cranks slowly or the car is completely silent.</p></article>
+            <article class="faq-mini-card"><h3>Share access details</h3><p>Mention the parking level, basement height, society entry rules, road direction and nearest landmark.</p></article>
+            <article class="faq-mini-card"><h3>Confirm the safe next step</h3><p>A damaged, leaking or swollen battery should not be jump started. Battery replacement or towing may be safer.</p></article>
+          </div>
+        </div>
+      </section>` : ""}
+      ${isRoadside ? `<section class="silo-section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">One Emergency Number</p>
+            <h2>Roadside assistance near you for common Mumbai breakdowns.</h2>
+            <p>Call once and describe what happened. Fast Mechanic helps identify whether the vehicle needs a battery jump start, new battery, towing, petrol delivery, key lockout assistance, stepney change or an on-road mechanic check.</p>
+          </div>
+          <div class="faq-mini-grid">
+            <article class="faq-mini-card"><h3>Share your live location</h3><p>Include the road direction, nearest landmark, parking access and whether the vehicle is blocking traffic.</p></article>
+            <article class="faq-mini-card"><h3>Explain what the car does</h3><p>Describe warning lights, sounds, leaks and whether the car can start, steer, roll or move safely.</p></article>
+            <article class="faq-mini-card"><h3>Receive the right assistance</h3><p>The first call is used to identify the safest suitable service for the vehicle condition and location.</p></article>
+          </div>
+        </div>
+      </section>` : ""}
       <section class="silo-section alt">
         <div class="container">
           <div class="section-head">
@@ -1252,8 +1293,8 @@ function flatAreaServicePage(item, service, index) {
           a: `Call ${phoneDisplay}, share your car model, exact location in ${item.name} and the nearest landmark.`
         },
         {
-          q: `What is the price for ${service.name.toLowerCase()} in ${item.name}?`,
-          a: service.price
+          q: `What information is needed to arrange ${service.name.toLowerCase()} in ${item.name}?`,
+          a: service.confirmation
         }
       ])
     ]
@@ -1285,7 +1326,7 @@ function flatAreaServicePage(item, service, index) {
               <li>Primary PIN code: ${escapeHtml(item.pin)}</li>
               <li>Service: ${escapeHtml(service.name)}</li>
               <li>Direct call: <a href="tel:${phoneTel}">${phoneDisplay}</a></li>
-              <li>Pricing: ${escapeHtml(service.price)}</li>
+              <li>To arrange help: ${escapeHtml(service.confirmation)}</li>
             </ul>
           </div>
           <div class="silo-card">
@@ -1670,7 +1711,7 @@ function nearbyAreas(item, index) {
 async function writePage(relativePath, html) {
   const fullPath = path.join(root, relativePath);
   await mkdir(path.dirname(fullPath), { recursive: true });
-  await writeFile(fullPath, html, "utf8");
+  await writeFile(fullPath, html.replace(/[ \t]+$/gm, ""), "utf8");
 }
 
 function sitemapUrlset(urls) {

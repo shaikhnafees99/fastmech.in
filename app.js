@@ -16,11 +16,11 @@ const translations = {
     whatsapp: "Chat WhatsApp",
     language: "Language",
     heroEyebrow: "24/7 Emergency Car Help in Mumbai",
-    heroTitle: "Fast Mechanic for new battery sale, jump start, key lock, towing, petrol delivery, stepney change and car mechanic help.",
-    heroLede: "Stuck at home, office, highway, parking basement or late-night road? Call Fast Mechanic for urgent car breakdown support across Mumbai, Andheri, Thane and Vashi.",
+    heroTitle: "24/7 roadside assistance and car breakdown help in Mumbai.",
+    heroLede: "Call Fast Mechanic for new battery sale, battery jump start, key lockout, towing, petrol delivery, stepney change and roadside mechanic support across Mumbai, Andheri, Thane and Vashi.",
     callNow: "Call Now",
     saveContact: "Save Contact",
-    trust: ["Live phone support", "Mumbai wide coverage", "Transparent quotes"],
+    trust: ["Live phone support", "Mumbai wide coverage", "Direct service coordination"],
     hotline: "Fast Response Hotline",
     rescueServices: ["Battery Jump Start", "Key Lock Assistance", "Towing and Petrol Delivery"],
     addContact: "Add Fast Mechanic to contacts",
@@ -131,7 +131,7 @@ const translations = {
     heroLede: "घर, ऑफिस, हायवे, पार्किंग बेसमेंट किंवा रात्री रस्त्यावर अडकलात? मुंबई, अंधेरी आणि ठाण्यात तातडीच्या कार ब्रेकडाउन मदतीसाठी Fast Mechanic ला कॉल करा.",
     callNow: "आता कॉल करा",
     saveContact: "संपर्क सेव्ह करा",
-    trust: ["फोनवर थेट मदत", "संपूर्ण मुंबई कव्हरेज", "स्पष्ट कोट"],
+    trust: ["फोनवर थेट मदत", "संपूर्ण मुंबई कव्हरेज", "थेट सेवा समन्वय"],
     hotline: "फास्ट रिस्पॉन्स हेल्पलाइन",
     rescueServices: ["बॅटरी जंप स्टार्ट", "की लॉक मदत", "टोइंग आणि पेट्रोल डिलिव्हरी"],
     addContact: "Fast Mechanic संपर्कात जोडा",
@@ -226,7 +226,7 @@ translations.ur = {
   heroLede: "گھر، دفتر، ہائی وے، پارکنگ بیسمنٹ یا رات میں سڑک پر پھنس گئے؟ ممبئی، اندھیری، تھانے اور واشی میں فوری مدد کے لیے کال کریں.",
   callNow: "ابھی کال کریں",
   saveContact: "رابطہ محفوظ کریں",
-  trust: ["فون سپورٹ", "ممبئی بھر کوریج", "صاف قیمت"],
+  trust: ["فون سپورٹ", "ممبئی بھر کوریج", "براہ راست سروس رابطہ"],
   hotline: "فاسٹ رسپانس ہاٹ لائن",
   addContact: "Fast Mechanic کو contacts میں شامل کریں",
   serviceTitles: ["نئی بیٹری سیل", "بیٹری جمپ اسٹارٹ", "کی لاک مدد", "ٹوئنگ سروس", "پیٹرول ڈیلیوری", "اسٹیپنی تبدیل", "کار مکینک"],
@@ -279,7 +279,7 @@ translations.ta = {
 Object.assign(translations.hi, {
   navCall: `कॉल ${PHONE_DISPLAY}`,
   whatsapp: "WhatsApp चैट",
-  trust: ["फोन पर सीधी सहायता", "पूरे मुंबई में कवरेज", "स्पष्ट कीमत"],
+  trust: ["फोन पर सीधी सहायता", "पूरे मुंबई में कवरेज", "सीधा सेवा समन्वय"],
   hotline: "फास्ट रिस्पॉन्स हेल्पलाइन",
   rescueServices: ["बैटरी जंप स्टार्ट", "की लॉक सहायता", "टोइंग और पेट्रोल डिलीवरी"],
   addContact: "Fast Mechanic को contacts में जोड़ें",
@@ -385,7 +385,7 @@ Object.assign(translations.ur, {
 
 Object.assign(translations.gu, {
   navCall: `કોલ ${PHONE_DISPLAY}`,
-  trust: ["ફોન પર સીધી મદદ", "સમગ્ર મુંબઈ કવરેજ", "સ્પષ્ટ ભાવ"],
+  trust: ["ફોન પર સીધી મદદ", "સમગ્ર મુંબઈ કવરેજ", "સીધો સેવા સમન્વય"],
   hotline: "ફાસ્ટ રિસ્પોન્સ હેલ્પલાઇન",
   rescueServices: ["બેટરી જમ્પ સ્ટાર્ટ", "કી લોક મદદ", "ટોઇંગ અને પેટ્રોલ ડિલિવરી"],
   addContact: "Fast Mechanic ને contacts માં ઉમેરો",
@@ -442,7 +442,7 @@ Object.assign(translations.gu, {
 
 Object.assign(translations.ta, {
   navCall: `${PHONE_DISPLAY} அழைக்கவும்`,
-  trust: ["நேரடி தொலைபேசி உதவி", "மும்பை முழு கவரேஜ்", "தெளிவான கட்டணம்"],
+  trust: ["நேரடி தொலைபேசி உதவி", "மும்பை முழு கவரேஜ்", "நேரடி சேவை ஒருங்கிணைப்பு"],
   hotline: "ஃபாஸ்ட் ரெஸ்பான்ஸ் ஹெல்ப்லைன்",
   rescueServices: ["பேட்டரி ஜம்ப் ஸ்டார்ட்", "கீ லாக் உதவி", "டோயிங் மற்றும் பெட்ரோல் டெலிவரி"],
   addContact: "Fast Mechanic ஐ contacts இல் சேர்க்கவும்",
@@ -572,13 +572,13 @@ const applyLanguage = (lang) => {
   setText(".coverage-copy h2", text.coverageTitle);
   setText(".coverage-copy p:not(.eyebrow)", text.coverageText);
   setText(".coverage-note", text.coverageNote);
-  setText(".local-seo-section .section-head .eyebrow", text.localSeoEyebrow);
-  setText(".local-seo-section .section-head h2", text.localSeoTitle);
-  setText(".local-seo-section .section-head p:not(.eyebrow)", text.localSeoText);
+  setText('[aria-labelledby="local-seo-title"] .section-head .eyebrow', text.localSeoEyebrow);
+  setText('[aria-labelledby="local-seo-title"] .section-head h2', text.localSeoTitle);
+  setText('[aria-labelledby="local-seo-title"] .section-head p:not(.eyebrow)', text.localSeoText);
   if (text.localSeoCtas) {
-    setTextList(".local-seo-card a", text.localSeoCtas);
+    setTextList('[aria-labelledby="local-seo-title"] .local-seo-card a', text.localSeoCtas);
   } else {
-    setRepeatedText(".local-seo-card a", text.localSeoCta);
+    setRepeatedText('[aria-labelledby="local-seo-title"] .local-seo-card a', text.localSeoCta);
   }
   setText(".seo-panel .eyebrow", text.seoEyebrow);
   setText(".seo-panel h2", text.seoTitle);
