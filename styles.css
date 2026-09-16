@@ -1373,6 +1373,39 @@ details p {
   font-weight: 950;
 }
 
+.brand-compatibility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.brand-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 12px rgba(11, 23, 32, 0.03);
+}
+
+.silo-section.alt .brand-badge {
+  background: var(--paper);
+}
+
+.brand-badge strong {
+  color: var(--ink);
+  font-size: 0.96rem;
+  font-weight: 850;
+}
+
+.brand-badge span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
 .silo-map-frame {
   min-height: 360px;
   border-radius: 8px;

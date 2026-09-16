@@ -8,7 +8,7 @@ const siteUrl = "https://fastmech.in";
 const phoneDisplay = "+91 70218 10153";
 const phoneTel = "+917021810153";
 const whatsappUrl = "https://wa.me/917021810153?text=Hi%20Fast%20Mechanic%2C%20I%20need%20roadside%20assistance%20in%20Mumbai.";
-const lastmod = "2026-09-07";
+const lastmod = "2026-09-16";
 const address = "New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010, India";
 const mapUrl = "https://www.google.com/maps?q=18.9788291,72.8482657";
 const openGraphImage = `${siteUrl}/google-ads-kit/images/png-ready/fast-mechanic-search-ad-1200x628.png`;
@@ -516,7 +516,7 @@ function pageShell({ title, description, canonicalPath, depth, body, schema }) {
     <link rel="canonical" href="${canonical}">
     <link rel="alternate" hreflang="en-IN" href="${canonical}">
     <link rel="icon" type="image/svg+xml" href="${prefix}logo.svg?v=realistic-20260526">
-    <link rel="stylesheet" href="${prefix}styles.css?v=20260704-indexing">
+    <link rel="stylesheet" href="${prefix}styles.css?v=20260916-recovery">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Fast Mechanic">
     <meta property="og:title" content="${escapeHtml(title)}">
@@ -997,14 +997,14 @@ function servicePage(service) {
   const isJumpStart = service.slug === "battery-jump-start";
   const isRoadside = service.slug === "roadside-assistance";
   const title = isJumpStart
-    ? "Car Battery Jump Start Near Me in Mumbai | Fast Mechanic"
+    ? "24/7 Car Battery Jump Start in Mumbai (15-25 Min) | Fast Mechanic"
     : isRoadside
-      ? "24/7 Roadside Assistance Near Me in Mumbai | Fast Mechanic"
-      : `${service.name} in Mumbai | Fast Mechanic`;
+      ? "24/7 Emergency Roadside Assistance in Mumbai | Fast Mechanic"
+      : `${service.name} in Mumbai (24/7 Doorstep Support) | Fast Mechanic`;
   const description = isJumpStart
-    ? `Need a car battery jump start near you in Mumbai? Fast Mechanic provides 24/7 phone support for dead batteries at home, office, basement parking and roadside locations. Call ${phoneDisplay}.`
+    ? `Dead car battery in Mumbai? Fast Mechanic provides 24/7 doorstep & roadside battery jump start in 15–25 mins across Mumbai, Thane and Vashi. Call ${phoneDisplay}.`
     : isRoadside
-      ? `Need 24/7 roadside assistance near you in Mumbai? Call Fast Mechanic for battery jump start, towing, petrol delivery, key lockout, stepney change and mechanic help at ${phoneDisplay}.`
+      ? `Stuck on road in Mumbai? Fast Mechanic provides 24/7 emergency roadside assistance: jump start, towing, fuel, key lockout, stepney and repairs. Call ${phoneDisplay}.`
       : `${service.name} in Mumbai from Fast Mechanic. ${service.short} Service areas include South Mumbai, Andheri, Thane and Vashi. Call ${phoneDisplay}.`;
   const guidance = serviceGuidance[service.slug];
   const schema = mergeSchema(
@@ -1359,16 +1359,18 @@ function flatAreaServicePage(item, service, index) {
           <div class="area-directory">${areaServiceDirectory(nearby, service, "../../../")}</div>
         </div>
       </section>
-      ${brandPageEnabled(item, service) ? `<section class="silo-section">
+      <section class="silo-section">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">Car Brand Pages</p>
-            <h2>${escapeHtml(service.name)} in ${escapeHtml(item.name)} by car brand.</h2>
-            <p>Select the vehicle manufacturer for model examples and the details that help confirm suitable ${escapeHtml(service.name.toLowerCase())} support.</p>
+            <p class="eyebrow">Vehicle Compatibility</p>
+            <h2>${escapeHtml(service.name)} in ${escapeHtml(item.name)} for all car brands.</h2>
+            <p>Fast Mechanic provides ${escapeHtml(service.name.toLowerCase())} support in ${escapeHtml(item.name)} across popular Indian and imported passenger car brands.</p>
           </div>
-          <div class="area-directory">${brandDirectory(item, service, "../../../")}</div>
+          <div class="brand-compatibility-grid">
+            ${carBrands.map((b) => `<div class="brand-badge"><strong>${escapeHtml(b.name)}</strong><span>${escapeHtml(b.models.slice(0, 4).join(", "))}</span></div>`).join("")}
+          </div>
         </div>
-      </section>` : ""}
+      </section>
       <section class="silo-section">
         <div class="container">
           <div class="section-head">
@@ -1739,8 +1741,6 @@ ${files.map((file) => `  <sitemap>
 }
 
 function sitemapGroups() {
-  const modelServices = services.filter((service) => brandEnabled(service));
-  const modelAreas = areas;
   return {
     "main.xml": [
       { loc: "/", priority: "1.0", changefreq: "weekly" },
@@ -1751,8 +1751,7 @@ function sitemapGroups() {
       ...guides.map((guide) => ({ loc: guidePath(guide), priority: "0.78", changefreq: "weekly" }))
     ],
     "mumbai-areas.xml": areas.map((item) => ({ loc: `/car-services/mumbai/${item.slug}/`, priority: "0.84", changefreq: "weekly" })),
-    "mumbai-services.xml": areas.flatMap((item) => services.map((service) => ({ loc: flatAreaServicePath(item, service), priority: "0.80", changefreq: "weekly" }))),
-    "mumbai-car-brands.xml": modelAreas.flatMap((item) => modelServices.flatMap((service) => priorityCarBrands.map((carBrand) => ({ loc: brandServicePath(item, service, carBrand), priority: "0.72", changefreq: "weekly" }))))
+    "mumbai-services.xml": areas.flatMap((item) => services.map((service) => ({ loc: flatAreaServicePath(item, service), priority: "0.80", changefreq: "weekly" })))
   };
 }
 
@@ -1772,22 +1771,11 @@ async function main() {
     await writePage(`car-services/mumbai/${service.slug}/index.html`, servicePage(service));
   }
 
-  const modelServices = services.filter((service) => brandEnabled(service));
-  const modelAreas = areas;
   for (const [index, item] of areas.entries()) {
     await writePage(`car-services/mumbai/${item.slug}/index.html`, areaPage(item, index));
     for (const service of services) {
       await writePage(`car-services/mumbai/${flatAreaServiceSlug(item, service)}/index.html`, flatAreaServicePage(item, service, index));
       await writePage(`car-services/mumbai/${item.slug}/${service.slug}/index.html`, legacyAreaServicePage(item, service));
-    }
-  }
-
-  for (const item of modelAreas) {
-    const index = areas.findIndex((candidate) => candidate.slug === item.slug);
-    for (const service of modelServices) {
-      for (const carBrand of priorityCarBrands) {
-        await writePage(`car-services/mumbai/${flatAreaServiceSlug(item, service)}/${carBrand.slug}/index.html`, brandServicePage(item, service, carBrand, index));
-      }
     }
   }
 
@@ -1802,7 +1790,7 @@ async function main() {
     await writePage(`google-ads-kit/site-files/sitemap/${file}`, xml);
   }
 
-  console.log(`Generated ${areas.length} area pages, ${services.length} service pages, ${areas.length * services.length} flat area-service pages, ${areas.length * services.length} legacy pages, ${modelAreas.length * modelServices.length * priorityCarBrands.length} brand pages and ${sitemapFiles.length} sitemap files.`);
+  console.log(`Generated ${areas.length} area pages, ${services.length} service pages, ${areas.length * services.length} flat area-service pages, ${areas.length * services.length} legacy pages and ${sitemapFiles.length} sitemap files.`);
 }
 
 main().catch((error) => {
