@@ -1,18 +1,45 @@
 {
   "name": "Fast Mechanic Mumbai Roadside Assistance",
   "short_name": "Fast Mechanic",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#f6f8f4",
   "theme_color": "#0b1720",
-  "description": "24/7 car breakdown assistance in Mumbai: jump start, towing, fuel, key lockout and mechanic help.",
+  "description": "24/7 emergency car roadside assistance in Mumbai: battery jump start, towing, petrol delivery, key lockout, stepney change, and doorstep mechanic. Call +91 70218 10153.",
+  "lang": "en-IN",
   "categories": ["business", "utilities", "navigation"],
   "icons": [
     {
-      "src": "logo.svg?v=realistic-20260526",
+      "src": "logo.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "shortcuts": [
+    {
+      "name": "Call Fast Mechanic",
+      "short_name": "Call Now",
+      "description": "Call Fast Mechanic for emergency car help in Mumbai",
+      "url": "tel:+917021810153",
+      "icons": [{"src": "logo.svg", "sizes": "any"}]
+    },
+    {
+      "name": "Battery Jump Start Mumbai",
+      "short_name": "Jump Start",
+      "description": "Battery jump start service across Mumbai",
+      "url": "/car-services/mumbai/battery-jump-start/?source=pwa-shortcut",
+      "icons": [{"src": "logo.svg", "sizes": "any"}]
+    },
+    {
+      "name": "Car Towing Mumbai",
+      "short_name": "Towing",
+      "description": "Car towing service across Mumbai",
+      "url": "/car-services/mumbai/towing-service/?source=pwa-shortcut",
+      "icons": [{"src": "logo.svg", "sizes": "any"}]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
 }

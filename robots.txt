@@ -1,4 +1,30 @@
 User-agent: *
 Allow: /
+Disallow: /google-ads-kit/
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: anthropic-ai
+Allow: /
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://fastmech.in/sitemap.xml
+Sitemap: https://fastmech.in/sitemap/sitemap-areas.xml
+Sitemap: https://fastmech.in/sitemap/sitemap-services.xml

@@ -8,7 +8,7 @@ const siteUrl = "https://fastmech.in";
 const phoneDisplay = "+91 70218 10153";
 const phoneTel = "+917021810153";
 const whatsappUrl = "https://wa.me/917021810153?text=Hi%20Fast%20Mechanic%2C%20I%20need%20roadside%20assistance%20in%20Mumbai.";
-const lastmod = "2026-09-16";
+const lastmod = new Date().toISOString().split("T")[0];
 const address = "New Tank Bandar Road, Darukhana, E Ward, Mumbai, Maharashtra 400010, India";
 const mapUrl = "https://www.google.com/maps?q=18.9788291,72.8482657";
 const openGraphImage = `${siteUrl}/google-ads-kit/images/png-ready/fast-mechanic-search-ad-1200x628.png`;
